@@ -925,3 +925,55 @@
     }
 
 }
+
+/* =========================================================
+   EDGE - REMOVE DEFAULT PASSWORD EYE
+========================================================= */
+
+#auditLoginPassword::-ms-reveal,
+#auditLoginPassword::-ms-clear {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+
+/* Keep only our custom eye */
+
+.audit-login-input-wrap {
+    position: relative !important;
+}
+
+#auditLoginPassword {
+    width: 100% !important;
+    padding-right: 48px !important;
+}
+
+.audit-password-toggle {
+    position: absolute !important;
+
+    top: 50% !important;
+    right: 14px !important;
+
+    transform: translateY(-50%) !important;
+
+    z-index: 5 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 30px !important;
+    height: 30px !important;
+
+    padding: 0 !important;
+
+    border: 0 !important;
+    background: transparent !important;
+
+    cursor: pointer !important;
+}
+
+.audit-password-toggle i {
+    font-size: 15px !important;
+}

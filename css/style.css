@@ -1123,3 +1123,384 @@ body {
         width: calc(100% - 28px);
     }
 }
+
+
+/* =========================================================
+   STACKLY PREMIUM LOADER
+========================================================= */
+
+.stackly-loader {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #0a5144 0%,
+            #063f35 35%,
+            #022b25 72%,
+            #061714 100%
+        );
+
+    overflow: hidden;
+
+    transition:
+        opacity .8s ease,
+        visibility .8s ease;
+}
+
+.stackly-loader.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CENTER AREA
+========================================================= */
+
+.stackly-loader-core {
+    position: relative;
+
+    width: 265px;
+    height: 265px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   ROTATING RINGS
+========================================================= */
+
+.stackly-ring {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+
+    box-sizing: border-box;
+
+    pointer-events: none;
+}
+
+
+/* Outer ring */
+
+.stackly-ring-one {
+    width: 255px;
+    height: 255px;
+
+    border:
+        1px solid
+        rgba(201, 255, 145, 0.28);
+
+    border-top-color: #c9ff91;
+    border-right-color: transparent;
+
+    animation:
+        stacklyRotate 2.4s linear infinite;
+}
+
+
+/* Middle ring */
+
+.stackly-ring-two {
+    width: 215px;
+    height: 215px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.22);
+
+    border-bottom-color: #c9ff91;
+    border-left-color: transparent;
+
+    animation:
+        stacklyRotateReverse 1.9s linear infinite;
+}
+
+
+/* Inner ring */
+
+.stackly-ring-three {
+    width: 175px;
+    height: 175px;
+
+    border:
+        1px solid
+        rgba(201, 255, 145, 0.32);
+
+    border-top-color: #ffffff;
+    border-right-color: transparent;
+
+    animation:
+        stacklyRotate 1.5s linear infinite;
+}
+
+
+/* =========================================================
+   CENTER
+========================================================= */
+
+.stackly-loader-center {
+    position: relative;
+
+    z-index: 5;
+
+    width: 142px;
+    height: 142px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #0c5b4c 0%,
+            #063f35 70%,
+            #032b25 100%
+        );
+
+    border:
+        1px solid
+        rgba(201, 255, 145, 0.35);
+
+    box-shadow:
+        0 0 25px rgba(201, 255, 145, 0.08),
+        inset 0 0 30px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.stackly-loader-logo {
+    width: 48px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 5px;
+
+    overflow: hidden;
+}
+
+.stackly-loader-logo img {
+    width: 72px;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+
+    filter:
+        brightness(0)
+        invert(1);
+}
+
+
+/* =========================================================
+   STACKLY TEXT
+========================================================= */
+
+.stackly-loader-brand {
+    color: #c9ff91;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.8px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   INNER TEXT
+========================================================= */
+
+.stackly-loader-text {
+    margin-top: 7px;
+
+    max-width: 105px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.7
+        );
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 6px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   ROTATION
+========================================================= */
+
+@keyframes stacklyRotate {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes stacklyRotateReverse {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+}
+
+
+/* =========================================================
+   SMALL GLOW
+========================================================= */
+
+.stackly-loader-core::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 285px;
+    height: 285px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(201,255,145,0.08),
+            transparent 65%
+        );
+
+    filter: blur(8px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .stackly-loader-core {
+        width: 235px;
+        height: 235px;
+    }
+
+    .stackly-ring-one {
+        width: 225px;
+        height: 225px;
+    }
+
+    .stackly-ring-two {
+        width: 190px;
+        height: 190px;
+    }
+
+    .stackly-ring-three {
+        width: 155px;
+        height: 155px;
+    }
+
+    .stackly-loader-center {
+        width: 128px;
+        height: 128px;
+    }
+
+    .stackly-loader-logo {
+        width: 44px;
+        height: 27px;
+    }
+
+    .stackly-loader-logo img {
+        width: 66px;
+    }
+
+    .stackly-loader-brand {
+        font-size: 14px;
+    }
+
+    .stackly-loader-text {
+        font-size: 5.5px;
+    }
+
+}

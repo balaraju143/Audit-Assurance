@@ -197,7 +197,9 @@ document.addEventListener("DOMContentLoaded", () => {
             "Team Performance",
 
         "assurance-reports":
-            "Assurance Reports"
+            "Assurance Reports",
+
+        "admin-settings": "Settings"
 
     };
 

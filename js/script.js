@@ -318,3 +318,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+/* =========================================================
+   STACKLY PREMIUM LOADER
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const loader =
+        document.querySelector("#stacklyLoader");
+
+    if (!loader) return;
+
+
+    /* Keep loader visible briefly */
+    setTimeout(() => {
+
+        loader.classList.add("hide");
+
+        /* Remove after fade */
+        setTimeout(() => {
+
+            loader.remove();
+
+        }, 850);
+
+    }, 2200);
+
+});

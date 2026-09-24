@@ -218,7 +218,11 @@ if (welcomeUserEmail) {
             "Billing",
 
         profile:
-            "Profile"
+            "Profile",
+            
+        settings:
+        "Settings"
+
 
     };
 
