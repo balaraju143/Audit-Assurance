@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly | Audit & Assurance</title>
+<!-- Font Awesome -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER / NAVBAR
+    ====================================================== -->
+<header class="site-header" id="siteHeader">
+    <nav class="navbar">
+
+      <!-- Logo -->
+<a href="index.html" class="brand-logo">
+    <img src="assetss/logo 4.webp" alt="STACKLY Logo">
+</a>
+        <!-- Desktop Navigation -->
+        <div class="nav-menu" id="navMenu">
+
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+
+            <!-- Mobile Auth Buttons -->
+            <div class="mobile-auth">
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="register.html" class="signup-btn">Sign Up</a>
+            </div>
+
+        </div>
+
+        <!-- Desktop Auth -->
+        <div class="desktop-auth">
+            <a href="login.html" class="login-btn">Login</a>
+            <a href="register.html" class="signup-btn">Sign Up</a>
+        </div>
+
+        <!-- Mobile Toggle -->
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </nav>
+</header>
+
+
+<!-- =========================================================
+     STACKLY AUDIT & ASSURANCE LOGIN CARD
+========================================================= -->
+
+<section class="audit-login-section">
+
+    <div class="audit-login-card">
+
+
+        <!-- =================================================
+             LEFT SIDE
+        ================================================== -->
+
+        <div class="audit-login-visual">
+
+            <div class="audit-login-visual-bg">
+                <img
+                    src="assetss/service-3.webp"
+                    alt="Stackly Audit and Assurance"
+                >
+            </div>
+
+            <div class="audit-login-visual-overlay"></div>
+
+
+            <div class="audit-login-visual-content">
+
+                <span class="audit-login-visual-label">
+                    STACKLY AUDIT & ASSURANCE
+                </span>
+
+                <h1>
+                    Confidence through
+                    <strong>trusted assurance.</strong>
+                </h1>
+
+                <p>
+                    Access your assurance workspace, review reports,
+                    monitor audit activities and stay connected with
+                    the information that matters to your business.
+                </p>
+
+
+                <div class="audit-login-stats">
+
+                    <div class="audit-login-stat">
+                        <strong>1.5K+</strong>
+                        <span>Audits Completed</span>
+                    </div>
+
+                    <div class="audit-login-stat">
+                        <strong>98%</strong>
+                        <span>Client Confidence</span>
+                    </div>
+
+                    <div class="audit-login-stat">
+                        <strong>24/7</strong>
+                        <span>Secure Access</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             RIGHT SIDE LOGIN
+        ================================================== -->
+
+        <div class="audit-login-form-side">
+
+            <div class="audit-login-form-container">
+
+
+                <!-- Heading -->
+
+                <div class="audit-login-heading">
+
+                    <span>
+                        SECURE ACCESS
+                    </span>
+
+                    <h2>
+                        Welcome Back
+                    </h2>
+
+                    <p>
+                        Enter your details below to access your
+                        Audit & Assurance workspace.
+                    </p>
+
+                </div>
+
+
+                <!-- =================================================
+                     ROLE SELECTION
+                ================================================== -->
+
+                <div class="audit-login-role-section">
+
+                    <label>
+                        Choose Account Role
+                    </label>
+
+
+                    <div class="audit-login-role-buttons">
+
+
+                        <!-- CLIENT -->
+
+                        <button
+                            type="button"
+                            class="audit-login-role active"
+                            data-role="client"
+                        >
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <span>
+                                Client
+                            </span>
+
+                        </button>
+
+
+                        <!-- ADMIN -->
+
+                        <button
+                            type="button"
+                            class="audit-login-role"
+                            data-role="admin"
+                        >
+
+                            <i class="fa-solid fa-user-shield"></i>
+
+                            <span>
+                                Admin
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     LOGIN FORM
+                ================================================== -->
+
+                <form
+                    id="auditLoginForm"
+                    class="audit-login-form"
+                    novalidate
+                >
+
+
+                    <!-- EMAIL -->
+
+                    <div class="audit-login-field">
+
+                        <label for="auditLoginEmail">
+                            Email Address
+                        </label>
+
+                        <div class="audit-login-input-wrap">
+
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="auditLoginEmail"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                            >
+
+                        </div>
+
+                        <span
+                            class="audit-login-error"
+                            id="auditLoginEmailError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="audit-login-field">
+
+                        <label for="auditLoginPassword">
+                            Password
+                        </label>
+
+                        <div class="audit-login-input-wrap">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="auditLoginPassword"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                            >
+
+                            <button
+                                type="button"
+                                class="audit-password-toggle"
+                                id="auditPasswordToggle"
+                                aria-label="Show password"
+                            >
+                                <i class="fa-regular fa-eye-slash"></i>
+                            </button>
+
+                        </div>
+
+                        <span
+                            class="audit-login-error"
+                            id="auditLoginPasswordError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- OPTIONS -->
+
+                    <div class="audit-login-options">
+
+                        <label class="audit-remember">
+
+                            <input
+                                type="checkbox"
+                                id="auditRememberMe"
+                            >
+
+                            <span>
+                                Remember Me
+                            </span>
+
+                        </label>
+
+
+                        <a
+                            href="404.html"
+                            class="audit-forgot-password"
+                        >
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+                    <!-- LOGIN -->
+
+                    <button
+                        type="submit"
+                        class="audit-login-submit"
+                    >
+                        SIGN IN
+                    </button>
+
+
+                    <!-- DIVIDER -->
+
+                    <div class="audit-login-divider">
+
+                        <span></span>
+
+                        <p>
+                            OR SIGN IN WITH
+                        </p>
+
+                        <span></span>
+
+                    </div>
+
+
+                    <!-- SOCIAL -->
+
+                    <div class="audit-login-social">
+
+                        <a
+                            href="404.html"
+                            aria-label="Google"
+                        >
+                            <i class="fa-brands fa-google"></i>
+                        </a>
+
+                        <a
+                            href="404.html"
+                            aria-label="Apple"
+                        >
+                            <i class="fa-brands fa-apple"></i>
+                        </a>
+
+                        <a
+                            href="404.html"
+                            aria-label="Facebook"
+                        >
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+
+                    </div>
+
+
+                    <!-- REGISTER -->
+
+                    <p class="audit-login-register">
+
+                        Don't have an account?
+
+                        <a href="register.html">
+                            Create Account
+                        </a>
+
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========================================================
+     STACKLY AUDIT & ASSURANCE FOOTER
+========================================================= -->
+
+<footer class="audit-footer">
+
+    <div class="audit-footer-pattern"></div>
+
+    <div class="audit-footer-container">
+
+        <!-- =================================================
+             BRAND
+        ================================================== -->
+
+        <div class="audit-footer-brand">
+
+            <a
+                href="index.html"
+                class="audit-footer-logo"
+            >
+                <img
+                    src="assetss/logo 4.webp"
+                    alt="STACKLY"
+                >
+            </a>
+
+
+            <p class="audit-footer-description">
+                Independent audit and assurance solutions
+                built to strengthen transparency, manage
+                risk and support confident business decisions.
+            </p>
+
+
+            <!-- SOCIAL ICONS -->
+
+            <div class="audit-footer-socials">
+
+                <a
+                    href="404.html"
+                    aria-label="Facebook"
+                >
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a
+                    href="404.html"
+                    aria-label="X"
+                >
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a
+                    href="404.html"
+                    aria-label="LinkedIn"
+                >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a
+                    href="404.html"
+                    aria-label="Instagram"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             EXPLORE
+        ================================================== -->
+
+        <div class="audit-footer-column">
+
+            <h3>
+                <span></span>
+                Explore
+            </h3>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="services.html">
+                        Services
+                    </a>
+                </li>
+
+                <li>
+                    <a href="blog.html">
+                        Blog
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- =================================================
+             SUPPORT
+        ================================================== -->
+
+        <div class="audit-footer-column">
+
+            <h3>
+                <span></span>
+                Support
+            </h3>
+
+            <ul>
+
+                <li>
+                    <a href="404.html">
+                        About our assurance team
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        Audit services
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        Client support
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        Schedule a consultation
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        Audit FAQs
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- =================================================
+             NEWSLETTER
+        ================================================== -->
+
+        <div class="audit-footer-newsletter">
+
+            <h3>
+                <span></span>
+                Newsletter
+            </h3>
+
+
+            <p>
+                Get useful audit insights, business updates
+                and assurance resources delivered to your inbox.
+            </p>
+
+
+            <form
+                class="audit-newsletter-form"
+                id="auditNewsletterForm"
+                novalidate
+            >
+
+                <div class="audit-newsletter-input-wrap">
+
+                    <input
+                        type="email"
+                        id="auditNewsletterEmail"
+                        placeholder="Your email address"
+                        autocomplete="email"
+                    >
+
+                    <button
+                        type="submit"
+                        aria-label="Subscribe"
+                    >
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="audit-newsletter-error"
+                    id="auditNewsletterError"
+                ></div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         BOTTOM FOOTER
+    ====================================================== -->
+
+    <div class="audit-footer-bottom">
+
+        <p>
+            © 2026 Stackly. All rights reserved.
+        </p>
+
+
+        <p class="audit-footer-crafted">
+            Crafted with
+            <i class="fa-solid fa-heart"></i>
+            by Stackly
+        </p>
+
+
+        <div class="audit-footer-legal">
+
+            <a href="404.html">
+                Terms & Conditions
+            </a>
+
+            <span>/</span>
+
+            <a href="404.html">
+                Privacy Policy
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/login.js"></script>
+</body>
+
+</html>

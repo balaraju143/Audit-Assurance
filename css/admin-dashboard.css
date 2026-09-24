@@ -1,0 +1,4566 @@
+/* =========================================================
+   STACKLY AUDIT & ASSURANCE
+   ADMIN DASHBOARD
+========================================================= */
+
+:root {
+
+    --admin-green-dark: #063f35;
+    --admin-green: #075548;
+    --admin-green-light: #c9ff91;
+    --admin-green-soft: #eaf5ef;
+
+    --admin-black: #071714;
+    --admin-text: #10221e;
+    --admin-muted: #71827d;
+
+    --admin-white: #ffffff;
+    --admin-border: #dce9e3;
+
+    --admin-bg: #f3f8f5;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+.audit-admin-dashboard * {
+    box-sizing: border-box;
+}
+
+.audit-admin-dashboard {
+    min-height: 100vh;
+    display: flex;
+    background: var(--admin-bg);
+    color: var(--admin-text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.audit-admin-sidebar {
+
+    width: 265px;
+    min-height: 100vh;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #063f35 0%,
+            #022b25 100%
+        );
+
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 1000;
+
+    padding: 25px 16px;
+
+}
+
+
+.audit-admin-logo {
+
+    padding: 4px 10px 27px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.12);
+
+}
+
+
+.audit-admin-logo img {
+
+    width: 125px;
+    height: auto;
+    display: block;
+
+    filter:
+        brightness(0)
+        invert(1);
+
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.audit-admin-profile {
+
+    margin-top: 20px;
+
+    padding: 13px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    border-radius: 13px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+}
+
+
+.audit-admin-avatar {
+
+    width: 42px;
+    height: 42px;
+
+    flex: 0 0 42px;
+
+    border-radius: 50%;
+
+    background: var(--admin-green-light);
+    color: var(--admin-green-dark);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 800;
+    font-size: 17px;
+
+}
+
+
+.audit-admin-profile-info {
+
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.audit-admin-profile-info strong {
+
+    font-size: 13px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+
+.audit-admin-profile-info span {
+
+    margin-top: 4px;
+
+    color: rgba(255,255,255,.68);
+
+    font-size: 10px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+
+.audit-admin-profile-info small {
+
+    margin-top: 5px;
+
+    color: var(--admin-green-light);
+
+    font-size: 8px;
+    letter-spacing: 1px;
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.audit-admin-menu-title {
+
+    margin:
+        28px 10px 10px;
+
+    font-size: 9px;
+
+    color:
+        rgba(255,255,255,.45);
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+}
+
+
+.audit-admin-nav {
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+}
+
+
+.admin-menu-link {
+
+    min-height: 44px;
+
+    padding: 0 13px;
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color:
+        rgba(255,255,255,.72);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease;
+
+}
+
+
+.admin-menu-link i {
+
+    width: 19px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+}
+
+
+.admin-menu-link:hover {
+
+    background:
+        rgba(255,255,255,.09);
+
+    color: #fff;
+
+    transform: translateX(3px);
+
+}
+
+
+.admin-menu-link.active {
+
+    background:
+        rgba(201,255,145,.17);
+
+    color:
+        var(--admin-green-light);
+
+    box-shadow:
+        inset 3px 0 0
+        var(--admin-green-light);
+
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+========================================================= */
+
+.audit-admin-sidebar-bottom {
+
+    margin-top: auto;
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid rgba(255,255,255,.1);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.audit-admin-sidebar-bottom a {
+
+    min-height: 42px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 13px;
+
+    color:
+        rgba(255,255,255,.65);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    border-radius: 8px;
+
+}
+
+
+.audit-admin-sidebar-bottom a:hover {
+
+    background:
+        rgba(255,255,255,.08);
+
+    color: #fff;
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.audit-admin-main {
+
+    width: calc(100% - 265px);
+
+    margin-left: 265px;
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.audit-admin-header {
+
+    height: 82px;
+
+    background:
+        rgba(255,255,255,.96);
+
+    border-bottom:
+        1px solid var(--admin-border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 30px;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 500;
+
+}
+
+
+.audit-admin-header-left {
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+}
+
+
+.audit-admin-page-label {
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    color: var(--admin-green);
+
+    font-weight: 700;
+
+}
+
+
+.audit-admin-header h1 {
+
+    margin: 4px 0 0;
+
+    font-size: 22px;
+
+}
+
+
+.audit-admin-header-right {
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.audit-admin-search {
+
+    width: 230px;
+    height: 40px;
+
+    border:
+        1px solid var(--admin-border);
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 0 13px;
+
+    text-decoration: none;
+
+    color: var(--admin-muted);
+
+    font-size: 12px;
+
+    background: #f8fbf9;
+
+}
+
+
+.audit-admin-notification {
+
+    width: 40px;
+    height: 40px;
+
+    border:
+        1px solid var(--admin-border);
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--admin-green);
+
+    text-decoration: none;
+
+    position: relative;
+
+}
+
+
+.audit-admin-notification span {
+
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #ff735c;
+
+    top: 8px;
+    right: 8px;
+
+}
+
+
+.audit-admin-header-avatar {
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: var(--admin-green-light);
+    color: var(--admin-green-dark);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 800;
+
+}
+
+
+.audit-admin-mobile-toggle {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.audit-admin-content {
+
+    padding: 30px;
+
+}
+
+
+.admin-page-section {
+
+    display: none;
+
+}
+
+
+.admin-page-section.active {
+
+    display: block;
+
+}
+
+
+/* =========================================================
+   WELCOME
+========================================================= */
+
+.audit-admin-welcome {
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #063f35,
+            #08715f
+        );
+
+    color: #fff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    overflow: hidden;
+
+    position: relative;
+
+}
+
+
+.audit-admin-welcome::after {
+
+    content: "";
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    right: -100px;
+    top: -160px;
+
+    background:
+        rgba(201,255,145,.12);
+
+}
+
+
+.audit-admin-welcome > div {
+
+    position: relative;
+    z-index: 1;
+
+}
+
+
+.audit-admin-welcome > div > span {
+
+    font-size: 9px;
+
+    letter-spacing: 1.4px;
+
+    color: var(--admin-green-light);
+
+    font-weight: 700;
+
+}
+
+
+.audit-admin-welcome h2 {
+
+    margin: 9px 0;
+
+    font-size: clamp(22px, 2.3vw, 32px);
+
+}
+
+
+.audit-admin-welcome h2 strong {
+
+    color: var(--admin-green-light);
+
+}
+
+
+.audit-admin-welcome p {
+
+    max-width: 680px;
+
+    margin: 0;
+
+    color:
+        rgba(255,255,255,.72);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+
+.audit-admin-primary-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+
+    padding: 0 20px;
+
+    background:
+        var(--admin-green-light);
+
+    color:
+        var(--admin-green-dark);
+
+    text-decoration: none;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+
+}
+
+
+.audit-admin-primary-btn:hover {
+
+    transform: translateY(-2px);
+
+    background: #fff;
+
+}
+
+
+/* =========================================================
+   KPI
+========================================================= */
+
+.audit-admin-kpi-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 17px;
+
+    margin-top: 18px;
+
+}
+
+
+.audit-admin-kpi-card {
+
+    padding: 22px;
+
+    min-height: 170px;
+
+    background: #fff;
+
+    border:
+        1px solid var(--admin-border);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(6,63,53,.05);
+
+}
+
+
+.audit-admin-kpi-icon {
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 10px;
+
+    background:
+        var(--admin-green-soft);
+
+    color:
+        var(--admin-green);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+}
+
+
+.audit-admin-kpi-card > span {
+
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    color: var(--admin-muted);
+
+    font-weight: 700;
+
+}
+
+
+.audit-admin-kpi-card > strong {
+
+    display: block;
+
+    font-size: 30px;
+
+    margin: 7px 0;
+
+}
+
+
+.audit-admin-kpi-card small {
+
+    color:
+        var(--admin-green);
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   TWO COLUMN
+========================================================= */
+
+.audit-admin-grid-two {
+
+    display: grid;
+
+    grid-template-columns:
+        1.7fr 1fr;
+
+    gap: 18px;
+
+    margin-top: 18px;
+
+}
+
+
+.audit-admin-panel {
+
+    background: #fff;
+
+    border:
+        1px solid var(--admin-border);
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(6,63,53,.04);
+
+}
+
+
+.audit-admin-panel-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.audit-admin-panel-heading span {
+
+    font-size: 9px;
+
+    color: var(--admin-green);
+
+    letter-spacing: 1px;
+
+    font-weight: 700;
+
+}
+
+
+.audit-admin-panel-heading h3 {
+
+    margin: 5px 0 0;
+
+    font-size: 18px;
+
+}
+
+
+.audit-admin-small-btn {
+
+    height: 36px;
+
+    padding: 0 14px;
+
+    background: #fff;
+
+    border:
+        1px solid var(--admin-border);
+
+    border-radius: 7px;
+
+    color: var(--admin-green);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   BARS
+========================================================= */
+
+.audit-admin-bars {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 21px;
+
+}
+
+
+.admin-bar-row {
+
+    display: grid;
+
+    grid-template-columns: 130px 1fr 40px;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 11px;
+
+}
+
+
+.admin-bar-row > div {
+
+    height: 7px;
+
+    background: #e8f0ec;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.admin-bar-row i {
+
+    display: block;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--admin-green),
+            #65a982
+        );
+
+    border-radius: inherit;
+
+}
+
+
+.admin-bar-row strong {
+
+    text-align: right;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   RISK
+========================================================= */
+
+.risk-circle {
+
+    width: 150px;
+    height: 150px;
+
+    margin:
+        28px auto 20px;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            var(--admin-green) 0 72%,
+            #e8f0ec 72% 100%
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.risk-circle::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 112px;
+    height: 112px;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+}
+
+
+.risk-circle > div {
+
+    position: relative;
+
+    text-align: center;
+
+}
+
+
+.risk-circle strong {
+
+    display: block;
+
+    font-size: 30px;
+
+}
+
+
+.risk-circle span {
+
+    font-size: 10px;
+
+    color: var(--admin-muted);
+
+}
+
+
+.risk-legend {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.risk-legend span {
+
+    font-size: 9px;
+
+    color: var(--admin-muted);
+
+}
+
+
+.risk-legend i {
+
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        var(--admin-green);
+
+    margin-right: 4px;
+
+}
+
+
+/* =========================================================
+   ACTIVITY
+========================================================= */
+
+.audit-admin-activity {
+
+    margin-top: 18px;
+
+}
+
+
+.audit-admin-activity-list {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.admin-activity-item {
+
+    display: grid;
+
+    grid-template-columns:
+        40px 1fr auto;
+
+    gap: 14px;
+
+    align-items: center;
+
+    padding: 17px 0;
+
+    border-top:
+        1px solid var(--admin-border);
+
+}
+
+
+.admin-activity-icon {
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    background:
+        var(--admin-green-soft);
+
+    color:
+        var(--admin-green);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.admin-activity-item strong {
+
+    font-size: 12px;
+
+}
+
+
+.admin-activity-item p {
+
+    margin: 4px 0 0;
+
+    font-size: 11px;
+
+    color: var(--admin-muted);
+
+}
+
+
+.admin-activity-item time {
+
+    color: var(--admin-muted);
+
+    font-size: 9px;
+
+}
+
+
+/* =========================================================
+   INNER PAGE HEADINGS
+========================================================= */
+
+.admin-section-heading {
+
+    margin-bottom: 25px;
+
+}
+
+
+.admin-section-heading span {
+
+    color: var(--admin-green);
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 700;
+
+}
+
+
+.admin-section-heading h2 {
+
+    margin: 7px 0;
+
+    font-size: 32px;
+
+}
+
+
+.admin-section-heading p {
+
+    max-width: 650px;
+
+    color: var(--admin-muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.audit-admin-table-panel {
+
+    background: #fff;
+
+    border:
+        1px solid var(--admin-border);
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+}
+
+
+.admin-table-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 22px;
+
+}
+
+
+.admin-table-heading h3 {
+
+    margin: 0;
+
+    font-size: 18px;
+
+}
+
+
+.audit-admin-table-wrap {
+
+    overflow-x: auto;
+
+}
+
+
+.audit-admin-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 700px;
+
+}
+
+
+.audit-admin-table th {
+
+    text-align: left;
+
+    padding: 13px;
+
+    color: var(--admin-muted);
+
+    font-size: 9px;
+
+    letter-spacing: .8px;
+
+    border-bottom:
+        1px solid var(--admin-border);
+
+}
+
+
+.audit-admin-table td {
+
+    padding: 17px 13px;
+
+    font-size: 12px;
+
+    border-bottom:
+        1px solid #edf2ef;
+
+}
+
+
+.status {
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+}
+
+
+.status.active {
+
+    background: #e3f5e8;
+    color: #247445;
+
+}
+
+
+.status.review {
+
+    background: #fff2d8;
+    color: #966a16;
+
+}
+
+
+.status.complete {
+
+    background: #e5f2f0;
+    color: var(--admin-green);
+
+}
+
+
+.status.pending {
+
+    background: #f3e9e7;
+    color: #9b4e40;
+
+}
+
+
+/* =========================================================
+   RISK CARDS
+========================================================= */
+
+.admin-risk-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.admin-risk-card {
+
+    padding: 28px;
+
+    min-height: 270px;
+
+    background: #fff;
+
+    border-radius: 15px;
+
+    border:
+        1px solid var(--admin-border);
+
+    border-top: 4px solid var(--admin-green);
+
+}
+
+
+.admin-risk-card.high {
+    border-top-color: #d96b58;
+}
+
+.admin-risk-card.medium {
+    border-top-color: #d5a13d;
+}
+
+.admin-risk-card.low {
+    border-top-color: #5eaa78;
+}
+
+
+.admin-risk-card span {
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    font-weight: 800;
+
+}
+
+
+.admin-risk-card h3 {
+
+    margin: 20px 0 10px;
+
+    font-size: 18px;
+
+}
+
+
+.admin-risk-card p {
+
+    color: var(--admin-muted);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+}
+
+
+.admin-risk-card button,
+.report-admin-card button {
+
+    margin-top: 18px;
+
+    height: 38px;
+
+    padding: 0 16px;
+
+    background:
+        var(--admin-green);
+
+    color: #fff;
+
+    border: none;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   COMPLIANCE
+========================================================= */
+
+.compliance-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.compliance-card {
+
+    background: #fff;
+
+    padding: 28px;
+
+    border:
+        1px solid var(--admin-border);
+
+    border-radius: 15px;
+
+}
+
+
+.compliance-card-icon {
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 11px;
+
+    background:
+        var(--admin-green-soft);
+
+    color:
+        var(--admin-green);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.compliance-card h3 {
+
+    margin: 25px 0 8px;
+
+    font-size: 15px;
+
+}
+
+
+.compliance-card strong {
+
+    display: block;
+
+    font-size: 35px;
+
+}
+
+
+.compliance-card span {
+
+    font-size: 11px;
+
+    color: var(--admin-muted);
+
+}
+
+
+/* =========================================================
+   CLIENT MANAGEMENT
+========================================================= */
+
+.client-admin-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.client-admin-card {
+
+    padding: 20px;
+
+    background: #fff;
+
+    border:
+        1px solid var(--admin-border);
+
+    border-radius: 13px;
+
+    display: grid;
+
+    grid-template-columns: 45px 1fr auto;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
+
+
+.client-admin-avatar,
+.team-member-icon {
+
+    width: 43px;
+    height: 43px;
+
+    border-radius: 12px;
+
+    background:
+        var(--admin-green);
+
+    color:
+        #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+}
+
+
+.client-admin-card h3 {
+
+    margin: 0;
+
+    font-size: 14px;
+
+}
+
+
+.client-admin-card p {
+
+    margin: 4px 0 0;
+
+    font-size: 10px;
+
+    color: var(--admin-muted);
+
+}
+
+
+.client-status {
+
+    padding: 5px 8px;
+
+    border-radius: 20px;
+
+    background: #e5f5ea;
+
+    color: #32764b;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   TEAM
+========================================================= */
+
+.team-performance-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.team-performance-card {
+
+    background: #fff;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    border:
+        1px solid var(--admin-border);
+
+}
+
+
+.team-performance-card h3 {
+
+    margin: 18px 0 5px;
+
+    font-size: 16px;
+
+}
+
+
+.team-performance-card p {
+
+    margin: 0 0 20px;
+
+    color: var(--admin-muted);
+
+    font-size: 11px;
+
+}
+
+
+.team-progress {
+
+    height: 7px;
+
+    border-radius: 10px;
+
+    background: #e8efeb;
+
+    overflow: hidden;
+
+}
+
+
+.team-progress span {
+
+    display: block;
+
+    height: 100%;
+
+    background: var(--admin-green);
+
+}
+
+
+.team-performance-card > strong {
+
+    display: block;
+
+    margin-top: 9px;
+
+    font-size: 10px;
+
+    color: var(--admin-green);
+
+}
+
+
+/* =========================================================
+   REPORTS
+========================================================= */
+
+.report-admin-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1fr;
+
+    gap: 18px;
+
+}
+
+
+.report-admin-card {
+
+    background: #fff;
+
+    padding: 27px;
+
+    border:
+        1px solid var(--admin-border);
+
+    border-radius: 15px;
+
+    min-height: 245px;
+
+}
+
+
+.report-admin-card.large {
+
+    background:
+        linear-gradient(
+            135deg,
+            #063f35,
+            #075548
+        );
+
+    color: #fff;
+
+}
+
+
+.report-admin-card > span {
+
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    color: var(--admin-green);
+
+    font-weight: 700;
+
+}
+
+
+.report-admin-card.large > span {
+
+    color: var(--admin-green-light);
+
+}
+
+
+.report-admin-card h3 {
+
+    margin: 15px 0;
+
+    font-size: 18px;
+
+}
+
+
+.report-number {
+
+    font-size: 42px;
+
+    font-weight: 800;
+
+    color: var(--admin-green-light);
+
+}
+
+
+.report-admin-card strong {
+
+    display: block;
+
+    font-size: 40px;
+
+    margin-top: 25px;
+
+}
+
+
+.report-admin-card p {
+
+    color: var(--admin-muted);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+}
+
+
+.report-admin-card.large p {
+
+    color:
+        rgba(255,255,255,.7);
+
+}
+
+
+.report-admin-card button {
+
+    margin-top: 10px;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .audit-admin-kpi-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .audit-admin-grid-two {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .admin-risk-grid,
+    .team-performance-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .report-admin-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+    .report-admin-card.large {
+
+        grid-column:
+            1 / -1;
+
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .audit-admin-sidebar {
+
+        transform:
+            translateX(-100%);
+
+        transition:
+            transform .35s ease;
+
+    }
+
+
+    .audit-admin-sidebar.open {
+
+        transform:
+            translateX(0);
+
+    }
+
+
+    .audit-admin-main {
+
+        width: 100%;
+
+        margin-left: 0;
+
+    }
+
+
+    .audit-admin-header {
+
+        height: 74px;
+
+        padding: 0 15px;
+
+    }
+
+
+    .audit-admin-mobile-toggle {
+
+        width: 39px;
+        height: 39px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        background: #fff;
+
+        border:
+            1px solid var(--admin-border);
+
+        border-radius: 9px;
+
+        color: var(--admin-green);
+
+        cursor: pointer;
+
+    }
+
+
+    .audit-admin-header-right {
+
+        gap: 7px;
+
+    }
+
+
+    .audit-admin-search {
+
+        width: 40px;
+
+        padding: 0;
+
+        justify-content: center;
+
+    }
+
+
+    .audit-admin-search span {
+
+        display: none;
+
+    }
+
+
+    .audit-admin-page-label {
+
+        font-size: 7px;
+
+    }
+
+
+    .audit-admin-header h1 {
+
+        font-size: 17px;
+
+    }
+
+
+    .audit-admin-content {
+
+        padding: 15px;
+
+    }
+
+
+    .audit-admin-welcome {
+
+        padding: 22px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .audit-admin-welcome h2 {
+
+        font-size: 22px;
+
+    }
+
+
+    .audit-admin-welcome p {
+
+        font-size: 11px;
+
+    }
+
+
+    .audit-admin-kpi-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 10px;
+
+    }
+
+
+    .audit-admin-kpi-card {
+
+        min-height: 145px;
+
+        padding: 16px;
+
+    }
+
+
+    .audit-admin-kpi-card > strong {
+
+        font-size: 25px;
+
+    }
+
+
+    .admin-bar-row {
+
+        grid-template-columns:
+            95px 1fr 35px;
+
+        font-size: 9px;
+
+    }
+
+
+    .admin-activity-item {
+
+        grid-template-columns:
+            35px 1fr;
+
+    }
+
+
+    .admin-activity-item time {
+
+        display: none;
+
+    }
+
+
+    .admin-risk-grid,
+    .compliance-grid,
+    .team-performance-grid,
+    .client-admin-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .report-admin-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .report-admin-card.large {
+
+        grid-column: auto;
+
+    }
+
+
+    .admin-section-heading h2 {
+
+        font-size: 27px;
+
+    }
+
+
+    .admin-section-heading p {
+
+        font-size: 11px;
+
+    }
+
+
+    .audit-admin-panel {
+
+        padding: 18px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .audit-admin-header-left {
+
+        min-width: 0;
+
+    }
+
+
+    .audit-admin-header-left > div {
+
+        min-width: 0;
+
+    }
+
+
+    .audit-admin-header h1 {
+
+        white-space: nowrap;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+    }
+
+
+    .audit-admin-notification {
+
+        width: 36px;
+        height: 36px;
+
+    }
+
+
+    .audit-admin-header-avatar {
+
+        width: 36px;
+        height: 36px;
+
+    }
+
+
+    .audit-admin-kpi-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .audit-admin-primary-btn {
+
+        width: 100%;
+
+    }
+
+
+    .audit-admin-panel-heading {
+
+        align-items: flex-start;
+
+    }
+
+
+    .audit-admin-panel-heading h3 {
+
+        font-size: 15px;
+
+    }
+
+
+    .audit-admin-small-btn {
+
+        padding: 0 10px;
+
+    }
+
+
+    .client-admin-card {
+
+        grid-template-columns:
+            42px 1fr;
+
+    }
+
+
+    .client-status {
+
+        grid-column:
+            2;
+
+        width: max-content;
+
+    }
+
+}
+
+
+/* =========================================================
+   AUDIT MONITORING EXTRA CONTENT
+========================================================= */
+
+.audit-monitoring-extra {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 20px;
+}
+
+
+/* CONTENT BOX */
+
+.audit-monitoring-extra > div {
+    position: relative;
+
+    padding: 28px 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce9e3;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* TOP GREEN LINE */
+
+.audit-monitoring-extra > div::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #075548;
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition: transform 0.35s ease;
+}
+
+
+/* SMALL LABEL */
+
+.audit-monitoring-extra span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #075548;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+}
+
+
+/* TITLE */
+
+.audit-monitoring-extra h3 {
+    margin: 0 0 11px;
+
+    color: #10221e;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1.3;
+}
+
+
+/* DESCRIPTION */
+
+.audit-monitoring-extra p {
+    margin: 0;
+
+    color: #71827d;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* HOVER */
+
+.audit-monitoring-extra > div:hover {
+    transform: translateY(-6px);
+
+    border-color: #b9d7ca;
+
+    box-shadow:
+        0 15px 35px rgba(6, 63, 53, 0.09);
+
+}
+
+
+.audit-monitoring-extra > div:hover::before {
+    transform: scaleX(1);
+}
+
+
+/* SECOND ROW SLIGHT DIFFERENCE */
+
+.audit-monitoring-extra > div:nth-child(4),
+.audit-monitoring-extra > div:nth-child(5) {
+    background: #f7faf8;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .audit-monitoring-extra {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .audit-monitoring-extra {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+
+        margin-top: 15px;
+    }
+
+
+    .audit-monitoring-extra > div {
+        padding: 23px 20px;
+
+        text-align: center;
+    }
+
+
+    .audit-monitoring-extra span {
+        font-size: 8px;
+    }
+
+
+    .audit-monitoring-extra h3 {
+        font-size: 17px;
+    }
+
+
+    .audit-monitoring-extra p {
+        font-size: 11px;
+
+        line-height: 1.65;
+    }
+
+}
+
+
+/* =========================================================
+   RISK MANAGEMENT - RISK CONTROL
+========================================================= */
+
+.risk-management-content {
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   RISK CONTROL INTRO
+========================================================= */
+
+.risk-control-intro {
+    position: relative;
+
+    padding: 32px 35px;
+
+    background: #063f35;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    color: #ffffff;
+}
+
+.risk-control-intro::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -70px;
+    top: -80px;
+
+    border: 1px solid rgba(201, 255, 145, 0.25);
+
+    border-radius: 50%;
+}
+
+.risk-control-intro span {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: #c9ff91;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.risk-control-intro h3 {
+    max-width: 650px;
+
+    margin: 0 0 12px;
+
+    color: #ffffff;
+
+    font-size: 24px;
+
+    line-height: 1.3;
+}
+
+.risk-control-intro p {
+    max-width: 780px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   RISK CONTROL GRID
+========================================================= */
+
+.risk-control-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 16px;
+
+    margin-top: 18px;
+}
+
+
+/* =========================================================
+   RISK CONTROL BOX
+========================================================= */
+
+.risk-control-box {
+    position: relative;
+
+    min-height: 175px;
+
+    padding: 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce9e3;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.risk-control-box::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 3px;
+
+    background: #075548;
+
+    transition: width 0.4s ease;
+}
+
+
+/* NUMBER */
+
+.risk-control-box > span {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    margin-bottom: 18px;
+
+    border-radius: 50%;
+
+    background: #eaf5ef;
+
+    color: #075548;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+/* TITLE */
+
+.risk-control-box h3 {
+    margin: 0 0 10px;
+
+    color: #10221e;
+
+    font-size: 16px;
+
+    line-height: 1.35;
+}
+
+
+/* TEXT */
+
+.risk-control-box p {
+    margin: 0;
+
+    color: #71827d;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+
+/* HOVER */
+
+.risk-control-box:hover {
+    transform: translateY(-5px);
+
+    border-color: #b8d8ca;
+
+    box-shadow:
+        0 14px 30px rgba(6, 63, 53, 0.08);
+}
+
+.risk-control-box:hover::before {
+    width: 100%;
+}
+
+
+/* NUMBER HOVER */
+
+.risk-control-box:hover > span {
+    background: #075548;
+
+    color: #c9ff91;
+}
+
+
+/* =========================================================
+   BOTTOM CONTROL NOTE
+========================================================= */
+
+.risk-control-note {
+    display: grid;
+
+    grid-template-columns: 1fr 1.3fr;
+
+    gap: 30px;
+
+    align-items: center;
+
+    margin-top: 18px;
+
+    padding: 28px 30px;
+
+    background: #eaf5ef;
+
+    border-radius: 15px;
+
+    border-left: 4px solid #075548;
+}
+
+.risk-control-note span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #075548;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+}
+
+.risk-control-note h3 {
+    margin: 0;
+
+    color: #10221e;
+
+    font-size: 18px;
+
+    line-height: 1.4;
+}
+
+.risk-control-note p {
+    margin: 0;
+
+    color: #5f716b;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .risk-control-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .risk-control-note {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .risk-management-content {
+        margin-top: 15px;
+    }
+
+    .risk-control-intro {
+        padding: 25px 20px;
+
+        text-align: center;
+    }
+
+    .risk-control-intro h3 {
+        font-size: 20px;
+    }
+
+    .risk-control-intro p {
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    .risk-control-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-top: 14px;
+    }
+
+    .risk-control-box {
+        min-height: auto;
+
+        padding: 22px;
+
+        text-align: center;
+    }
+
+    .risk-control-box > span {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .risk-control-box h3 {
+        font-size: 16px;
+    }
+
+    .risk-control-box p {
+        font-size: 11px;
+    }
+
+    .risk-control-note {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-top: 14px;
+
+        padding: 24px 20px;
+
+        text-align: center;
+
+        border-left: 0;
+
+        border-top: 3px solid #075548;
+    }
+
+    .risk-control-note h3 {
+        font-size: 17px;
+    }
+
+    .risk-control-note p {
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .risk-control-intro {
+        padding: 22px 16px;
+    }
+
+    .risk-control-intro h3 {
+        font-size: 18px;
+    }
+
+    .risk-control-box {
+        padding: 20px 17px;
+    }
+
+    .risk-control-note {
+        padding: 21px 16px;
+    }
+
+}
+
+/* =========================================================
+   TEAM PERFORMANCE
+========================================================= */
+
+.team-performance-content {
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.team-performance-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    padding: 30px 32px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce9e3;
+    border-radius: 18px;
+}
+
+.team-performance-header > div:first-child {
+    max-width: 720px;
+}
+
+.team-performance-header span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #075548;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.team-performance-header h3 {
+    margin: 0 0 11px;
+
+    color: #10221e;
+
+    font-size: 24px;
+    line-height: 1.3;
+}
+
+.team-performance-header p {
+    margin: 0;
+
+    color: #71827d;
+
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   PERFORMANCE STATUS
+========================================================= */
+
+.team-performance-status {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 125px;
+    height: 125px;
+
+    border-radius: 50%;
+
+    background: #063f35;
+
+    border: 8px solid #eaf5ef;
+}
+
+.team-performance-status strong {
+    color: #c9ff91;
+
+    font-size: 27px;
+
+    line-height: 1;
+}
+
+.team-performance-status span {
+    margin: 7px 0 0;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 8px;
+
+    letter-spacing: 0.7px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   PERFORMANCE METRICS
+========================================================= */
+
+.team-performance-metrics {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 14px;
+
+    margin-top: 16px;
+}
+
+.team-metric {
+    padding: 22px 20px;
+
+    background: #eaf5ef;
+
+    border-radius: 13px;
+
+    border: 1px solid transparent;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.team-metric:hover {
+    transform: translateY(-4px);
+
+    background: #ffffff;
+
+    border-color: #b9d7ca;
+}
+
+.team-metric span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #71827d;
+
+    font-size: 10px;
+}
+
+.team-metric strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #063f35;
+
+    font-size: 25px;
+
+    line-height: 1;
+}
+
+.team-metric small {
+    color: #899993;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   MAIN PANELS
+========================================================= */
+
+.team-performance-panels {
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr;
+
+    gap: 16px;
+
+    margin-top: 16px;
+}
+
+.team-performance-panel {
+    padding: 27px 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce9e3;
+
+    border-radius: 15px;
+}
+
+.team-performance-panel > span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #075548;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+}
+
+.team-performance-panel h3 {
+    margin: 0 0 25px;
+
+    color: #10221e;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   PROGRESS ITEMS
+========================================================= */
+
+.team-progress-item {
+    margin-bottom: 20px;
+}
+
+.team-progress-item:last-child {
+    margin-bottom: 0;
+}
+
+.team-progress-item > div:first-child {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+}
+
+.team-progress-item > div:first-child span {
+    color: #405650;
+
+    font-size: 10px;
+}
+
+.team-progress-item > div:first-child strong {
+    color: #075548;
+
+    font-size: 10px;
+}
+
+.team-progress-track {
+    width: 100%;
+    height: 7px;
+
+    overflow: hidden;
+
+    background: #edf3f0;
+
+    border-radius: 20px;
+}
+
+.team-progress-track div {
+    height: 100%;
+
+    background: #075548;
+
+    border-radius: 20px;
+
+    transition: width 0.8s ease;
+}
+
+
+/* =========================================================
+   DEVELOPMENT PANEL
+========================================================= */
+
+.team-development-panel {
+    background: #063f35;
+
+    border-color: #063f35;
+}
+
+.team-development-panel > span {
+    color: #c9ff91;
+}
+
+.team-development-panel h3 {
+    color: #ffffff;
+}
+
+.development-item {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.development-item:last-child {
+    border-bottom: 0;
+}
+
+.development-item strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #ffffff;
+
+    font-size: 11px;
+}
+
+.development-item small {
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 9px;
+}
+
+.development-item > span {
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: rgba(201, 255, 145, 0.12);
+
+    color: #c9ff91;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   FOOTER FOCUS AREA
+========================================================= */
+
+.team-performance-footer {
+    display: grid;
+
+    grid-template-columns: 1fr 1.2fr;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin-top: 16px;
+
+    padding: 25px 28px;
+
+    background: #f7faf8;
+
+    border-radius: 15px;
+
+    border-left: 4px solid #075548;
+}
+
+.team-performance-footer span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #075548;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+}
+
+.team-performance-footer h3 {
+    margin: 0;
+
+    color: #10221e;
+
+    font-size: 17px;
+
+    line-height: 1.4;
+}
+
+.team-performance-footer p {
+    margin: 0;
+
+    color: #71827d;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .team-performance-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-performance-panels {
+        grid-template-columns: 1fr;
+    }
+
+    .team-performance-footer {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .team-performance-content {
+        margin-top: 15px;
+    }
+
+    .team-performance-header {
+        flex-direction: column;
+
+        padding: 25px 20px;
+
+        text-align: center;
+    }
+
+    .team-performance-header h3 {
+        font-size: 20px;
+    }
+
+    .team-performance-header p {
+        font-size: 11px;
+    }
+
+    .team-performance-status {
+        width: 105px;
+        height: 105px;
+
+        border-width: 6px;
+    }
+
+    .team-performance-status strong {
+        font-size: 23px;
+    }
+
+    .team-performance-metrics {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 10px;
+
+        margin-top: 12px;
+    }
+
+    .team-metric {
+        padding: 18px 15px;
+    }
+
+    .team-metric strong {
+        font-size: 21px;
+    }
+
+    .team-performance-panels {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-top: 12px;
+    }
+
+    .team-performance-panel {
+        padding: 23px 19px;
+    }
+
+    .team-performance-panel h3 {
+        font-size: 17px;
+    }
+
+    .team-performance-footer {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-top: 12px;
+
+        padding: 23px 18px;
+
+        text-align: center;
+
+        border-left: 0;
+        border-top: 3px solid #075548;
+    }
+
+    .team-performance-footer h3 {
+        font-size: 16px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .team-performance-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .team-performance-header {
+        padding: 22px 16px;
+    }
+
+    .team-performance-panel {
+        padding: 21px 16px;
+    }
+
+    .team-performance-footer {
+        padding: 21px 15px;
+    }
+
+}
+
+/* =========================================================
+   ASSURANCE REPORTS
+========================================================= */
+
+.assurance-reports-content {
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   REPORT INTRO
+========================================================= */
+
+.assurance-report-intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    padding: 30px 32px;
+
+    background: #063f35;
+    border-radius: 18px;
+
+    overflow: hidden;
+}
+
+.assurance-report-intro > div:first-child {
+    max-width: 760px;
+}
+
+.assurance-report-intro span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #c9ff91;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.assurance-report-intro h3 {
+    margin: 0 0 12px;
+
+    color: #ffffff;
+
+    font-size: 24px;
+    line-height: 1.3;
+}
+
+.assurance-report-intro p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   SUMMARY BADGE
+========================================================= */
+
+.report-summary-badge {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 120px;
+    height: 120px;
+
+    background: #c9ff91;
+
+    border-radius: 50%;
+}
+
+.report-summary-badge strong {
+    color: #063f35;
+
+    font-size: 30px;
+
+    line-height: 1;
+}
+
+.report-summary-badge span {
+    margin: 7px 0 0;
+
+    color: #063f35;
+
+    font-size: 8px;
+
+    letter-spacing: .5px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   REPORT TYPE CARDS
+========================================================= */
+
+.assurance-report-types {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-top: 16px;
+}
+
+.report-type-card {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce9e3;
+
+    border-radius: 15px;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+}
+
+.report-type-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #a9cdbd;
+
+    box-shadow:
+        0 14px 30px rgba(6, 63, 53, .08);
+}
+
+.report-type-card > div:first-child {
+    flex: 1;
+}
+
+.report-type-card > div:first-child > span {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+
+    margin-bottom: 12px;
+
+    border-radius: 7px;
+
+    background: #eaf5ef;
+
+    color: #075548;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+.report-type-card h3 {
+    margin: 0 0 8px;
+
+    color: #10221e;
+
+    font-size: 16px;
+}
+
+.report-type-card p {
+    margin: 0;
+
+    color: #71827d;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   REPORT STATUS
+========================================================= */
+
+.report-status {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 65px;
+    height: 65px;
+
+    background: #f3f8f5;
+
+    border-radius: 12px;
+}
+
+.report-status strong {
+    color: #075548;
+
+    font-size: 20px;
+
+    line-height: 1;
+}
+
+.report-status span {
+    margin-top: 5px;
+
+    color: #899993;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   REPORT REVIEW
+========================================================= */
+
+.assurance-report-review {
+    margin-top: 16px;
+
+    padding: 25px;
+
+    background: #f7faf8;
+
+    border-radius: 15px;
+
+    border: 1px solid #dce9e3;
+}
+
+.report-review-heading {
+    margin-bottom: 18px;
+}
+
+.report-review-heading span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #075548;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+}
+
+.report-review-heading h3 {
+    margin: 0;
+
+    color: #10221e;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   REVIEW LIST
+========================================================= */
+
+.report-review-list {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.report-review-item {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #dce9e3;
+}
+
+.report-review-item:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.report-review-item strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #10221e;
+
+    font-size: 11px;
+}
+
+.report-review-item span {
+    color: #899993;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   STATUS LABELS
+========================================================= */
+
+.review-complete,
+.review-progress {
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.review-complete {
+    background: #e5f5e8;
+
+    color: #287345;
+}
+
+.review-progress {
+    background: #fff4d9;
+
+    color: #99701c;
+}
+
+
+/* =========================================================
+   REPORT NOTE
+========================================================= */
+
+.assurance-report-note {
+    margin-top: 16px;
+
+    padding: 26px 28px;
+
+    background: #ffffff;
+
+    border-radius: 15px;
+
+    border-left: 4px solid #075548;
+
+    border-top: 1px solid #dce9e3;
+    border-right: 1px solid #dce9e3;
+    border-bottom: 1px solid #dce9e3;
+}
+
+.assurance-report-note > span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #075548;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+}
+
+.assurance-report-note h3 {
+    margin: 0 0 9px;
+
+    color: #10221e;
+
+    font-size: 18px;
+}
+
+.assurance-report-note p {
+    max-width: 850px;
+
+    margin: 0;
+
+    color: #71827d;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .assurance-report-types {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .assurance-reports-content {
+        margin-top: 15px;
+    }
+
+    .assurance-report-intro {
+        flex-direction: column;
+
+        padding: 25px 20px;
+
+        text-align: center;
+    }
+
+    .assurance-report-intro h3 {
+        font-size: 20px;
+    }
+
+    .assurance-report-intro p {
+        font-size: 11px;
+    }
+
+    .report-summary-badge {
+        width: 100px;
+        height: 100px;
+    }
+
+    .report-summary-badge strong {
+        font-size: 25px;
+    }
+
+    .assurance-report-types {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-top: 12px;
+    }
+
+    .report-type-card {
+        padding: 21px 18px;
+
+        align-items: flex-start;
+    }
+
+    .report-type-card h3 {
+        font-size: 15px;
+    }
+
+    .report-type-card p {
+        font-size: 10px;
+    }
+
+    .report-status {
+        min-width: 58px;
+        height: 58px;
+    }
+
+    .report-status strong {
+        font-size: 18px;
+    }
+
+    .assurance-report-review {
+        margin-top: 12px;
+
+        padding: 21px 18px;
+    }
+
+    .report-review-heading h3 {
+        font-size: 17px;
+    }
+
+    .report-review-item {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 9px;
+    }
+
+    .assurance-report-note {
+        margin-top: 12px;
+
+        padding: 22px 18px;
+
+        border-left: 0;
+
+        border-top: 3px solid #075548;
+
+        text-align: center;
+    }
+
+    .assurance-report-note h3 {
+        font-size: 16px;
+    }
+
+    .assurance-report-note p {
+        font-size: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .assurance-report-intro {
+        padding: 22px 16px;
+    }
+
+    .report-type-card {
+        padding: 19px 15px;
+    }
+
+    .assurance-report-review {
+        padding: 20px 15px;
+    }
+
+    .assurance-report-note {
+        padding: 20px 15px;
+    }
+
+}
+
+/* =========================================================
+   ADMIN DASHBOARD - MOBILE EMAIL OVERFLOW FIX
+========================================================= */
+
+@media (max-width: 650px) {
+
+    /* Welcome panel */
+    .audit-admin-welcome,
+    .admin-welcome-panel {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Welcome content */
+    .audit-admin-welcome *,
+    .admin-welcome-panel * {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Welcome email/name */
+    .audit-admin-welcome h2 strong,
+    .admin-welcome-panel h2 strong,
+    #adminWelcomeEmail {
+        display: inline-block !important;
+
+        max-width: 100% !important;
+
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+        white-space: normal !important;
+
+        font-size: 22px !important;
+
+        line-height: 1.2 !important;
+    }
+
+    /* Welcome heading */
+    .audit-admin-welcome h2,
+    .admin-welcome-panel h2 {
+        max-width: 100% !important;
+
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+
+        line-height: 1.25 !important;
+    }
+
+    /* Welcome paragraph */
+    .audit-admin-welcome p,
+    .admin-welcome-panel p {
+        max-width: 100% !important;
+
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+
+        font-size: 11px !important;
+        line-height: 1.6 !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .audit-admin-welcome h2 strong,
+    .admin-welcome-panel h2 strong,
+    #adminWelcomeEmail {
+        font-size: 20px !important;
+    }
+
+    .audit-admin-welcome h2,
+    .admin-welcome-panel h2 {
+        font-size: 22px !important;
+    }
+
+}
+
+
+/* =========================================================
+   ADMIN DASHBOARD
+   MOBILE - INCREASE ALL TEXT
+   ADD AT VERY BOTTOM
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .audit-admin-page-label {
+        font-size: 9px !important;
+    }
+
+    .audit-admin-header h1 {
+        font-size: 20px !important;
+    }
+
+    .audit-admin-search {
+        font-size: 12px !important;
+    }
+
+
+    /* =========================
+       SIDEBAR
+    ========================= */
+
+    .audit-admin-logo img {
+        width: 135px !important;
+    }
+
+    .audit-admin-profile-info strong {
+        font-size: 14px !important;
+    }
+
+    .audit-admin-profile-info span {
+        font-size: 11px !important;
+    }
+
+    .audit-admin-profile-info small {
+        font-size: 9px !important;
+    }
+
+    .audit-admin-menu-title {
+        font-size: 10px !important;
+    }
+
+    .admin-menu-link {
+        font-size: 14px !important;
+    }
+
+    .admin-menu-link span {
+        font-size: 14px !important;
+    }
+
+    .audit-admin-sidebar-bottom a {
+        font-size: 14px !important;
+    }
+
+
+    /* =========================
+       WELCOME
+    ========================= */
+
+    .audit-admin-welcome > div > span {
+        font-size: 10px !important;
+    }
+
+    .audit-admin-welcome h2 {
+        font-size: 27px !important;
+        line-height: 1.3 !important;
+    }
+
+    .audit-admin-welcome h2 strong {
+        font-size: 27px !important;
+        line-height: 1.3 !important;
+
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+        white-space: normal !important;
+    }
+
+    #adminWelcomeEmail {
+        display: inline !important;
+
+        max-width: 100% !important;
+
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+        white-space: normal !important;
+    }
+
+    .audit-admin-welcome p {
+        font-size: 13px !important;
+        line-height: 1.75 !important;
+    }
+
+    .audit-admin-primary-btn {
+        font-size: 13px !important;
+    }
+
+
+    /* =========================
+       KPI CARDS
+    ========================= */
+
+    .audit-admin-kpi-card > span {
+        font-size: 10px !important;
+    }
+
+    .audit-admin-kpi-card > strong {
+        font-size: 29px !important;
+    }
+
+    .audit-admin-kpi-card small {
+        font-size: 11px !important;
+    }
+
+
+    /* =========================
+       PANEL HEADINGS
+    ========================= */
+
+    .audit-admin-panel-heading span {
+        font-size: 10px !important;
+    }
+
+    .audit-admin-panel-heading h3 {
+        font-size: 19px !important;
+    }
+
+    .audit-admin-small-btn {
+        font-size: 11px !important;
+    }
+
+
+    /* =========================
+       ASSURANCE BARS
+    ========================= */
+
+    .admin-bar-row {
+        font-size: 11px !important;
+    }
+
+    .admin-bar-row strong {
+        font-size: 11px !important;
+    }
+
+
+    /* =========================
+       RISK OVERVIEW
+    ========================= */
+
+    .risk-circle strong {
+        font-size: 31px !important;
+    }
+
+    .risk-circle span {
+        font-size: 11px !important;
+    }
+
+    .risk-legend span {
+        font-size: 10px !important;
+    }
+
+
+    /* =========================
+       RECENT ACTIVITY
+    ========================= */
+
+    .admin-activity-item strong {
+        font-size: 13px !important;
+    }
+
+    .admin-activity-item p {
+        font-size: 11px !important;
+        line-height: 1.6 !important;
+    }
+
+    .admin-activity-item time {
+        font-size: 10px !important;
+    }
+
+
+    /* =========================
+       INNER PAGE HEADINGS
+    ========================= */
+
+    .admin-section-heading span {
+        font-size: 10px !important;
+    }
+
+    .admin-section-heading h2 {
+        font-size: 29px !important;
+    }
+
+    .admin-section-heading p {
+        font-size: 13px !important;
+        line-height: 1.75 !important;
+    }
+
+
+    /* =========================
+       TABLE
+    ========================= */
+
+    .admin-table-heading h3 {
+        font-size: 19px !important;
+    }
+
+    .audit-admin-table th {
+        font-size: 10px !important;
+    }
+
+    .audit-admin-table td {
+        font-size: 13px !important;
+    }
+
+    .status {
+        font-size: 10px !important;
+    }
+
+
+    /* =========================
+       RISK MANAGEMENT
+    ========================= */
+
+    .risk-control-intro span {
+        font-size: 10px !important;
+    }
+
+    .risk-control-intro h3 {
+        font-size: 22px !important;
+    }
+
+    .risk-control-intro p {
+        font-size: 13px !important;
+        line-height: 1.75 !important;
+    }
+
+    .risk-control-box > span {
+        font-size: 11px !important;
+    }
+
+    .risk-control-box h3 {
+        font-size: 18px !important;
+    }
+
+    .risk-control-box p {
+        font-size: 12px !important;
+        line-height: 1.75 !important;
+    }
+
+    .risk-control-note span {
+        font-size: 10px !important;
+    }
+
+    .risk-control-note h3 {
+        font-size: 19px !important;
+    }
+
+    .risk-control-note p {
+        font-size: 12px !important;
+        line-height: 1.75 !important;
+    }
+
+
+    /* =========================
+       COMPLIANCE
+    ========================= */
+
+    .compliance-card h3 {
+        font-size: 18px !important;
+    }
+
+    .compliance-card strong {
+        font-size: 37px !important;
+    }
+
+    .compliance-card span {
+        font-size: 11px !important;
+    }
+
+
+    /* =========================
+       CLIENT MANAGEMENT
+    ========================= */
+
+    .client-admin-card h3 {
+        font-size: 16px !important;
+    }
+
+    .client-admin-card p {
+        font-size: 11px !important;
+        line-height: 1.6 !important;
+    }
+
+    .client-status {
+        font-size: 10px !important;
+    }
+
+
+    /* =========================
+       TEAM PERFORMANCE
+    ========================= */
+
+    .team-performance-header span {
+        font-size: 10px !important;
+    }
+
+    .team-performance-header h3 {
+        font-size: 22px !important;
+    }
+
+    .team-performance-header p {
+        font-size: 13px !important;
+        line-height: 1.75 !important;
+    }
+
+    .team-performance-status strong {
+        font-size: 25px !important;
+    }
+
+    .team-performance-status span {
+        font-size: 9px !important;
+    }
+
+    .team-metric span {
+        font-size: 11px !important;
+    }
+
+    .team-metric strong {
+        font-size: 27px !important;
+    }
+
+    .team-metric small {
+        font-size: 10px !important;
+    }
+
+    .team-performance-panel > span {
+        font-size: 10px !important;
+    }
+
+    .team-performance-panel h3 {
+        font-size: 19px !important;
+    }
+
+    .team-progress-item > div:first-child span {
+        font-size: 11px !important;
+    }
+
+    .team-progress-item > div:first-child strong {
+        font-size: 11px !important;
+    }
+
+    .development-item strong {
+        font-size: 12px !important;
+    }
+
+    .development-item small {
+        font-size: 10px !important;
+    }
+
+    .development-item > span {
+        font-size: 9px !important;
+    }
+
+    .team-performance-footer span {
+        font-size: 10px !important;
+    }
+
+    .team-performance-footer h3 {
+        font-size: 19px !important;
+    }
+
+    .team-performance-footer p {
+        font-size: 12px !important;
+        line-height: 1.75 !important;
+    }
+
+
+    /* =========================
+       ASSURANCE REPORTS
+    ========================= */
+
+    .report-admin-card > span {
+        font-size: 10px !important;
+    }
+
+    .report-admin-card h3 {
+        font-size: 20px !important;
+    }
+
+    .report-admin-card strong {
+        font-size: 40px !important;
+    }
+
+    .report-admin-card p {
+        font-size: 12px !important;
+        line-height: 1.75 !important;
+    }
+
+    .report-number {
+        font-size: 43px !important;
+    }
+
+
+    /* =========================
+       AUDIT MONITORING EXTRA
+    ========================= */
+
+    .audit-monitoring-extra span {
+        font-size: 10px !important;
+    }
+
+    .audit-monitoring-extra h3 {
+        font-size: 19px !important;
+    }
+
+    .audit-monitoring-extra p {
+        font-size: 12px !important;
+        line-height: 1.75 !important;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .audit-admin-header h1 {
+        font-size: 19px !important;
+    }
+
+    .audit-admin-welcome h2 {
+        font-size: 25px !important;
+    }
+
+    .audit-admin-welcome h2 strong {
+        font-size: 25px !important;
+    }
+
+    .audit-admin-welcome p {
+        font-size: 12px !important;
+    }
+
+    .audit-admin-primary-btn {
+        font-size: 12px !important;
+    }
+
+    .audit-admin-kpi-card > span {
+        font-size: 10px !important;
+    }
+
+    .audit-admin-kpi-card > strong {
+        font-size: 27px !important;
+    }
+
+    .audit-admin-kpi-card small {
+        font-size: 10px !important;
+    }
+
+    .admin-section-heading h2 {
+        font-size: 27px !important;
+    }
+
+    .admin-section-heading p {
+        font-size: 12px !important;
+    }
+
+    .audit-admin-panel-heading h3 {
+        font-size: 18px !important;
+    }
+
+    .admin-risk-card h3 {
+        font-size: 18px !important;
+    }
+
+    .admin-risk-card p {
+        font-size: 12px !important;
+    }
+
+    .compliance-card h3 {
+        font-size: 17px !important;
+    }
+
+    .client-admin-card h3 {
+        font-size: 15px !important;
+    }
+
+    .team-performance-header h3 {
+        font-size: 20px !important;
+    }
+
+    .team-performance-header p {
+        font-size: 12px !important;
+    }
+
+    .report-admin-card h3 {
+        font-size: 19px !important;
+    }
+
+    .report-admin-card p {
+        font-size: 11px !important;
+    }
+
+    .audit-monitoring-extra h3 {
+        font-size: 18px !important;
+    }
+
+    .audit-monitoring-extra p {
+        font-size: 11px !important;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .audit-admin-welcome h2 {
+        font-size: 23px !important;
+    }
+
+    .audit-admin-welcome h2 strong {
+        font-size: 23px !important;
+    }
+
+    .audit-admin-welcome p {
+        font-size: 11px !important;
+    }
+
+    .admin-section-heading h2 {
+        font-size: 25px !important;
+    }
+
+    .admin-section-heading p {
+        font-size: 11px !important;
+    }
+
+    .audit-admin-kpi-card > strong {
+        font-size: 25px !important;
+    }
+
+    .audit-admin-panel-heading h3 {
+        font-size: 17px !important;
+    }
+
+    .admin-risk-card h3 {
+        font-size: 17px !important;
+    }
+
+    .admin-risk-card p {
+        font-size: 11px !important;
+    }
+
+    .team-performance-header h3 {
+        font-size: 19px !important;
+    }
+
+    .team-performance-header p {
+        font-size: 11px !important;
+    }
+
+    .report-admin-card h3 {
+        font-size: 18px !important;
+    }
+
+    .report-admin-card p {
+        font-size: 11px !important;
+    }
+
+}

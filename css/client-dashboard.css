@@ -1,0 +1,6004 @@
+/* =========================================================
+   STACKLY AUDIT & ASSURANCE
+   CLIENT DASHBOARD
+========================================================= */
+
+:root {
+    --dash-dark: #063f35;
+    --dash-dark-2: #022b25;
+    --dash-green: #075548;
+    --dash-mint: #c9ff91;
+    --dash-light: #eef8f3;
+    --dash-soft: #f5faf7;
+    --dash-white: #ffffff;
+    --dash-text: #122c27;
+    --dash-muted: #72847e;
+    --dash-border: #dceae4;
+    --dash-blue: #55aee8;
+    --dash-purple: #8b70e8;
+    --dash-orange: #e4a243;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body.audit-dashboard-body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    background: var(--dash-light);
+
+    color: var(--dash-text);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.audit-sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    z-index: 1000;
+
+    width: 245px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 0 14px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #063f35 0%,
+            #022b25 100%
+        );
+
+    color: #ffffff;
+
+    overflow-y: auto;
+}
+
+
+.audit-sidebar-logo {
+    height: 78px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 10px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.08);
+}
+
+
+.audit-sidebar-logo a {
+    display: flex;
+}
+
+
+.audit-sidebar-logo img {
+    width: 125px;
+
+    height: auto;
+
+    filter:
+        brightness(0)
+        invert(1);
+}
+
+
+/* =========================================================
+   USER
+========================================================= */
+
+.audit-sidebar-user {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin: 14px 0 23px;
+
+    padding: 13px 11px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(255,255,255,0.07);
+}
+
+
+.audit-user-avatar,
+.audit-header-avatar {
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--dash-mint);
+
+    color: var(--dash-dark);
+
+    font-weight: 800;
+}
+
+
+.audit-user-avatar {
+    width: 39px;
+    height: 39px;
+
+    font-size: 14px;
+}
+
+
+.audit-user-details {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.audit-user-details strong {
+    max-width: 145px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    font-size: 11px;
+}
+
+
+.audit-user-details span {
+    max-width: 145px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    color: rgba(255,255,255,0.62);
+
+    font-size: 9px;
+}
+
+
+.audit-user-details small {
+    width: fit-content;
+
+    padding: 3px 6px;
+
+    border-radius: 4px;
+
+    background: rgba(201,255,145,0.15);
+
+    color: var(--dash-mint);
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   SIDEBAR LABEL
+========================================================= */
+
+.audit-sidebar-label {
+    margin: 0 10px 8px;
+
+    color: rgba(255,255,255,0.42);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+.audit-sidebar-label-bottom {
+    margin-top: auto;
+
+    padding-top: 20px;
+}
+
+
+/* =========================================================
+   NAV
+========================================================= */
+
+.audit-sidebar-nav {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.audit-sidebar-link {
+    position: relative;
+
+    min-height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 0 11px;
+
+    border-radius: 9px;
+
+    color: rgba(255,255,255,0.68);
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.audit-sidebar-link i {
+    width: 17px;
+
+    text-align: center;
+
+    font-size: 12px;
+}
+
+
+.audit-sidebar-link span {
+    flex: 1;
+}
+
+
+.audit-sidebar-link b {
+    min-width: 20px;
+
+    padding: 3px 5px;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.08);
+
+    text-align: center;
+
+    font-size: 8px;
+}
+
+
+.audit-sidebar-link:hover {
+    background:
+        rgba(255,255,255,0.07);
+
+    color: #ffffff;
+
+    transform: translateX(2px);
+}
+
+
+.audit-sidebar-link.active {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(201,255,145,0.22),
+            rgba(201,255,145,0.08)
+        );
+
+    color: #ffffff;
+}
+
+
+.audit-sidebar-link.active::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 9px;
+
+    bottom: 9px;
+
+    width: 3px;
+
+    border-radius: 3px;
+
+    background: var(--dash-mint);
+}
+
+
+.audit-logout-link {
+    margin-bottom: 18px;
+
+    color: #ff9b8e;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.audit-dashboard-main {
+    min-height: 100vh;
+
+    margin-left: 245px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.audit-dashboard-header {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 500;
+
+    min-height: 78px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 12px 30px;
+
+    background:
+        rgba(255,255,255,0.95);
+
+    border-bottom:
+        1px solid
+        var(--dash-border);
+
+    backdrop-filter: blur(14px);
+}
+
+
+.audit-header-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.audit-header-kicker {
+    color: var(--dash-green);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.6px;
+}
+
+
+.audit-header-left h1 {
+    margin: 4px 0 0;
+
+    color: var(--dash-text);
+
+    font-size: 23px;
+
+    line-height: 1;
+
+    letter-spacing: -0.7px;
+}
+
+
+.audit-menu-toggle {
+    display: none;
+
+    width: 40px;
+
+    height: 40px;
+
+    border:
+        1px solid
+        var(--dash-border);
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: var(--dash-green);
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.audit-header-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.audit-header-search {
+    width: 210px;
+
+    height: 39px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 0 13px;
+
+    border:
+        1px solid
+        var(--dash-border);
+
+    border-radius: 9px;
+
+    background: #f5fbf8;
+
+    color: var(--dash-muted);
+
+    cursor: pointer;
+
+    text-align: left;
+
+    font-size: 10px;
+}
+
+
+.audit-header-search i {
+    color: var(--dash-green);
+}
+
+
+.audit-header-icon {
+    position: relative;
+
+    width: 39px;
+
+    height: 39px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        var(--dash-border);
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: var(--dash-green);
+
+    text-decoration: none;
+}
+
+
+.audit-header-icon > span {
+    position: absolute;
+
+    top: 8px;
+    right: 8px;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #df665b;
+}
+
+
+.audit-header-user {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding-left: 3px;
+}
+
+
+.audit-header-avatar {
+    width: 40px;
+    height: 40px;
+
+    font-size: 13px;
+}
+
+
+.audit-header-user-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.audit-header-user-info strong {
+    max-width: 125px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    font-size: 10px;
+}
+
+
+.audit-header-user-info span {
+    max-width: 125px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    color: var(--dash-muted);
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.audit-dashboard-content {
+    width: 100%;
+
+    max-width: 1600px;
+
+    margin: 0 auto;
+
+    padding: 27px 30px 60px;
+}
+
+
+.audit-dashboard-page {
+    display: none;
+}
+
+
+.audit-dashboard-page.active {
+    display: block;
+}
+
+
+/* =========================================================
+   WELCOME
+========================================================= */
+
+.audit-welcome-panel {
+    min-height: 150px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 30px 32px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #075548,
+            #0c725e
+        );
+
+    color: #ffffff;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+.audit-welcome-panel::after {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    right: 10%;
+
+    top: -150px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(201,255,145,0.10);
+}
+
+
+.audit-welcome-panel > div {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.audit-welcome-panel span {
+    color: var(--dash-mint);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+}
+
+
+.audit-welcome-panel h2 {
+    margin: 8px 0 6px;
+
+    font-size: 27px;
+
+    letter-spacing: -0.8px;
+}
+
+
+.audit-welcome-panel h2 strong {
+    color: var(--dash-mint);
+}
+
+
+.audit-welcome-panel p {
+    max-width: 620px;
+
+    margin: 0;
+
+    color: rgba(255,255,255,0.72);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+.audit-welcome-actions {
+    display: flex;
+
+    gap: 9px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.audit-main-button,
+.audit-outline-button {
+    min-height: 39px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0 17px;
+
+    border-radius: 7px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.audit-main-button {
+    background: var(--dash-mint);
+
+    color: var(--dash-dark);
+}
+
+
+.audit-outline-button {
+    border:
+        1px solid
+        rgba(255,255,255,0.3);
+
+    color: #ffffff;
+
+    background:
+        rgba(255,255,255,0.06);
+}
+
+
+.audit-main-button:hover,
+.audit-outline-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.audit-stat-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 14px;
+
+    margin-top: 15px;
+}
+
+
+.audit-stat-card {
+    min-height: 120px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 20px;
+
+    border:
+        1px solid
+        var(--dash-border);
+
+    border-radius: 15px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 25px rgba(5,63,53,0.04);
+}
+
+
+.audit-stat-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    font-size: 16px;
+}
+
+
+.audit-stat-icon.green {
+    background: #e7f5ec;
+
+    color: #3b9a67;
+}
+
+
+.audit-stat-icon.blue {
+    background: #e8f5fb;
+
+    color: #44a6d8;
+}
+
+
+.audit-stat-icon.purple {
+    background: #f0ebff;
+
+    color: #8062e5;
+}
+
+
+.audit-stat-icon.orange {
+    background: #fff4e5;
+
+    color: #db982c;
+}
+
+
+.audit-stat-card div:last-child {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.audit-stat-card span {
+    color: var(--dash-muted);
+
+    font-size: 8px;
+
+    letter-spacing: 0.6px;
+}
+
+
+.audit-stat-card strong {
+    color: var(--dash-text);
+
+    font-size: 25px;
+
+    line-height: 1;
+}
+
+
+.audit-stat-card small {
+    color: #5c8277;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.audit-overview-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.25fr 1fr;
+
+    gap: 15px;
+
+    margin-top: 15px;
+}
+
+
+.bottom-grid {
+    grid-template-columns:
+        1.2fr 1fr;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.audit-dashboard-card,
+.audit-table-card,
+.audit-profile-card,
+.audit-profile-details,
+.audit-large-summary,
+.audit-large-note {
+    border:
+        1px solid
+        var(--dash-border);
+
+    border-radius: 15px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 25px rgba(5,63,53,0.035);
+}
+
+
+.audit-dashboard-card {
+    padding: 23px;
+}
+
+
+.audit-card-heading {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+}
+
+
+.audit-card-heading span {
+    color: var(--dash-green);
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+}
+
+
+.audit-card-heading h3 {
+    margin: 5px 0 0;
+
+    color: var(--dash-text);
+
+    font-size: 15px;
+}
+
+
+.audit-card-heading a {
+    color: var(--dash-green);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   ASSURANCE PROGRESS
+========================================================= */
+
+.audit-progress-area {
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+}
+
+
+.audit-progress-ring {
+    width: 145px;
+    height: 145px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            var(--dash-green) 0 78%,
+            #e7f0ec 78% 100%
+        );
+}
+
+
+.audit-progress-ring::before {
+    content: "";
+
+    position: absolute;
+}
+
+
+.audit-progress-ring > div {
+    width: 108px;
+    height: 108px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+}
+
+
+.audit-progress-ring strong {
+    color: var(--dash-text);
+
+    font-size: 25px;
+}
+
+
+.audit-progress-ring span {
+    color: var(--dash-muted);
+
+    font-size: 8px;
+}
+
+
+.audit-progress-details {
+    flex: 1;
+}
+
+
+.audit-progress-details div {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 10px 0;
+
+    border-bottom:
+        1px solid
+        #edf3f0;
+}
+
+
+.audit-progress-details div:last-child {
+    border-bottom: none;
+}
+
+
+.audit-progress-details span {
+    color: var(--dash-muted);
+
+    font-size: 9px;
+}
+
+
+.audit-progress-details strong {
+    color: var(--dash-green);
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   RISK BARS
+========================================================= */
+
+.audit-risk-bars {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+.audit-risk-row > div:first-child {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+}
+
+
+.audit-risk-row span {
+    color: var(--dash-muted);
+
+    font-size: 9px;
+}
+
+
+.audit-risk-row strong {
+    color: var(--dash-text);
+
+    font-size: 9px;
+}
+
+
+.audit-bar {
+    height: 6px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #e9f1ee;
+}
+
+
+.audit-bar span {
+    display: block;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--dash-green),
+            #70b78c
+        );
+}
+
+
+/* =========================================================
+   ACTIVITY
+========================================================= */
+
+.audit-activity-list {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.audit-activity-item {
+    display: grid;
+
+    grid-template-columns: 29px 1fr auto;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 13px 0;
+
+    border-bottom:
+        1px solid
+        #edf3f0;
+}
+
+
+.audit-activity-item:last-child {
+    border-bottom: none;
+}
+
+
+.audit-activity-item > i {
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #e9f5ee;
+
+    color: var(--dash-green);
+
+    font-size: 10px;
+}
+
+
+.audit-activity-item div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.audit-activity-item strong {
+    color: var(--dash-text);
+
+    font-size: 9px;
+}
+
+
+.audit-activity-item span {
+    color: var(--dash-muted);
+
+    font-size: 8px;
+
+    line-height: 1.4;
+}
+
+
+.audit-activity-item small {
+    color: #91a29d;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   MILESTONES
+========================================================= */
+
+.audit-milestone-list {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.audit-milestone {
+    display: grid;
+
+    grid-template-columns:
+        38px 1fr auto;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 12px 0;
+
+    border-bottom:
+        1px solid
+        #edf3f0;
+}
+
+
+.audit-milestone:last-child {
+    border-bottom: none;
+}
+
+
+.audit-milestone-date {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #edf8f2;
+
+    color: var(--dash-green);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+.audit-milestone div:nth-child(2) {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.audit-milestone strong {
+    font-size: 9px;
+}
+
+
+.audit-milestone span {
+    color: var(--dash-muted);
+
+    font-size: 8px;
+}
+
+
+.audit-milestone small {
+    color: var(--dash-green);
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   PAGE INTRO
+========================================================= */
+
+.audit-page-intro {
+    margin-bottom: 22px;
+}
+
+
+.audit-page-intro span {
+    color: var(--dash-green);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.7px;
+}
+
+
+.audit-page-intro h2 {
+    margin: 6px 0;
+
+    color: var(--dash-text);
+
+    font-size: 30px;
+
+    letter-spacing: -1px;
+}
+
+
+.audit-page-intro p {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: var(--dash-muted);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.audit-large-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    margin-bottom: 15px;
+
+    overflow: hidden;
+}
+
+
+.audit-large-summary > div {
+    min-height: 105px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 20px 25px;
+
+    border-right:
+        1px solid
+        var(--dash-border);
+}
+
+
+.audit-large-summary > div:last-child {
+    border-right: none;
+}
+
+
+.audit-large-summary span {
+    color: var(--dash-muted);
+
+    font-size: 8px;
+
+    letter-spacing: 0.8px;
+}
+
+
+.audit-large-summary strong {
+    color: var(--dash-text);
+
+    font-size: 26px;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.audit-table-card {
+    padding: 23px;
+}
+
+
+.audit-table-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+
+.audit-table-heading h3 {
+    margin: 0;
+
+    font-size: 15px;
+}
+
+
+.audit-table-heading a {
+    color: var(--dash-green);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+.audit-table-scroll {
+    overflow-x: auto;
+}
+
+
+.audit-table-scroll table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 720px;
+}
+
+
+.audit-table-scroll th {
+    padding: 11px 9px;
+
+    border-bottom:
+        1px solid
+        var(--dash-border);
+
+    color: #7d918a;
+
+    text-align: left;
+
+    font-size: 7px;
+
+    letter-spacing: 0.7px;
+}
+
+
+.audit-table-scroll td {
+    padding: 15px 9px;
+
+    border-bottom:
+        1px solid
+        #edf3f0;
+
+    color: var(--dash-muted);
+
+    font-size: 9px;
+}
+
+
+.audit-table-scroll td strong {
+    display: block;
+
+    color: var(--dash-text);
+
+    font-size: 9px;
+}
+
+
+.audit-table-scroll td small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #9aa9a4;
+
+    font-size: 7px;
+}
+
+
+.audit-table-scroll td a {
+    color: var(--dash-green);
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+.mini-progress {
+    width: 85px;
+
+    height: 5px;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    background: #e9f1ee;
+}
+
+
+.mini-progress span {
+    display: block;
+
+    height: 100%;
+
+    background: var(--dash-green);
+}
+
+
+.audit-table-scroll em {
+    padding: 5px 7px;
+
+    border-radius: 20px;
+
+    font-size: 7px;
+
+    font-style: normal;
+
+    font-weight: 700;
+}
+
+
+.status-green {
+    background: #e6f6ec;
+
+    color: #298b56;
+}
+
+
+.status-orange {
+    background: #fff1df;
+
+    color: #b97919;
+}
+
+
+.status-blue {
+    background: #e6f4fb;
+
+    color: #338db8;
+}
+
+
+/* =========================================================
+   REPORTS
+========================================================= */
+
+.audit-report-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
+.audit-report-card {
+    padding: 25px;
+
+    border:
+        1px solid
+        var(--dash-border);
+
+    border-radius: 15px;
+
+    background: #ffffff;
+}
+
+
+.audit-report-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 11px;
+
+    background: #eaf6ef;
+
+    color: var(--dash-green);
+}
+
+
+.audit-report-card > span {
+    color: var(--dash-green);
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.audit-report-card h3 {
+    margin: 8px 0;
+
+    font-size: 15px;
+}
+
+
+.audit-report-card p {
+    min-height: 48px;
+
+    margin: 0 0 20px;
+
+    color: var(--dash-muted);
+
+    font-size: 9px;
+
+    line-height: 1.6;
+}
+
+
+.audit-report-card a {
+    color: var(--dash-green);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+.audit-large-note {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: 15px;
+
+    padding: 18px 20px;
+}
+
+
+.audit-large-note > i {
+    color: var(--dash-green);
+
+    font-size: 20px;
+}
+
+
+.audit-large-note strong {
+    font-size: 10px;
+}
+
+
+.audit-large-note p {
+    margin: 4px 0 0;
+
+    color: var(--dash-muted);
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   RISK PAGE
+========================================================= */
+
+.audit-risk-overview-grid {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 15px;
+}
+
+
+.audit-risk-score-card {
+    padding: 30px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--dash-green),
+            var(--dash-dark)
+        );
+
+    color: #ffffff;
+}
+
+
+.audit-risk-score-card > span {
+    color: var(--dash-mint);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+}
+
+
+.audit-risk-score-card strong {
+    display: block;
+
+    margin-top: 20px;
+
+    font-size: 58px;
+
+    line-height: 1;
+}
+
+
+.audit-risk-score-card p {
+    margin: 7px 0 25px;
+
+    color: rgba(255,255,255,0.65);
+
+    font-size: 9px;
+}
+
+
+.audit-score-track {
+    height: 7px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,0.15);
+
+    overflow: hidden;
+}
+
+
+.audit-score-track span {
+    display: block;
+
+    width: 82%;
+
+    height: 100%;
+
+    background: var(--dash-mint);
+}
+
+
+.audit-control-list {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.audit-control-list > div {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 14px 0;
+
+    border-bottom:
+        1px solid
+        #edf3f0;
+}
+
+
+.audit-control-list > div:last-child {
+    border-bottom: none;
+}
+
+
+.audit-control-list span {
+    color: var(--dash-muted);
+
+    font-size: 9px;
+}
+
+
+.audit-control-list strong {
+    color: var(--dash-green);
+
+    font-size: 9px;
+}
+
+
+.audit-observation-card {
+    margin-top: 15px;
+}
+
+
+.audit-observation-list {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.audit-observation-list > div {
+    display: grid;
+
+    grid-template-columns: 22px 1fr auto;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 13px 0;
+
+    border-bottom:
+        1px solid
+        #edf3f0;
+}
+
+
+.audit-observation-list > div:last-child {
+    border-bottom: none;
+}
+
+
+.audit-observation-list i {
+    color: #d39834;
+
+    font-size: 12px;
+}
+
+
+.audit-observation-list p {
+    margin: 0;
+
+    color: var(--dash-text);
+
+    font-size: 9px;
+}
+
+
+.audit-observation-list small {
+    color: var(--dash-muted);
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   DOCUMENTS
+========================================================= */
+
+.audit-document-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+
+.audit-document-card {
+    padding: 22px;
+
+    border:
+        1px solid
+        var(--dash-border);
+
+    border-radius: 15px;
+
+    background: #ffffff;
+}
+
+
+.audit-document-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.audit-document-top i {
+    color: var(--dash-green);
+
+    font-size: 25px;
+}
+
+
+.audit-document-top span {
+    padding: 4px 6px;
+
+    border-radius: 5px;
+
+    background: #edf7f1;
+
+    color: var(--dash-green);
+
+    font-size: 7px;
+
+    font-weight: 700;
+}
+
+
+.audit-document-card h3 {
+    margin: 20px 0 6px;
+
+    font-size: 13px;
+}
+
+
+.audit-document-card p {
+    margin: 0 0 22px;
+
+    color: var(--dash-muted);
+
+    font-size: 8px;
+}
+
+
+.audit-document-card a {
+    color: var(--dash-green);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   BILLING
+========================================================= */
+
+.audit-billing-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    margin-bottom: 15px;
+
+    border:
+        1px solid
+        var(--dash-border);
+
+    border-radius: 15px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+.audit-billing-summary > div {
+    padding: 25px;
+
+    border-right:
+        1px solid
+        var(--dash-border);
+}
+
+
+.audit-billing-summary > div:last-child {
+    border-right: none;
+}
+
+
+.audit-billing-summary span {
+    color: var(--dash-muted);
+
+    font-size: 8px;
+
+    letter-spacing: 0.8px;
+}
+
+
+.audit-billing-summary strong {
+    display: block;
+
+    margin-top: 8px;
+
+    color: var(--dash-text);
+
+    font-size: 25px;
+}
+
+
+.audit-invoice-list > div {
+    display: grid;
+
+    grid-template-columns: 1fr 120px 60px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px 0;
+
+    border-bottom:
+        1px solid
+        #edf3f0;
+}
+
+
+.audit-invoice-list > div:last-child {
+    border-bottom: none;
+}
+
+
+.audit-invoice-list > div > div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.audit-invoice-list strong {
+    font-size: 10px;
+}
+
+
+.audit-invoice-list span {
+    color: var(--dash-muted);
+
+    font-size: 8px;
+}
+
+
+.audit-invoice-list > div > strong {
+    color: var(--dash-green);
+}
+
+
+.audit-invoice-list a {
+    color: var(--dash-green);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.audit-profile-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 28px;
+}
+
+
+.audit-profile-avatar-large {
+    width: 72px;
+    height: 72px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: var(--dash-mint);
+
+    color: var(--dash-dark);
+
+    font-size: 26px;
+
+    font-weight: 800;
+}
+
+
+.audit-profile-info {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.audit-profile-info > span {
+    color: var(--dash-green);
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+}
+
+
+.audit-profile-info h3 {
+    margin: 0;
+
+    font-size: 18px;
+}
+
+
+.audit-profile-info p {
+    margin: 0;
+
+    color: var(--dash-muted);
+
+    font-size: 9px;
+}
+
+
+.audit-profile-info small {
+    color: #5f8b7c;
+
+    font-size: 8px;
+}
+
+
+.audit-profile-details {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    margin-top: 15px;
+}
+
+
+.audit-profile-details > div {
+    padding: 25px;
+
+    border-right:
+        1px solid
+        var(--dash-border);
+}
+
+
+.audit-profile-details > div:last-child {
+    border-right: none;
+}
+
+
+.audit-profile-details span {
+    display: block;
+
+    color: var(--dash-muted);
+
+    font-size: 8px;
+}
+
+
+.audit-profile-details strong {
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   MOBILE OVERLAY
+========================================================= */
+
+.audit-mobile-overlay {
+    display: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1150px) {
+
+    .audit-sidebar {
+        width: 220px;
+    }
+
+
+    .audit-dashboard-main {
+        margin-left: 220px;
+    }
+
+
+    .audit-stat-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .audit-document-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .audit-header-search {
+        width: 170px;
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .audit-sidebar {
+        width: 245px;
+
+        transform: translateX(-100%);
+
+        transition:
+            transform 0.35s ease;
+    }
+
+
+    .audit-sidebar.open {
+        transform: translateX(0);
+    }
+
+
+    .audit-dashboard-main {
+        margin-left: 0;
+    }
+
+
+    .audit-menu-toggle {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+    }
+
+
+    .audit-mobile-overlay {
+        position: fixed;
+
+        inset: 0;
+
+        z-index: 900;
+
+        background:
+            rgba(0,0,0,0.42);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+    }
+
+
+    .audit-mobile-overlay.active {
+        display: block;
+
+        opacity: 1;
+
+        visibility: visible;
+    }
+
+
+    .audit-header-user-info {
+        display: none;
+    }
+
+
+    .audit-overview-grid,
+    .bottom-grid,
+    .audit-risk-overview-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .audit-report-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .audit-dashboard-header {
+        padding: 10px 15px;
+
+        min-height: 68px;
+    }
+
+
+    .audit-header-left h1 {
+        font-size: 19px;
+    }
+
+
+    .audit-header-kicker {
+        font-size: 7px;
+    }
+
+
+    .audit-header-search {
+        width: 40px;
+
+        padding: 0;
+
+        justify-content: center;
+    }
+
+
+    .audit-header-search span {
+        display: none;
+    }
+
+
+    .audit-header-actions {
+        gap: 6px;
+    }
+
+
+    .audit-header-user {
+        padding-left: 0;
+    }
+
+
+    .audit-header-avatar {
+        width: 37px;
+        height: 37px;
+    }
+
+
+    .audit-dashboard-content {
+        padding:
+            18px 12px
+            45px;
+    }
+
+
+    .audit-welcome-panel {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        padding: 23px;
+
+        border-radius: 15px;
+    }
+
+
+    .audit-welcome-panel h2 {
+        font-size: 23px;
+    }
+
+
+    .audit-welcome-actions {
+        width: 100%;
+    }
+
+
+    .audit-main-button,
+    .audit-outline-button {
+        flex: 1;
+
+        padding: 0 10px;
+
+        text-align: center;
+    }
+
+
+    .audit-stat-grid {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+
+    .audit-stat-card {
+        min-height: 105px;
+    }
+
+
+    .audit-dashboard-card,
+    .audit-table-card {
+        padding: 18px;
+    }
+
+
+    .audit-progress-area {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    .audit-progress-details {
+        width: 100%;
+    }
+
+
+    .audit-page-intro h2 {
+        font-size: 26px;
+    }
+
+
+    .audit-large-summary {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .audit-large-summary > div:nth-child(2) {
+        border-right: none;
+    }
+
+
+    .audit-large-summary > div:nth-child(-n+2) {
+        border-bottom:
+            1px solid
+            var(--dash-border);
+    }
+
+
+    .audit-report-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .audit-document-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .audit-billing-summary {
+        grid-template-columns: 1fr;
+    }
+
+
+    .audit-billing-summary > div {
+        border-right: none;
+
+        border-bottom:
+            1px solid
+            var(--dash-border);
+    }
+
+
+    .audit-billing-summary > div:last-child {
+        border-bottom: none;
+    }
+
+
+    .audit-profile-card {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .audit-profile-card .audit-main-button {
+        width: 100%;
+
+        flex: none;
+    }
+
+
+    .audit-profile-details {
+        grid-template-columns: 1fr;
+    }
+
+
+    .audit-profile-details > div {
+        border-right: none;
+
+        border-bottom:
+            1px solid
+            var(--dash-border);
+    }
+
+
+    .audit-profile-details > div:last-child {
+        border-bottom: none;
+    }
+
+
+    .audit-invoice-list > div {
+        grid-template-columns: 1fr auto;
+    }
+
+
+    .audit-invoice-list > div > strong {
+        text-align: right;
+    }
+
+
+    .audit-invoice-list > div > a {
+        grid-column: 2;
+    }
+
+}
+
+
+@media (max-width: 390px) {
+
+    .audit-dashboard-content {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+
+    .audit-welcome-actions {
+        flex-direction: column;
+    }
+
+
+    .audit-main-button,
+    .audit-outline-button {
+        width: 100%;
+    }
+
+
+    .audit-header-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+
+    .audit-header-avatar {
+        width: 36px;
+        height: 36px;
+    }
+
+
+    .audit-milestone {
+        grid-template-columns:
+            34px 1fr;
+
+        row-gap: 5px;
+    }
+
+
+    .audit-milestone small {
+        grid-column: 2;
+    }
+
+}
+
+
+/* =========================================================
+   CLIENT DASHBOARD - MY AUDITS
+========================================================= */
+
+.client-audits-content {
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.client-audits-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    padding: 30px 32px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce9e3;
+    border-radius: 18px;
+}
+
+.client-audits-heading > div:first-child {
+    max-width: 720px;
+}
+
+.client-audits-heading span {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #075548;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.client-audits-heading h3 {
+    margin: 0 0 11px;
+
+    color: #10221e;
+
+    font-size: 24px;
+    line-height: 1.3;
+}
+
+.client-audits-heading p {
+    margin: 0;
+
+    color: #71827d;
+
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   AUDIT COUNT
+========================================================= */
+
+.audit-portfolio-count {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 110px;
+    height: 110px;
+
+    background: #063f35;
+
+    border-radius: 18px;
+}
+
+.audit-portfolio-count strong {
+    color: #c9ff91;
+
+    font-size: 30px;
+
+    line-height: 1;
+}
+
+.audit-portfolio-count span {
+    margin: 7px 0 0;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 8px;
+
+    letter-spacing: .6px;
+}
+
+
+/* =========================================================
+   CURRENT ENGAGEMENT
+========================================================= */
+
+.audit-engagement-card {
+    margin-top: 16px;
+
+    padding: 26px;
+
+    background: #063f35;
+
+    border-radius: 16px;
+
+    color: #ffffff;
+}
+
+.audit-engagement-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-bottom: 22px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.audit-engagement-top span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #c9ff91;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+}
+
+.audit-engagement-top h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 19px;
+}
+
+.audit-active-status {
+    padding: 8px 13px;
+
+    background: rgba(201, 255, 145, 0.13);
+
+    color: #c9ff91;
+
+    border: 1px solid rgba(201, 255, 145, 0.2);
+
+    border-radius: 20px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   ENGAGEMENT INFO
+========================================================= */
+
+.audit-engagement-info {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+    padding-top: 22px;
+}
+
+.audit-engagement-info > div span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .8px;
+}
+
+.audit-engagement-info strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   AUDIT MILESTONES
+========================================================= */
+
+.audit-milestones {
+    margin-top: 16px;
+
+    padding: 26px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce9e3;
+
+    border-radius: 16px;
+}
+
+.audit-milestone-title {
+    margin-bottom: 22px;
+}
+
+.audit-milestone-title span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #075548;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+}
+
+.audit-milestone-title h3 {
+    margin: 0;
+
+    color: #10221e;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   MILESTONE LIST
+========================================================= */
+
+.audit-milestone-list {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 0;
+}
+
+.audit-milestone {
+    position: relative;
+
+    padding-right: 25px;
+}
+
+.audit-milestone::after {
+    content: "";
+
+    position: absolute;
+
+    top: 17px;
+    left: 35px;
+
+    width: calc(100% - 35px);
+    height: 2px;
+
+    background: #dce9e3;
+}
+
+.audit-milestone:last-child::after {
+    display: none;
+}
+
+.milestone-marker {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 35px;
+    height: 35px;
+
+    margin-bottom: 14px;
+
+    background: #edf3f0;
+
+    border-radius: 50%;
+
+    color: #71827d;
+
+    font-size: 10px;
+}
+
+.audit-milestone.completed .milestone-marker {
+    background: #075548;
+
+    color: #c9ff91;
+}
+
+.audit-milestone.active .milestone-marker {
+    background: #c9ff91;
+
+    color: #063f35;
+
+    box-shadow: 0 0 0 5px #eaf5ef;
+}
+
+.audit-milestone strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #10221e;
+
+    font-size: 10px;
+
+    line-height: 1.4;
+}
+
+.audit-milestone > div:last-child span {
+    color: #899993;
+
+    font-size: 8px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   CLIENT SUMMARY
+========================================================= */
+
+.audit-client-summary {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-top: 16px;
+
+    padding: 25px 28px;
+
+    background: #eaf5ef;
+
+    border-radius: 16px;
+}
+
+.audit-client-summary > div:first-child span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #075548;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+}
+
+.audit-client-summary > div:first-child h3 {
+    margin: 0;
+
+    color: #10221e;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   SUMMARY ITEMS
+========================================================= */
+
+.audit-summary-items {
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+}
+
+.audit-summary-items > div {
+    text-align: center;
+
+    min-width: 90px;
+}
+
+.audit-summary-items strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #063f35;
+
+    font-size: 22px;
+}
+
+.audit-summary-items span {
+    color: #71827d;
+
+    font-size: 8px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .audit-engagement-info {
+        grid-template-columns: repeat(2, 1fr);
+
+        row-gap: 18px;
+    }
+
+    .audit-milestone-list {
+        grid-template-columns: repeat(2, 1fr);
+
+        row-gap: 25px;
+    }
+
+    .audit-milestone::after {
+        display: none;
+    }
+
+    .audit-client-summary {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .audit-summary-items {
+        width: 100%;
+
+        justify-content: space-between;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .client-audits-content {
+        margin-top: 15px;
+    }
+
+    .client-audits-heading {
+        flex-direction: column;
+
+        padding: 25px 20px;
+
+        text-align: center;
+    }
+
+    .client-audits-heading h3 {
+        font-size: 20px;
+    }
+
+    .client-audits-heading p {
+        font-size: 11px;
+    }
+
+    .audit-portfolio-count {
+        width: 95px;
+        height: 95px;
+    }
+
+    .audit-portfolio-count strong {
+        font-size: 25px;
+    }
+
+    .audit-engagement-card {
+        padding: 21px 18px;
+
+        margin-top: 12px;
+    }
+
+    .audit-engagement-top {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        padding-bottom: 18px;
+    }
+
+    .audit-engagement-top h3 {
+        font-size: 17px;
+    }
+
+    .audit-engagement-info {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 18px 12px;
+
+        padding-top: 19px;
+    }
+
+    .audit-engagement-info strong {
+        font-size: 9px;
+    }
+
+    .audit-milestones {
+        margin-top: 12px;
+
+        padding: 22px 18px;
+    }
+
+    .audit-milestone-list {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .audit-milestone {
+        display: flex;
+
+        align-items: center;
+
+        gap: 13px;
+
+        padding: 0;
+    }
+
+    .milestone-marker {
+        flex-shrink: 0;
+
+        margin: 0;
+    }
+
+    .audit-milestone strong {
+        margin-bottom: 3px;
+    }
+
+    .audit-client-summary {
+        margin-top: 12px;
+
+        padding: 22px 18px;
+
+        text-align: center;
+
+        align-items: center;
+    }
+
+    .audit-summary-items {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 8px;
+    }
+
+    .audit-summary-items > div {
+        min-width: 0;
+    }
+
+    .audit-summary-items strong {
+        font-size: 19px;
+    }
+
+    .audit-summary-items span {
+        font-size: 7px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .client-audits-heading {
+        padding: 22px 16px;
+    }
+
+    .audit-engagement-card {
+        padding: 19px 15px;
+    }
+
+    .audit-milestones {
+        padding: 20px 15px;
+    }
+
+    .audit-client-summary {
+        padding: 20px 14px;
+    }
+
+}
+
+/* =========================================================
+   ASSURANCE REPORTS - INSIGHTS DESIGN
+========================================================= */
+
+.assurance-reports-new-content {
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   REPORT BANNER
+========================================================= */
+
+.assurance-report-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    padding: 30px 32px;
+
+    background: #075548;
+    border-radius: 18px;
+
+    overflow: hidden;
+}
+
+.assurance-report-banner > div:first-child {
+    max-width: 760px;
+}
+
+.assurance-report-banner span {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #c9ff91;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+}
+
+.assurance-report-banner h3 {
+    margin: 0 0 12px;
+
+    color: #ffffff;
+
+    font-size: 24px;
+
+    line-height: 1.3;
+}
+
+.assurance-report-banner p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 12px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   INSIGHT NUMBER
+========================================================= */
+
+.report-insight-number {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 120px;
+    height: 120px;
+
+    background: #c9ff91;
+
+    border-radius: 20px;
+
+    transform: rotate(3deg);
+}
+
+.report-insight-number strong {
+    color: #063f35;
+
+    font-size: 30px;
+
+    line-height: 1;
+}
+
+.report-insight-number span {
+    margin-top: 7px;
+
+    color: #063f35;
+
+    font-size: 8px;
+
+    letter-spacing: .5px;
+
+    transform: rotate(-3deg);
+}
+
+
+/* =========================================================
+   INSIGHT CARDS
+========================================================= */
+
+.report-insight-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 16px;
+
+    margin-top: 16px;
+}
+
+.report-insight-card {
+    position: relative;
+
+    padding: 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce9e3;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+.report-insight-card::after {
+    content: "";
+
+    position: absolute;
+
+    right: -35px;
+    bottom: -35px;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background: #eaf5ef;
+
+    transition: transform .4s ease;
+}
+
+.report-insight-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #a9cdbd;
+
+    box-shadow:
+        0 16px 35px rgba(6, 63, 53, 0.09);
+}
+
+.report-insight-card:hover::after {
+    transform: scale(1.5);
+}
+
+
+/* =========================================================
+   CARD ICON
+========================================================= */
+
+.report-card-icon {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 43px;
+    height: 43px;
+
+    margin-bottom: 20px;
+
+    background: #063f35;
+
+    border-radius: 12px;
+
+    color: #c9ff91;
+
+    font-size: 15px;
+}
+
+.report-insight-card > span {
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #075548;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.1px;
+
+    text-transform: uppercase;
+}
+
+.report-insight-card h3 {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0 0 10px;
+
+    color: #10221e;
+
+    font-size: 17px;
+}
+
+.report-insight-card p {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    color: #71827d;
+
+    font-size: 10px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   CARD BOTTOM
+========================================================= */
+
+.report-card-bottom {
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 22px;
+
+    padding-top: 13px;
+
+    border-top: 1px solid #e3ece8;
+}
+
+.report-card-bottom strong {
+    color: #075548;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .7px;
+}
+
+.report-card-bottom span {
+    margin: 0;
+
+    color: #899993;
+
+    font-size: 8px;
+
+    letter-spacing: 0;
+
+    text-transform: none;
+}
+
+
+/* =========================================================
+   REVIEW STRIP
+========================================================= */
+
+.report-review-strip {
+    margin-top: 16px;
+
+    padding: 26px;
+
+    background: #f7faf8;
+
+    border: 1px solid #dce9e3;
+
+    border-radius: 16px;
+}
+
+.report-review-heading {
+    margin-bottom: 18px;
+}
+
+.report-review-heading span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #075548;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+}
+
+.report-review-heading h3 {
+    margin: 0;
+
+    color: #10221e;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   OBSERVATION ROW
+========================================================= */
+
+.report-observation {
+    display: grid;
+
+    grid-template-columns: 42px 1fr auto;
+
+    align-items: center;
+
+    gap: 17px;
+
+    padding: 16px 0;
+
+    border-bottom: 1px solid #dce9e3;
+}
+
+.report-observation:last-child {
+    border-bottom: 0;
+
+    padding-bottom: 0;
+}
+
+.observation-number {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    background: #063f35;
+
+    border-radius: 10px;
+
+    color: #c9ff91;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+.report-observation strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #10221e;
+
+    font-size: 11px;
+}
+
+.report-observation p {
+    margin: 0;
+
+    color: #71827d;
+
+    font-size: 9px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   OBSERVATION STATUS
+========================================================= */
+
+.observation-status {
+    padding: 7px 12px;
+
+    background: #fff4d9;
+
+    color: #99701c;
+
+    border-radius: 20px;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.observation-status.completed {
+    background: #e5f5e8;
+
+    color: #287345;
+}
+
+.observation-status.pending {
+    background: #eaf5ef;
+
+    color: #075548;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.report-insight-footer {
+    display: grid;
+
+    grid-template-columns: 1fr 1.2fr;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin-top: 16px;
+
+    padding: 25px 28px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce9e3;
+
+    border-left: 4px solid #075548;
+
+    border-radius: 14px;
+}
+
+.report-insight-footer span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #075548;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+}
+
+.report-insight-footer h3 {
+    margin: 0;
+
+    color: #10221e;
+
+    font-size: 17px;
+
+    line-height: 1.4;
+}
+
+.report-insight-footer p {
+    margin: 0;
+
+    color: #71827d;
+
+    font-size: 10px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .report-insight-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .report-insight-footer {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .assurance-reports-new-content {
+        margin-top: 15px;
+    }
+
+    .assurance-report-banner {
+        flex-direction: column;
+
+        padding: 25px 20px;
+
+        text-align: center;
+    }
+
+    .assurance-report-banner h3 {
+        font-size: 20px;
+    }
+
+    .assurance-report-banner p {
+        font-size: 11px;
+    }
+
+    .report-insight-number {
+        width: 100px;
+        height: 100px;
+    }
+
+    .report-insight-number strong {
+        font-size: 25px;
+    }
+
+    .report-insight-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-top: 12px;
+    }
+
+    .report-insight-card {
+        padding: 22px 19px;
+    }
+
+    .report-insight-card h3 {
+        font-size: 16px;
+    }
+
+    .report-insight-card p {
+        font-size: 10px;
+    }
+
+    .report-review-strip {
+        margin-top: 12px;
+
+        padding: 22px 18px;
+    }
+
+    .report-review-heading h3 {
+        font-size: 17px;
+    }
+
+    .report-observation {
+        grid-template-columns: 38px 1fr;
+
+        gap: 12px;
+    }
+
+    .observation-number {
+        width: 35px;
+        height: 35px;
+    }
+
+    .observation-status {
+        grid-column: 2;
+
+        justify-self: start;
+    }
+
+    .report-insight-footer {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-top: 12px;
+
+        padding: 22px 18px;
+
+        border-left: 0;
+
+        border-top: 3px solid #075548;
+
+        text-align: center;
+    }
+
+    .report-insight-footer h3 {
+        font-size: 16px;
+    }
+
+    .report-insight-footer p {
+        font-size: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .assurance-report-banner {
+        padding: 22px 16px;
+    }
+
+    .report-insight-card {
+        padding: 20px 16px;
+    }
+
+    .report-review-strip {
+        padding: 20px 15px;
+    }
+
+    .report-insight-footer {
+        padding: 20px 15px;
+    }
+
+}
+
+/* =========================================================
+   RISK & COMPLIANCE - SMALL CONTENT
+========================================================= */
+
+.risk-compliance-content {
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   HIGHLIGHT
+========================================================= */
+
+.compliance-highlight {
+    position: relative;
+
+    padding: 26px 30px;
+
+    background: #10221e;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+}
+
+.compliance-highlight::after {
+    content: "";
+
+    position: absolute;
+
+    right: -35px;
+    top: -45px;
+
+    width: 130px;
+    height: 130px;
+
+    border: 1px solid rgba(201, 255, 145, 0.2);
+
+    border-radius: 50%;
+}
+
+.compliance-highlight span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #c9ff91;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+}
+
+.compliance-highlight h3 {
+    position: relative;
+    z-index: 1;
+
+    margin: 0 0 9px;
+
+    color: #ffffff;
+
+    font-size: 21px;
+    line-height: 1.3;
+}
+
+.compliance-highlight p {
+    position: relative;
+    z-index: 1;
+
+    max-width: 700px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   MINI GRID
+========================================================= */
+
+.compliance-mini-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 14px;
+
+    margin-top: 14px;
+}
+
+.compliance-mini-grid > div {
+    padding: 21px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce9e3;
+
+    border-radius: 13px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.compliance-mini-grid > div:hover {
+    transform: translateY(-4px);
+
+    border-color: #a9cdbd;
+
+    box-shadow:
+        0 12px 25px rgba(6, 63, 53, 0.08);
+}
+
+.compliance-mini-grid strong {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    margin-bottom: 13px;
+
+    background: #eaf5ef;
+
+    border-radius: 8px;
+
+    color: #075548;
+
+    font-size: 9px;
+}
+
+.compliance-mini-grid h3 {
+    margin: 0 0 7px;
+
+    color: #10221e;
+
+    font-size: 15px;
+}
+
+.compliance-mini-grid p {
+    margin: 0;
+
+    color: #71827d;
+
+    font-size: 10px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.compliance-status {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-top: 14px;
+
+    padding: 20px 24px;
+
+    background: #eaf5ef;
+
+    border-radius: 13px;
+
+    border-left: 4px solid #075548;
+}
+
+.compliance-status span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #075548;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+}
+
+.compliance-status h3 {
+    margin: 0;
+
+    color: #10221e;
+
+    font-size: 14px;
+}
+
+.compliance-status-badge {
+    padding: 8px 14px;
+
+    background: #075548;
+
+    border-radius: 20px;
+
+    color: #c9ff91;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .compliance-mini-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .compliance-mini-grid > div:last-child {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .risk-compliance-content {
+        margin-top: 15px;
+    }
+
+    .compliance-highlight {
+        padding: 23px 19px;
+
+        text-align: center;
+    }
+
+    .compliance-highlight h3 {
+        font-size: 19px;
+    }
+
+    .compliance-highlight p {
+        font-size: 10px;
+    }
+
+    .compliance-mini-grid {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+        margin-top: 10px;
+    }
+
+    .compliance-mini-grid > div:last-child {
+        grid-column: auto;
+    }
+
+    .compliance-mini-grid > div {
+        padding: 19px;
+
+        text-align: center;
+    }
+
+    .compliance-mini-grid strong {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .compliance-mini-grid h3 {
+        font-size: 14px;
+    }
+
+    .compliance-mini-grid p {
+        font-size: 10px;
+    }
+
+    .compliance-status {
+        flex-direction: column;
+
+        align-items: center;
+
+        margin-top: 10px;
+
+        padding: 20px 17px;
+
+        text-align: center;
+
+        border-left: 0;
+
+        border-top: 3px solid #075548;
+    }
+
+    .compliance-status h3 {
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .compliance-highlight {
+        padding: 21px 15px;
+    }
+
+    .compliance-mini-grid > div {
+        padding: 18px 15px;
+    }
+
+    .compliance-status {
+        padding: 18px 14px;
+    }
+
+}
+
+/* =========================================================
+   CLIENT BILLING
+========================================================= */
+
+.client-billing-content {
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   BILLING OVERVIEW
+========================================================= */
+
+.billing-overview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    padding: 30px 32px;
+
+    background: #063f35;
+    border-radius: 18px;
+
+    overflow: hidden;
+}
+
+.billing-overview > div:first-child {
+    max-width: 700px;
+}
+
+.billing-overview span {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #c9ff91;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.billing-overview h3 {
+    margin: 0 0 11px;
+
+    color: #ffffff;
+
+    font-size: 23px;
+    line-height: 1.3;
+}
+
+.billing-overview p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    font-size: 11px;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   BALANCE
+========================================================= */
+
+.billing-balance {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 160px;
+
+    padding: 20px 15px;
+
+    background: #c9ff91;
+
+    border-radius: 16px;
+
+    text-align: center;
+}
+
+.billing-balance span {
+    margin-bottom: 8px;
+
+    color: #063f35;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+.billing-balance strong {
+    color: #063f35;
+
+    font-size: 25px;
+
+    line-height: 1;
+}
+
+.billing-balance small {
+    margin-top: 7px;
+
+    color: #40634f;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   BILLING SUMMARY
+========================================================= */
+
+.billing-summary {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 14px;
+
+    margin-top: 16px;
+}
+
+.billing-summary > div {
+    padding: 21px 22px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce9e3;
+
+    border-radius: 14px;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.billing-summary > div:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 25px rgba(6, 63, 53, 0.07);
+}
+
+.billing-summary span {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #71827d;
+
+    font-size: 9px;
+
+    font-weight: 600;
+}
+
+.billing-summary strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #063f35;
+
+    font-size: 20px;
+}
+
+.billing-summary small {
+    color: #899993;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   BILLING DETAILS
+========================================================= */
+
+.billing-details {
+    margin-top: 16px;
+
+    padding: 25px;
+
+    background: #f7faf8;
+
+    border: 1px solid #dce9e3;
+
+    border-radius: 16px;
+}
+
+.billing-details-heading {
+    margin-bottom: 18px;
+}
+
+.billing-details-heading span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #075548;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+}
+
+.billing-details-heading h3 {
+    margin: 0;
+
+    color: #10221e;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   BILLING ROW
+========================================================= */
+
+.billing-row {
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr auto;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 16px 0;
+
+    border-bottom: 1px solid #dce9e3;
+}
+
+.billing-row:last-child {
+    border-bottom: 0;
+
+    padding-bottom: 0;
+}
+
+.billing-row strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #10221e;
+
+    font-size: 10px;
+}
+
+.billing-row span {
+    color: #899993;
+
+    font-size: 8px;
+}
+
+.billing-row > div:nth-child(2) {
+    text-align: left;
+}
+
+.billing-row > div:nth-child(2) strong {
+    color: #075548;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   PAID STATUS
+========================================================= */
+
+.billing-paid {
+    padding: 7px 12px;
+
+    background: #e5f5e8;
+
+    border-radius: 20px;
+
+    color: #287345;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   PAYMENT NOTE
+========================================================= */
+
+.billing-payment-note {
+    display: grid;
+
+    grid-template-columns: 1fr 1.3fr;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin-top: 16px;
+
+    padding: 24px 27px;
+
+    background: #eaf5ef;
+
+    border-radius: 14px;
+
+    border-left: 4px solid #075548;
+}
+
+.billing-payment-note span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #075548;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+}
+
+.billing-payment-note h3 {
+    margin: 0;
+
+    color: #10221e;
+
+    font-size: 17px;
+}
+
+.billing-payment-note p {
+    margin: 0;
+
+    color: #71827d;
+
+    font-size: 10px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .billing-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .billing-summary > div:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .billing-payment-note {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .client-billing-content {
+        margin-top: 15px;
+    }
+
+    .billing-overview {
+        flex-direction: column;
+
+        padding: 25px 20px;
+
+        text-align: center;
+    }
+
+    .billing-overview h3 {
+        font-size: 20px;
+    }
+
+    .billing-overview p {
+        font-size: 10px;
+    }
+
+    .billing-balance {
+        width: 130px;
+
+        padding: 18px 12px;
+    }
+
+    .billing-balance strong {
+        font-size: 22px;
+    }
+
+    .billing-summary {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+        margin-top: 12px;
+    }
+
+    .billing-summary > div:last-child {
+        grid-column: auto;
+    }
+
+    .billing-summary > div {
+        padding: 19px;
+
+        text-align: center;
+    }
+
+    .billing-details {
+        margin-top: 12px;
+
+        padding: 21px 18px;
+    }
+
+    .billing-details-heading h3 {
+        font-size: 17px;
+    }
+
+    .billing-row {
+        grid-template-columns: 1fr auto;
+
+        gap: 10px;
+    }
+
+    .billing-row > div:nth-child(2) {
+        text-align: right;
+    }
+
+    .billing-paid {
+        grid-column: 1 / -1;
+
+        justify-self: flex-start;
+    }
+
+    .billing-payment-note {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-top: 12px;
+
+        padding: 22px 18px;
+
+        border-left: 0;
+
+        border-top: 3px solid #075548;
+
+        text-align: center;
+    }
+
+    .billing-payment-note h3 {
+        font-size: 16px;
+    }
+
+    .billing-payment-note p {
+        font-size: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .billing-overview {
+        padding: 22px 16px;
+    }
+
+    .billing-details {
+        padding: 19px 15px;
+    }
+
+    .billing-payment-note {
+        padding: 20px 15px;
+    }
+
+}
+
+
+/* =========================================================
+   REMOVE MILESTONE LINES
+========================================================= */
+
+.audit-milestone-list {
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+.audit-milestone {
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+/* Remove connecting horizontal lines */
+.audit-milestone::before,
+.audit-milestone::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Remove any line from inner elements */
+.audit-milestone > div,
+.audit-milestone > div::before,
+.audit-milestone > div::after {
+    border: none !important;
+}
+
+/* Remove bottom divider if applied to last/each item */
+.audit-milestone-list > *,
+.audit-milestone-list > *::before,
+.audit-milestone-list > *::after {
+    border-bottom: none !important;
+}
+
+/* =========================================================
+   CLIENT DASHBOARD - INCREASE ALL CONTENT TEXT
+   ADD THIS AT THE VERY BOTTOM
+========================================================= */
+
+/* ---------- GENERAL CONTENT ---------- */
+
+.audit-dashboard-content p {
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+}
+
+.audit-dashboard-content span {
+    font-size: 10px !important;
+}
+
+.audit-dashboard-content small {
+    font-size: 10px !important;
+}
+
+.audit-dashboard-content strong {
+    font-size: 12px !important;
+}
+
+
+/* ---------- PAGE HEADINGS ---------- */
+
+.audit-page-intro h2 {
+    font-size: 32px !important;
+}
+
+.audit-page-intro p {
+    font-size: 13px !important;
+}
+
+.audit-card-heading h3,
+.audit-table-heading h3 {
+    font-size: 18px !important;
+}
+
+.audit-card-heading span {
+    font-size: 9px !important;
+}
+
+
+/* ---------- WELCOME ---------- */
+
+.audit-welcome-panel h2 {
+    font-size: 30px !important;
+}
+
+.audit-welcome-panel p {
+    font-size: 13px !important;
+}
+
+.audit-main-button,
+.audit-outline-button {
+    font-size: 11px !important;
+}
+
+
+/* ---------- STAT CARDS ---------- */
+
+.audit-stat-card span {
+    font-size: 10px !important;
+}
+
+.audit-stat-card strong {
+    font-size: 28px !important;
+}
+
+.audit-stat-card small {
+    font-size: 10px !important;
+}
+
+
+/* ---------- PROGRESS ---------- */
+
+.audit-progress-details span {
+    font-size: 11px !important;
+}
+
+.audit-progress-details strong {
+    font-size: 11px !important;
+}
+
+.audit-progress-ring strong {
+    font-size: 28px !important;
+}
+
+.audit-progress-ring span {
+    font-size: 10px !important;
+}
+
+
+/* ---------- RISK ---------- */
+
+.audit-risk-row span,
+.audit-risk-row strong {
+    font-size: 11px !important;
+}
+
+
+/* ---------- ACTIVITY ---------- */
+
+.audit-activity-item strong {
+    font-size: 11px !important;
+}
+
+.audit-activity-item span {
+    font-size: 10px !important;
+}
+
+.audit-activity-item small {
+    font-size: 9px !important;
+}
+
+
+/* =========================================================
+   ENGAGEMENT MILESTONES
+========================================================= */
+
+.audit-milestone strong {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+}
+
+.audit-milestone > div:last-child span {
+    font-size: 10px !important;
+    line-height: 1.5 !important;
+}
+
+.audit-milestone small {
+    font-size: 10px !important;
+}
+
+.audit-milestone-date {
+    font-size: 12px !important;
+}
+
+
+/* ---------- TABLE ---------- */
+
+.audit-table-scroll th {
+    font-size: 9px !important;
+}
+
+.audit-table-scroll td {
+    font-size: 11px !important;
+}
+
+.audit-table-scroll td strong {
+    font-size: 11px !important;
+}
+
+.audit-table-scroll td small {
+    font-size: 9px !important;
+}
+
+.audit-table-scroll em {
+    font-size: 9px !important;
+}
+
+
+/* ---------- REPORT CARDS ---------- */
+
+.audit-report-card > span {
+    font-size: 9px !important;
+}
+
+.audit-report-card h3 {
+    font-size: 17px !important;
+}
+
+.audit-report-card p {
+    font-size: 11px !important;
+    line-height: 1.7 !important;
+}
+
+.audit-report-card a {
+    font-size: 10px !important;
+}
+
+
+/* ---------- DOCUMENTS ---------- */
+
+.audit-document-card h3 {
+    font-size: 15px !important;
+}
+
+.audit-document-card p {
+    font-size: 10px !important;
+    line-height: 1.6 !important;
+}
+
+.audit-document-card a {
+    font-size: 10px !important;
+}
+
+
+/* ---------- BILLING ---------- */
+
+.audit-billing-summary span {
+    font-size: 10px !important;
+}
+
+.audit-billing-summary strong {
+    font-size: 27px !important;
+}
+
+.audit-invoice-list strong {
+    font-size: 11px !important;
+}
+
+.audit-invoice-list span {
+    font-size: 9px !important;
+}
+
+.audit-invoice-list a {
+    font-size: 10px !important;
+}
+
+
+/* ---------- PROFILE ---------- */
+
+.audit-profile-info h3 {
+    font-size: 20px !important;
+}
+
+.audit-profile-info p {
+    font-size: 11px !important;
+}
+
+.audit-profile-info small {
+    font-size: 9px !important;
+}
+
+.audit-profile-details span {
+    font-size: 9px !important;
+}
+
+.audit-profile-details strong {
+    font-size: 12px !important;
+}
+
+
+/* =========================================================
+   MY AUDITS PAGE
+========================================================= */
+
+.client-audits-heading h3 {
+    font-size: 27px !important;
+}
+
+.client-audits-heading p {
+    font-size: 13px !important;
+}
+
+.audit-engagement-top h3 {
+    font-size: 21px !important;
+}
+
+.audit-engagement-top span {
+    font-size: 10px !important;
+}
+
+.audit-engagement-info > div span {
+    font-size: 9px !important;
+}
+
+.audit-engagement-info strong {
+    font-size: 11px !important;
+}
+
+.audit-milestone-title h3 {
+    font-size: 20px !important;
+}
+
+.audit-client-summary > div:first-child h3 {
+    font-size: 19px !important;
+}
+
+.audit-summary-items strong {
+    font-size: 24px !important;
+}
+
+.audit-summary-items span {
+    font-size: 9px !important;
+}
+
+
+/* =========================================================
+   MOBILE - MAKE EVERYTHING CLEARER
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .audit-dashboard-content p {
+        font-size: 13px !important;
+        line-height: 1.7 !important;
+    }
+
+    .audit-dashboard-content span {
+        font-size: 10px !important;
+    }
+
+    .audit-dashboard-content small {
+        font-size: 10px !important;
+    }
+
+    .audit-page-intro h2 {
+        font-size: 28px !important;
+    }
+
+    .audit-page-intro p {
+        font-size: 12px !important;
+    }
+
+    .audit-card-heading h3,
+    .audit-table-heading h3 {
+        font-size: 18px !important;
+    }
+
+    .audit-welcome-panel h2 {
+        font-size: 25px !important;
+    }
+
+    .audit-welcome-panel p {
+        font-size: 12px !important;
+    }
+
+    .audit-stat-card span {
+        font-size: 10px !important;
+    }
+
+    .audit-stat-card strong {
+        font-size: 25px !important;
+    }
+
+    .audit-stat-card small {
+        font-size: 10px !important;
+    }
+
+
+    /* MILESTONES */
+
+    .audit-milestone strong {
+        font-size: 13px !important;
+    }
+
+    .audit-milestone > div:last-child span {
+        font-size: 10px !important;
+    }
+
+    .audit-milestone small {
+        font-size: 10px !important;
+    }
+
+    .audit-milestone-date {
+        font-size: 12px !important;
+    }
+
+
+    /* TABLE */
+
+    .audit-table-scroll th {
+        font-size: 9px !important;
+    }
+
+    .audit-table-scroll td {
+        font-size: 11px !important;
+    }
+
+    .audit-table-scroll td strong {
+        font-size: 11px !important;
+    }
+
+
+    /* REPORTS */
+
+    .audit-report-card h3 {
+        font-size: 17px !important;
+    }
+
+    .audit-report-card p {
+        font-size: 11px !important;
+    }
+
+
+    /* DOCUMENTS */
+
+    .audit-document-card h3 {
+        font-size: 15px !important;
+    }
+
+    .audit-document-card p {
+        font-size: 10px !important;
+    }
+
+
+    /* BILLING */
+
+    .audit-billing-summary strong {
+        font-size: 25px !important;
+    }
+
+    .audit-invoice-list strong {
+        font-size: 11px !important;
+    }
+
+    .audit-invoice-list span {
+        font-size: 9px !important;
+    }
+
+
+    /* MY AUDITS */
+
+    .client-audits-heading h3 {
+        font-size: 22px !important;
+    }
+
+    .client-audits-heading p {
+        font-size: 12px !important;
+    }
+
+    .audit-engagement-top h3 {
+        font-size: 18px !important;
+    }
+
+    .audit-engagement-info strong {
+        font-size: 10px !important;
+    }
+
+    .audit-milestone-title h3 {
+        font-size: 19px !important;
+    }
+
+    .audit-client-summary > div:first-child h3 {
+        font-size: 17px !important;
+    }
+
+}
+
+/* =========================================================
+   MOBILE - INCREASE ALL DASHBOARD TEXT
+   ADD AT VERY BOTTOM
+========================================================= */
+
+@media (max-width: 650px) {
+
+    /* General paragraphs */
+    .audit-dashboard-content p {
+        font-size: 14px !important;
+        line-height: 1.75 !important;
+    }
+
+    /* General spans */
+    .audit-dashboard-content span {
+        font-size: 11px !important;
+    }
+
+    /* Small text */
+    .audit-dashboard-content small {
+        font-size: 10px !important;
+    }
+
+    /* Strong text */
+    .audit-dashboard-content strong {
+        font-size: 13px !important;
+    }
+
+
+    /* =====================================================
+       PAGE INTRO
+    ===================================================== */
+
+    .audit-page-intro span {
+        font-size: 10px !important;
+    }
+
+    .audit-page-intro h2 {
+        font-size: 29px !important;
+    }
+
+    .audit-page-intro p {
+        font-size: 13px !important;
+        line-height: 1.75 !important;
+    }
+
+
+    /* =====================================================
+       WELCOME
+    ===================================================== */
+
+    .audit-welcome-panel span {
+        font-size: 10px !important;
+    }
+
+    .audit-welcome-panel h2 {
+        font-size: 26px !important;
+    }
+
+    .audit-welcome-panel p {
+        font-size: 13px !important;
+    }
+
+    .audit-main-button,
+    .audit-outline-button {
+        font-size: 11px !important;
+    }
+
+
+    /* =====================================================
+       STAT CARDS
+    ===================================================== */
+
+    .audit-stat-card span {
+        font-size: 11px !important;
+    }
+
+    .audit-stat-card strong {
+        font-size: 27px !important;
+    }
+
+    .audit-stat-card small {
+        font-size: 10px !important;
+    }
+
+
+    /* =====================================================
+       CARD HEADINGS
+    ===================================================== */
+
+    .audit-card-heading span {
+        font-size: 10px !important;
+    }
+
+    .audit-card-heading h3 {
+        font-size: 19px !important;
+    }
+
+    .audit-card-heading a {
+        font-size: 10px !important;
+    }
+
+
+    /* =====================================================
+       PROGRESS
+    ===================================================== */
+
+    .audit-progress-ring strong {
+        font-size: 29px !important;
+    }
+
+    .audit-progress-ring span {
+        font-size: 10px !important;
+    }
+
+    .audit-progress-details span {
+        font-size: 11px !important;
+    }
+
+    .audit-progress-details strong {
+        font-size: 11px !important;
+    }
+
+
+    /* =====================================================
+       RISK
+    ===================================================== */
+
+    .audit-risk-row span {
+        font-size: 11px !important;
+    }
+
+    .audit-risk-row strong {
+        font-size: 11px !important;
+    }
+
+
+    /* =====================================================
+       ACTIVITY
+    ===================================================== */
+
+    .audit-activity-item strong {
+        font-size: 12px !important;
+    }
+
+    .audit-activity-item span {
+        font-size: 10px !important;
+    }
+
+    .audit-activity-item small {
+        font-size: 10px !important;
+    }
+
+
+    /* =====================================================
+       MILESTONES
+    ===================================================== */
+
+    .audit-milestone-title span {
+        font-size: 10px !important;
+    }
+
+    .audit-milestone-title h3 {
+        font-size: 20px !important;
+    }
+
+    .audit-milestone strong {
+        font-size: 14px !important;
+        line-height: 1.45 !important;
+    }
+
+    .audit-milestone > div:last-child span {
+        font-size: 11px !important;
+        line-height: 1.6 !important;
+    }
+
+    .audit-milestone small {
+        font-size: 10px !important;
+    }
+
+    .audit-milestone-date {
+        font-size: 12px !important;
+    }
+
+
+    /* =====================================================
+       TABLE
+    ===================================================== */
+
+    .audit-table-heading h3 {
+        font-size: 19px !important;
+    }
+
+    .audit-table-heading a {
+        font-size: 10px !important;
+    }
+
+    .audit-table-scroll th {
+        font-size: 10px !important;
+    }
+
+    .audit-table-scroll td {
+        font-size: 11px !important;
+    }
+
+    .audit-table-scroll td strong {
+        font-size: 12px !important;
+    }
+
+    .audit-table-scroll td small {
+        font-size: 10px !important;
+    }
+
+    .audit-table-scroll em {
+        font-size: 9px !important;
+    }
+
+
+    /* =====================================================
+       REPORTS
+    ===================================================== */
+
+    .audit-report-card > span {
+        font-size: 10px !important;
+    }
+
+    .audit-report-card h3 {
+        font-size: 18px !important;
+    }
+
+    .audit-report-card p {
+        font-size: 12px !important;
+        line-height: 1.7 !important;
+    }
+
+    .audit-report-card a {
+        font-size: 10px !important;
+    }
+
+
+    /* =====================================================
+       DOCUMENTS
+    ===================================================== */
+
+    .audit-document-card h3 {
+        font-size: 16px !important;
+    }
+
+    .audit-document-card p {
+        font-size: 11px !important;
+        line-height: 1.7 !important;
+    }
+
+    .audit-document-card a {
+        font-size: 10px !important;
+    }
+
+
+    /* =====================================================
+       BILLING
+    ===================================================== */
+
+    .audit-billing-summary span {
+        font-size: 10px !important;
+    }
+
+    .audit-billing-summary strong {
+        font-size: 27px !important;
+    }
+
+    .audit-invoice-list strong {
+        font-size: 12px !important;
+    }
+
+    .audit-invoice-list span {
+        font-size: 10px !important;
+    }
+
+    .audit-invoice-list a {
+        font-size: 10px !important;
+    }
+
+
+    /* =====================================================
+       PROFILE
+    ===================================================== */
+
+    .audit-profile-info > span {
+        font-size: 10px !important;
+    }
+
+    .audit-profile-info h3 {
+        font-size: 21px !important;
+    }
+
+    .audit-profile-info p {
+        font-size: 12px !important;
+    }
+
+    .audit-profile-info small {
+        font-size: 10px !important;
+    }
+
+    .audit-profile-details span {
+        font-size: 10px !important;
+    }
+
+    .audit-profile-details strong {
+        font-size: 13px !important;
+    }
+
+
+    /* =====================================================
+       MY AUDITS
+    ===================================================== */
+
+    .client-audits-heading span {
+        font-size: 10px !important;
+    }
+
+    .client-audits-heading h3 {
+        font-size: 23px !important;
+    }
+
+    .client-audits-heading p {
+        font-size: 13px !important;
+        line-height: 1.75 !important;
+    }
+
+    .audit-portfolio-count strong {
+        font-size: 27px !important;
+    }
+
+    .audit-portfolio-count span {
+        font-size: 9px !important;
+    }
+
+    .audit-engagement-top span {
+        font-size: 10px !important;
+    }
+
+    .audit-engagement-top h3 {
+        font-size: 19px !important;
+    }
+
+    .audit-engagement-info > div span {
+        font-size: 9px !important;
+    }
+
+    .audit-engagement-info strong {
+        font-size: 11px !important;
+    }
+
+    .audit-client-summary > div:first-child span {
+        font-size: 10px !important;
+    }
+
+    .audit-client-summary > div:first-child h3 {
+        font-size: 18px !important;
+    }
+
+    .audit-summary-items strong {
+        font-size: 24px !important;
+    }
+
+    .audit-summary-items span {
+        font-size: 9px !important;
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .audit-dashboard-content p {
+        font-size: 13px !important;
+    }
+
+    .audit-dashboard-content span {
+        font-size: 10px !important;
+    }
+
+    .audit-dashboard-content small {
+        font-size: 10px !important;
+    }
+
+    .audit-welcome-panel h2 {
+        font-size: 24px !important;
+    }
+
+    .audit-welcome-panel p {
+        font-size: 12px !important;
+    }
+
+    .audit-page-intro h2 {
+        font-size: 27px !important;
+    }
+
+    .audit-page-intro p {
+        font-size: 12px !important;
+    }
+
+    .audit-milestone strong {
+        font-size: 13px !important;
+    }
+
+    .audit-milestone > div:last-child span {
+        font-size: 10px !important;
+    }
+
+    .audit-report-card h3 {
+        font-size: 17px !important;
+    }
+
+    .audit-report-card p {
+        font-size: 11px !important;
+    }
+
+    .audit-document-card h3 {
+        font-size: 15px !important;
+    }
+
+    .audit-document-card p {
+        font-size: 10px !important;
+    }
+
+    .client-audits-heading h3 {
+        font-size: 21px !important;
+    }
+
+    .client-audits-heading p {
+        font-size: 12px !important;
+    }
+
+}
+/* =========================================================
+   MOBILE SIDEBAR - INCREASE ALL TEXT
+   ADD AT THE VERY BOTTOM
+========================================================= */
+
+@media (max-width: 900px) {
+
+    /* Sidebar width */
+    .audit-sidebar {
+        width: 280px !important;
+    }
+
+    /* Logo area */
+    .audit-sidebar-logo {
+        height: 82px !important;
+    }
+
+    .audit-sidebar-logo img {
+        width: 135px !important;
+    }
+
+
+    /* User profile */
+    .audit-sidebar-user {
+        gap: 13px !important;
+
+        margin: 16px 0 25px !important;
+
+        padding: 15px 13px !important;
+    }
+
+    .audit-user-avatar {
+        width: 44px !important;
+        height: 44px !important;
+
+        font-size: 16px !important;
+    }
+
+    .audit-user-details {
+        gap: 4px !important;
+    }
+
+    .audit-user-details strong {
+        max-width: 175px !important;
+
+        font-size: 13px !important;
+    }
+
+    .audit-user-details span {
+        max-width: 175px !important;
+
+        font-size: 11px !important;
+    }
+
+    .audit-user-details small {
+        font-size: 9px !important;
+
+        padding: 4px 7px !important;
+    }
+
+
+    /* Sidebar section labels */
+    .audit-sidebar-label {
+        margin: 0 12px 10px !important;
+
+        font-size: 10px !important;
+
+        letter-spacing: 1.5px !important;
+    }
+
+
+    /* Sidebar navigation */
+    .audit-sidebar-nav {
+        gap: 6px !important;
+    }
+
+    .audit-sidebar-link {
+        min-height: 48px !important;
+
+        gap: 13px !important;
+
+        padding: 0 13px !important;
+
+        border-radius: 10px !important;
+
+        font-size: 13px !important;
+    }
+
+    .audit-sidebar-link i {
+        width: 20px !important;
+
+        font-size: 15px !important;
+    }
+
+    .audit-sidebar-link span {
+        font-size: 13px !important;
+    }
+
+    .audit-sidebar-link b {
+        min-width: 23px !important;
+
+        padding: 4px 6px !important;
+
+        font-size: 9px !important;
+    }
+
+
+    /* Logout / bottom links */
+    .audit-logout-link {
+        margin-bottom: 20px !important;
+
+        font-size: 13px !important;
+    }
+
+    .audit-logout-link i {
+        font-size: 15px !important;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE SIDEBAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .audit-sidebar {
+        width: 285px !important;
+    }
+
+    .audit-sidebar-logo {
+        height: 80px !important;
+    }
+
+    .audit-sidebar-logo img {
+        width: 135px !important;
+    }
+
+
+    /* User */
+    .audit-sidebar-user {
+        margin: 15px 0 24px !important;
+
+        padding: 15px 12px !important;
+    }
+
+    .audit-user-avatar {
+        width: 43px !important;
+        height: 43px !important;
+
+        font-size: 16px !important;
+    }
+
+    .audit-user-details strong {
+        max-width: 180px !important;
+
+        font-size: 13px !important;
+    }
+
+    .audit-user-details span {
+        max-width: 180px !important;
+
+        font-size: 11px !important;
+    }
+
+    .audit-user-details small {
+        font-size: 9px !important;
+    }
+
+
+    /* Section labels */
+    .audit-sidebar-label {
+        font-size: 10px !important;
+    }
+
+
+    /* Menu */
+    .audit-sidebar-link {
+        min-height: 50px !important;
+
+        font-size: 14px !important;
+
+        gap: 13px !important;
+    }
+
+    .audit-sidebar-link i {
+        width: 21px !important;
+
+        font-size: 15px !important;
+    }
+
+    .audit-sidebar-link span {
+        font-size: 14px !important;
+    }
+
+    .audit-sidebar-link b {
+        font-size: 9px !important;
+    }
+
+
+    /* Bottom */
+    .audit-logout-link {
+        font-size: 14px !important;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .audit-sidebar {
+        width: 275px !important;
+    }
+
+    .audit-sidebar-link {
+        min-height: 48px !important;
+
+        font-size: 13px !important;
+    }
+
+    .audit-sidebar-link span {
+        font-size: 13px !important;
+    }
+
+    .audit-sidebar-link i {
+        font-size: 14px !important;
+    }
+
+    .audit-user-details strong {
+        font-size: 12px !important;
+    }
+
+    .audit-user-details span {
+        font-size: 10px !important;
+    }
+
+    .audit-sidebar-label {
+        font-size: 9px !important;
+    }
+
+}
+
+
+/* =========================================================
+   CLIENT WELCOME - LARGE DYNAMIC EMAIL
+========================================================= */
+
+.audit-welcome-panel h2 {
+    margin-bottom: 2px !important;
+}
+
+.audit-welcome-panel .welcome-user-email {
+    display: block !important;
+
+    margin: 0 0 15px !important;
+
+    color: #c9ff91 !important;
+
+    font-size: 32px !important;
+
+    font-weight: 700 !important;
+
+    line-height: 1.15 !important;
+
+    letter-spacing: -0.8px !important;
+
+    overflow-wrap: anywhere !important;
+
+    word-break: break-word !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .audit-welcome-panel .welcome-user-email {
+        font-size: 20px !important;
+
+        line-height: 1.2 !important;
+
+        margin-bottom: 13px !important;
+
+        overflow-wrap: anywhere !important;
+
+        word-break: break-word !important;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .audit-welcome-panel .welcome-user-email {
+        font-size: 18px !important;
+    }
+
+}

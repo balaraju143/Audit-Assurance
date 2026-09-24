@@ -1,0 +1,4075 @@
+/* =========================================================
+   STACKLY AUDIT & ASSURANCE
+   SERVICES PAGE HERO
+========================================================= */
+
+.audit-services-hero {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    height: 100vh;
+
+    overflow: hidden;
+
+    background: #031b17;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BACKGROUND IMAGE
+========================================================= */
+
+.audit-services-hero-bg {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+
+.audit-services-hero-bg img {
+
+    width: 100%;
+
+    height: 90%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transform: scale(1.12);
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   DARK OVERLAY
+========================================================= */
+
+.audit-services-hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.08) 0%,
+            rgba(0, 0, 0, 0.22) 34%,
+            rgba(0, 0, 0, 0.70) 62%,
+            rgba(0, 0, 0, 0.94) 100%
+        );
+}
+
+
+/* =========================================================
+   HERO CONTAINER
+========================================================= */
+
+.audit-services-hero-container {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: min(
+        1500px,
+        calc(100% - 100px)
+    );
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.audit-services-hero-content {
+
+    width: 58%;
+
+    max-width: 760px;
+
+    padding-top: 70px;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform: translateX(90px);
+
+    will-change:
+        transform,
+        opacity;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.audit-services-hero-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-bottom: 20px;
+
+    padding: 9px 14px;
+
+    border-radius: 5px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.11
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.12
+        );
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+}
+
+
+.audit-services-hero-label i {
+
+    color: #c9ff91;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.audit-services-hero-title {
+
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        clamp(
+            48px,
+            5.2vw,
+            58px
+        );
+
+    line-height: 1.03;
+
+    letter-spacing: -2.5px;
+
+    font-weight: 500;
+
+    opacity: 0;
+
+    transform:
+        translateY(40px);
+}
+
+
+.audit-services-hero-title strong {
+
+    display: inline;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.audit-services-hero-description {
+
+    max-width: 650px;
+
+    margin:
+        28px auto 0;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.78
+        );
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.55;
+
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+}
+
+
+/* =========================================================
+   BUTTON WRAP
+========================================================= */
+
+.audit-services-hero-button-wrap {
+
+    margin-top: 32px;
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.audit-services-hero-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    min-height: 52px;
+
+    padding-left: 20px;
+
+    border-radius: 7px;
+
+    background: #c9ff91;
+
+    color: #063f38;
+
+    text-decoration: none;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.audit-services-hero-button:hover {
+
+    background: #d9ffb5;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   BUTTON ARROW
+========================================================= */
+
+.audit-services-hero-arrow {
+
+    width: 43px;
+
+    height: 43px;
+
+    margin-right: 4px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 6px;
+
+    background: #063f38;
+
+    color: #c9ff91;
+
+    font-size: 15px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.audit-services-hero-button:hover
+.audit-services-hero-arrow {
+
+    transform:
+        translateX(4px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .audit-services-hero-container {
+
+        width:
+            calc(100% - 60px);
+    }
+
+
+    .audit-services-hero-content {
+
+        width: 60%;
+    }
+
+
+    .audit-services-hero-title {
+
+        font-size:
+            clamp(
+                44px,
+                5.5vw,
+                62px
+            );
+    }
+
+
+    .audit-services-hero-overlay {
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(0, 0, 0, 0.20) 0%,
+                rgba(0, 0, 0, 0.50) 45%,
+                rgba(0, 0, 0, 0.91) 100%
+            );
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .audit-services-hero {
+
+        min-height: 760px;
+
+        height: auto;
+
+        overflow: hidden;
+    }
+
+
+    /* BACKGROUND */
+
+    .audit-services-hero-bg {
+
+        position: absolute;
+
+        inset: 0;
+
+        height: 100%;
+    }
+
+
+    .audit-services-hero-bg img {
+
+        object-position:
+            48% center;
+
+        transform:
+            scale(1.08);
+    }
+
+
+    /* STRONG MOBILE OVERLAY */
+
+    .audit-services-hero-overlay {
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.42) 0%,
+                rgba(0, 0, 0, 0.58) 42%,
+                rgba(0, 0, 0, 0.91) 100%
+            );
+    }
+
+
+    /* CONTAINER */
+
+    .audit-services-hero-container {
+
+        width: 100%;
+
+        min-height: 760px;
+
+        padding:
+            110px 20px 70px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        box-sizing: border-box;
+    }
+
+
+    /* CONTENT */
+
+    .audit-services-hero-content {
+
+        width: 100%;
+
+        max-width: 650px;
+
+        padding: 0;
+
+        text-align: center;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+    }
+
+
+    /* LABEL */
+
+    .audit-services-hero-label {
+
+        margin-bottom: 18px;
+
+        font-size: 13px;
+    }
+
+
+    /* TITLE */
+
+    .audit-services-hero-title {
+
+        width: 100%;
+
+        max-width: 600px;
+
+        font-size:
+            clamp(
+                38px,
+                10vw,
+                58px
+            );
+
+        line-height: 1.07;
+
+        letter-spacing: -1.2px;
+
+        text-align: center;
+    }
+
+
+    /* DESCRIPTION */
+
+    .audit-services-hero-description {
+
+        width: 100%;
+
+        max-width: 540px;
+
+        margin-top: 22px;
+
+        font-size: 15px;
+
+        line-height: 1.6;
+
+        text-align: center;
+    }
+
+
+    /* BUTTON */
+
+    .audit-services-hero-button-wrap {
+
+        margin-top: 28px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .audit-services-hero {
+
+        min-height: 700px;
+    }
+
+
+    .audit-services-hero-container {
+
+        min-height: 700px;
+
+        padding:
+            105px 17px 55px;
+    }
+
+
+    .audit-services-hero-bg img {
+
+        object-position:
+            43% center;
+    }
+
+
+    .audit-services-hero-title {
+
+        font-size: 36px;
+
+        line-height: 1.08;
+
+        letter-spacing: -0.8px;
+    }
+
+
+    .audit-services-hero-description {
+
+        font-size: 14px;
+
+        line-height: 1.55;
+    }
+
+
+    .audit-services-hero-button {
+
+        min-height: 49px;
+
+        padding-left: 17px;
+
+        gap: 12px;
+
+        font-size: 14px;
+    }
+
+
+    .audit-services-hero-arrow {
+
+        width: 40px;
+
+        height: 40px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .audit-services-hero {
+
+        min-height: 660px;
+    }
+
+
+    .audit-services-hero-container {
+
+        min-height: 660px;
+
+        padding:
+            100px 15px 45px;
+    }
+
+
+    .audit-services-hero-title {
+
+        font-size: 32px;
+
+        line-height: 1.08;
+    }
+
+
+    .audit-services-hero-description {
+
+        font-size: 13px;
+
+        line-height: 1.55;
+    }
+
+
+    .audit-services-hero-label {
+
+        font-size: 12px;
+
+        padding:
+            8px 11px;
+    }
+
+}
+
+
+/* =========================================================
+   STACKLY AUDIT & ASSURANCE
+   SERVICE SOLUTIONS SECTION
+========================================================= */
+
+.audit-service-solutions {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 78px 0 86px;
+
+    background: #f3f5f3;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.audit-service-solutions-container {
+
+    width: min(
+        1460px,
+        calc(100% - 80px)
+    );
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.audit-service-solutions-heading {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.audit-service-solutions-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-bottom: 18px;
+
+    padding: 9px 14px;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    opacity: 0;
+
+    transform: translateY(-25px);
+}
+
+
+.audit-service-solutions-label
+.material-symbols-rounded {
+
+    font-size: 14px;
+
+    font-variation-settings:
+        "FILL" 1,
+        "wght" 500;
+}
+
+
+/* =========================================================
+   HEADING TITLE
+========================================================= */
+
+.audit-service-solutions-heading h2 {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 0;
+
+    color: #181818;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        clamp(
+            42px,
+            4.2vw,
+            62px
+        );
+
+    line-height: 1.06;
+
+    letter-spacing: -2px;
+
+    font-weight: 500;
+
+    opacity: 0;
+
+    transform: translateY(-35px);
+}
+
+
+.audit-service-solutions-heading h2 strong {
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   CARDS GRID
+========================================================= */
+
+.audit-service-solutions-grid {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 34px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.audit-solution-card {
+
+    position: relative;
+
+    min-width: 0;
+
+    min-height: 435px;
+
+    padding:
+        34px 29px 0;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    opacity: 0;
+
+    transform: translateY(-90px);
+
+    transition:
+        background 0.45s ease,
+        transform 0.45s ease,
+        box-shadow 0.45s ease;
+
+    will-change:
+        transform,
+        opacity;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.audit-solution-card:hover {
+
+    background: #063f38;
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 18px 45px
+        rgba(
+            0,
+            40,
+            34,
+            0.15
+        );
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.audit-solution-image {
+
+    width: 100%;
+
+    height: 168px;
+
+    border-radius: 7px;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+.audit-solution-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform 0.65s
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+}
+
+
+.audit-solution-card:hover
+.audit-solution-image img {
+
+    transform: scale(1.045);
+
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.audit-solution-content {
+
+    padding-top: 30px;
+
+    padding-bottom: 82px;
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.audit-solution-content h3 {
+
+    margin: 0 0 20px;
+
+    color: #101010;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 23px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    transition:
+        color 0.35s ease;
+}
+
+
+/* =========================================================
+   LIST
+========================================================= */
+
+.audit-solution-content ul {
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+.audit-solution-content li {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #66716e;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.35;
+
+    transition:
+        color 0.35s ease;
+}
+
+
+.audit-solution-content li
+.material-symbols-rounded {
+
+    flex-shrink: 0;
+
+    font-size: 17px;
+
+    color: #063f38;
+
+    font-variation-settings:
+        "FILL" 0,
+        "wght" 500;
+
+    transition:
+        color 0.35s ease;
+}
+
+
+/* =========================================================
+   GREEN CARD CONTENT
+========================================================= */
+
+.audit-solution-card:hover
+.audit-solution-content h3 {
+
+    color: #c9ff91;
+
+}
+
+
+.audit-solution-card:hover
+.audit-solution-content li {
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.82
+    );
+
+}
+
+
+.audit-solution-card:hover
+.audit-solution-content li
+.material-symbols-rounded {
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================================
+   ARROW BUTTON
+========================================================= */
+
+.audit-solution-arrow {
+
+    position: absolute;
+
+    right: 32px;
+
+    bottom: -1px;
+
+    width: 52px;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius:
+        5px 5px 0 0;
+
+    background: #063f38;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    z-index: 5;
+
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        transform 0.35s ease;
+}
+
+
+.audit-solution-arrow
+.material-symbols-rounded {
+
+    font-size: 22px;
+
+    font-variation-settings:
+        "FILL" 0,
+        "wght" 500;
+}
+
+
+.audit-solution-arrow:hover {
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =========================================================
+   HOVER ARROW
+========================================================= */
+
+.audit-solution-card:hover
+.audit-solution-arrow {
+
+    background: #c9ff91;
+
+    color: #063f38;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .audit-service-solutions-container {
+
+        width:
+            calc(100% - 50px);
+    }
+
+
+    .audit-service-solutions-grid {
+
+        gap: 22px;
+    }
+
+
+    .audit-solution-card {
+
+        padding:
+            25px 22px 0;
+    }
+
+
+    .audit-solution-image {
+
+        height: 155px;
+    }
+
+
+    .audit-solution-content h3 {
+
+        font-size: 21px;
+    }
+
+
+    .audit-solution-content li {
+
+        font-size: 14px;
+    }
+
+
+    .audit-solution-arrow {
+
+        right: 22px;
+
+        width: 48px;
+
+        height: 48px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .audit-service-solutions {
+
+        padding:
+            65px 0 70px;
+    }
+
+
+    .audit-service-solutions-container {
+
+        width: 100%;
+
+        padding:
+            0 20px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* HEADING */
+
+    .audit-service-solutions-heading {
+
+        margin-bottom: 38px;
+    }
+
+
+    .audit-service-solutions-label {
+
+        font-size: 13px;
+
+        margin-bottom: 17px;
+    }
+
+
+    .audit-service-solutions-heading h2 {
+
+        max-width: 600px;
+
+        font-size:
+            clamp(
+                34px,
+                8.8vw,
+                48px
+            );
+
+        line-height: 1.08;
+
+        letter-spacing: -1px;
+    }
+
+
+    /* GRID */
+
+    .audit-service-solutions-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+
+        width: 100%;
+    }
+
+
+    /* CARD */
+
+    .audit-solution-card {
+
+        width: 100%;
+
+        min-height: 430px;
+
+        padding:
+            25px 22px 0;
+
+        border-radius: 9px;
+
+        transform:
+            translateY(-70px);
+    }
+
+
+    .audit-solution-image {
+
+        width: 100%;
+
+        height:
+            clamp(
+                180px,
+                48vw,
+                240px
+            );
+
+        border-radius: 7px;
+    }
+
+
+    .audit-solution-content {
+
+        padding-top: 25px;
+
+        padding-bottom: 78px;
+    }
+
+
+    .audit-solution-content h3 {
+
+        font-size: 22px;
+
+        line-height: 1.2;
+
+        margin-bottom: 18px;
+    }
+
+
+    .audit-solution-content li {
+
+        font-size: 15px;
+
+        text-align: left;
+    }
+
+
+    .audit-solution-arrow {
+
+        right: 22px;
+
+        width: 50px;
+
+        height: 50px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .audit-service-solutions {
+
+        padding:
+            55px 0 60px;
+    }
+
+
+    .audit-service-solutions-container {
+
+        padding:
+            0 16px;
+    }
+
+
+    .audit-service-solutions-heading {
+
+        margin-bottom: 32px;
+    }
+
+
+    .audit-service-solutions-heading h2 {
+
+        font-size: 33px;
+
+        line-height: 1.08;
+    }
+
+
+    .audit-solution-card {
+
+        min-height: 410px;
+
+        padding:
+            20px 18px 0;
+    }
+
+
+    .audit-solution-image {
+
+        height: 175px;
+    }
+
+
+    .audit-solution-content {
+
+        padding-top: 22px;
+
+        padding-bottom: 73px;
+    }
+
+
+    .audit-solution-content h3 {
+
+        font-size: 20px;
+    }
+
+
+    .audit-solution-content ul {
+
+        gap: 12px;
+    }
+
+
+    .audit-solution-content li {
+
+        font-size: 14px;
+
+        line-height: 1.35;
+    }
+
+
+    .audit-solution-arrow {
+
+        right: 18px;
+
+        width: 46px;
+
+        height: 46px;
+    }
+
+
+    .audit-solution-arrow
+    .material-symbols-rounded {
+
+        font-size: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .audit-service-solutions-container {
+
+        padding:
+            0 14px;
+    }
+
+
+    .audit-service-solutions-heading h2 {
+
+        font-size: 30px;
+    }
+
+
+    .audit-solution-card {
+
+        min-height: 400px;
+
+        padding:
+            18px 16px 0;
+    }
+
+
+    .audit-solution-image {
+
+        height: 160px;
+    }
+
+
+    .audit-solution-content h3 {
+
+        font-size: 19px;
+    }
+
+
+    .audit-solution-content li {
+
+        font-size: 13px;
+    }
+
+}
+
+/* =========================================================
+   AUDIT MISSION SECTION
+========================================================= */
+
+.audit-mission {
+    width: 100%;
+    background: #ffffff;
+    padding: 90px 0;
+    overflow: hidden;
+}
+
+
+.audit-mission-container {
+    width: min(1240px, calc(100% - 80px));
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    gap: 70px;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.audit-mission-image {
+    width: 100%;
+    height: 540px;
+
+    border-radius: 14px;
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+.audit-mission-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 43, 37, 0.02),
+            rgba(0, 43, 37, 0.18)
+        );
+
+    pointer-events: none;
+}
+
+
+.audit-mission-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transform: scale(1.06);
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.audit-mission-content {
+    width: 100%;
+}
+
+
+.audit-mission-label {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px 12px;
+
+    border: 1px solid #7a7a7a;
+
+    border-radius: 30px;
+
+    margin-bottom: 18px;
+}
+
+
+.audit-mission-label span {
+    font-size: 14px;
+    font-style: italic;
+
+    color: #075548;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.audit-mission-title {
+    margin: 0 0 22px;
+
+    max-width: 600px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: clamp(38px, 4vw, 58px);
+
+    line-height: 1.08;
+
+    letter-spacing: -1.8px;
+
+    font-weight: 600;
+
+    color: #075548;
+}
+
+
+.audit-mission-title strong {
+    display: block;
+
+    color: #043d35;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.audit-mission-description {
+    max-width: 650px;
+
+    margin: 0 0 28px;
+
+    font-size: 17px;
+
+    line-height: 1.65;
+
+    color: #68747a;
+}
+
+
+/* =========================================================
+   FEATURES BOX
+========================================================= */
+
+.audit-mission-features {
+    width: 100%;
+
+    padding: 28px 30px;
+
+    box-sizing: border-box;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #416a31,
+            #063f35
+        );
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   FEATURE
+========================================================= */
+
+.audit-mission-feature {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    font-weight: 600;
+}
+
+
+.audit-mission-check {
+    width: 20px;
+    height: 20px;
+
+    flex: 0 0 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #075548;
+
+    font-size: 11px;
+}
+
+
+.audit-mission-feature span:last-child {
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   GSAP INITIAL STATES
+========================================================= */
+
+.audit-mission-image-reveal {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+
+.mission-reveal {
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .audit-mission {
+        padding: 75px 0;
+    }
+
+
+    .audit-mission-container {
+        width: min(900px, calc(100% - 50px));
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .audit-mission-image {
+        height: 500px;
+    }
+
+
+    .audit-mission-content {
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .audit-mission {
+        padding: 65px 0;
+    }
+
+
+    .audit-mission-container {
+        width: calc(100% - 32px);
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 42px;
+    }
+
+
+    /* IMAGE */
+
+    .audit-mission-image {
+        width: 100%;
+
+        height: 390px;
+
+        border-radius: 12px;
+    }
+
+
+    /* CONTENT */
+
+    .audit-mission-content {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+
+    .audit-mission-label {
+        margin-bottom: 16px;
+    }
+
+
+    .audit-mission-title {
+        width: 100%;
+
+        max-width: 600px;
+
+        font-size: clamp(34px, 9vw, 46px);
+
+        line-height: 1.1;
+
+        letter-spacing: -1px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .audit-mission-title strong {
+        margin-top: 3px;
+    }
+
+
+    .audit-mission-description {
+        width: 100%;
+
+        max-width: 600px;
+
+        font-size: 15px;
+
+        line-height: 1.65;
+
+        margin-bottom: 25px;
+    }
+
+
+    /* FEATURES */
+
+    .audit-mission-features {
+        width: 100%;
+
+        padding: 25px 20px;
+
+        gap: 18px;
+
+        text-align: left;
+
+        border-radius: 12px;
+    }
+
+
+    .audit-mission-feature {
+        font-size: 15px;
+
+        gap: 12px;
+    }
+
+
+    .audit-mission-check {
+        width: 19px;
+        height: 19px;
+
+        flex-basis: 19px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .audit-mission {
+        padding: 55px 0;
+    }
+
+
+    .audit-mission-container {
+        width: calc(100% - 24px);
+
+        gap: 35px;
+    }
+
+
+    .audit-mission-image {
+        height: 330px;
+
+        border-radius: 10px;
+    }
+
+
+    .audit-mission-title {
+        font-size: 33px;
+
+        line-height: 1.1;
+    }
+
+
+    .audit-mission-description {
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+
+    .audit-mission-features {
+        padding: 22px 17px;
+
+        gap: 16px;
+    }
+
+
+    .audit-mission-feature {
+        font-size: 14px;
+
+        gap: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .audit-mission-container {
+        width: calc(100% - 20px);
+    }
+
+
+    .audit-mission-image {
+        height: 290px;
+    }
+
+
+    .audit-mission-title {
+        font-size: 30px;
+    }
+
+
+    .audit-mission-description {
+        font-size: 13px;
+    }
+
+
+    .audit-mission-features {
+        padding: 20px 15px;
+    }
+
+
+    .audit-mission-feature {
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   STACKLY AUDIT & ASSURANCE
+   SERVICES TIMELINE
+========================================================= */
+
+.audit-services-timeline {
+
+    width: 100%;
+
+    padding: 105px 0 120px;
+
+    background: #f3f6f3;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.audit-services-timeline-header {
+
+    width: min(
+        850px,
+        calc(100% - 40px)
+    );
+
+    margin: 0 auto 90px;
+
+    text-align: center;
+}
+
+
+.audit-services-timeline-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 9px 15px;
+
+    margin-bottom: 22px;
+
+    background: #ffffff;
+
+    border-radius: 6px;
+
+    color: #111111;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    opacity: 0;
+
+    transform: translateY(-25px);
+}
+
+
+.audit-services-timeline-label i {
+
+    color: #075548;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.audit-services-timeline-header h2 {
+
+    margin: 0;
+
+    color: #171717;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        clamp(
+            42px,
+            5vw,
+            66px
+        );
+
+    line-height: 1.05;
+
+    letter-spacing: -2.2px;
+
+    font-weight: 600;
+
+    opacity: 0;
+
+    transform: translateY(35px);
+}
+
+
+.audit-services-timeline-header h2 strong {
+
+    display: block;
+
+    color: #075548;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.audit-services-timeline-header p {
+
+    max-width: 690px;
+
+    margin: 24px auto 0;
+
+    color: #687572;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.65;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+}
+
+
+/* =========================================================
+   TIMELINE WRAPPER
+========================================================= */
+
+.audit-services-timeline-wrapper {
+
+    position: relative;
+
+    width: min(
+        1120px,
+        calc(100% - 70px)
+    );
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   CENTER LINE
+========================================================= */
+
+.audit-services-timeline-line {
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 50%;
+
+    width: 2px;
+
+    transform: translateX(-50%);
+
+    background:
+        rgba(
+            7,
+            85,
+            72,
+            0.15
+        );
+
+    overflow: hidden;
+}
+
+
+.audit-services-timeline-line span {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 0;
+
+    background: #075548;
+
+    transform-origin: top;
+}
+
+
+/* =========================================================
+   TIMELINE ITEM
+========================================================= */
+
+.audit-services-timeline-item {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 280px;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.timeline-left {
+
+    justify-content: flex-start;
+}
+
+
+.timeline-right {
+
+    justify-content: flex-end;
+}
+
+
+/* =========================================================
+   NUMBER CIRCLE
+========================================================= */
+
+.audit-services-timeline-number {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 62px;
+    height: 62px;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.5);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #c9ff91;
+
+    border: 7px solid #f3f6f3;
+
+    box-sizing: border-box;
+
+    z-index: 5;
+
+    opacity: 0;
+
+    box-shadow:
+        0 0 0 1px
+        rgba(7, 85, 72, 0.12);
+}
+
+
+.audit-services-timeline-number span {
+
+    color: #063f35;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.audit-services-timeline-card {
+
+    position: relative;
+
+    width: 430px;
+
+    min-height: 220px;
+
+    padding: 31px 32px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    border:
+        1px solid
+        rgba(7, 85, 72, 0.08);
+
+    box-shadow:
+        0 16px 45px
+        rgba(
+            3,
+            27,
+            23,
+            0.07
+        );
+
+    opacity: 0;
+
+    will-change:
+        transform,
+        opacity;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.timeline-left .audit-services-timeline-card {
+
+    margin-right:
+        calc(50% + 48px);
+
+    transform:
+        translateX(-100px);
+}
+
+
+.timeline-right .audit-services-timeline-card {
+
+    margin-left:
+        calc(50% + 48px);
+
+    transform:
+        translateX(100px);
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.audit-services-timeline-card:hover {
+
+    transform:
+        translateY(-7px) !important;
+
+    box-shadow:
+        0 24px 55px
+        rgba(
+            3,
+            27,
+            23,
+            0.12
+        );
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.audit-services-timeline-icon {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 9px;
+
+    background: #063f35;
+
+    color: #c9ff91;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   STAGE
+========================================================= */
+
+.audit-services-timeline-stage {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #07816c;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.audit-services-timeline-card h3 {
+
+    margin: 0 0 12px;
+
+    color: #151515;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 24px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CARD TEXT
+========================================================= */
+
+.audit-services-timeline-card p {
+
+    margin: 0;
+
+    color: #687572;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .audit-services-timeline {
+
+        padding:
+            85px 0 100px;
+    }
+
+
+    .audit-services-timeline-wrapper {
+
+        width:
+            calc(100% - 40px);
+    }
+
+
+    .audit-services-timeline-card {
+
+        width: 370px;
+
+        padding:
+            27px 25px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .audit-services-timeline {
+
+        padding:
+            70px 0 80px;
+    }
+
+
+    .audit-services-timeline-header {
+
+        width:
+            calc(100% - 32px);
+
+        margin-bottom: 60px;
+    }
+
+
+    .audit-services-timeline-label {
+
+        font-size: 13px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .audit-services-timeline-header h2 {
+
+        font-size:
+            clamp(
+                34px,
+                9vw,
+                48px
+            );
+
+        line-height: 1.08;
+
+        letter-spacing: -1px;
+    }
+
+
+    .audit-services-timeline-header p {
+
+        margin-top: 20px;
+
+        font-size: 15px;
+
+        line-height: 1.6;
+    }
+
+
+    /* =====================================================
+       MOBILE TIMELINE
+    ===================================================== */
+
+    .audit-services-timeline-wrapper {
+
+        width:
+            calc(100% - 32px);
+    }
+
+
+    .audit-services-timeline-line {
+
+        left: 24px;
+
+        transform: none;
+    }
+
+
+    .audit-services-timeline-item {
+
+        min-height: auto;
+
+        padding:
+            0 0 42px;
+
+        display: flex;
+
+        justify-content:
+            flex-start;
+
+        align-items:
+            flex-start;
+    }
+
+
+    /* NUMBER */
+
+    .audit-services-timeline-number {
+
+        left: 24px;
+
+        top: 25px;
+
+        width: 48px;
+        height: 48px;
+
+        transform:
+            translate(-50%, 0)
+            scale(0.5);
+
+        border-width: 5px;
+    }
+
+
+    .audit-services-timeline-number span {
+
+        font-size: 11px;
+    }
+
+
+    /* CARD */
+
+    .audit-services-timeline-card,
+    .timeline-left .audit-services-timeline-card,
+    .timeline-right .audit-services-timeline-card {
+
+        width:
+            calc(100% - 70px);
+
+        margin:
+            0 0 0 58px;
+
+        min-height: auto;
+
+        padding:
+            25px 22px;
+
+        transform:
+            translateX(70px);
+    }
+
+
+    .timeline-left .audit-services-timeline-card {
+
+        transform:
+            translateX(-70px);
+    }
+
+
+    .audit-services-timeline-icon {
+
+        width: 44px;
+        height: 44px;
+
+        margin-bottom: 16px;
+
+        font-size: 17px;
+    }
+
+
+    .audit-services-timeline-card h3 {
+
+        font-size: 21px;
+    }
+
+
+    .audit-services-timeline-card p {
+
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .audit-services-timeline {
+
+        padding:
+            60px 0 70px;
+    }
+
+
+    .audit-services-timeline-header {
+
+        width:
+            calc(100% - 24px);
+    }
+
+
+    .audit-services-timeline-header h2 {
+
+        font-size: 33px;
+    }
+
+
+    .audit-services-timeline-header p {
+
+        font-size: 14px;
+    }
+
+
+    .audit-services-timeline-wrapper {
+
+        width:
+            calc(100% - 24px);
+    }
+
+
+    .audit-services-timeline-line {
+
+        left: 21px;
+    }
+
+
+    .audit-services-timeline-number {
+
+        left: 21px;
+
+        width: 44px;
+        height: 44px;
+    }
+
+
+    .audit-services-timeline-card,
+    .timeline-left .audit-services-timeline-card,
+    .timeline-right .audit-services-timeline-card {
+
+        width:
+            calc(100% - 58px);
+
+        margin-left: 52px;
+
+        padding:
+            22px 18px;
+    }
+
+
+    .timeline-left .audit-services-timeline-card {
+
+        transform:
+            translateX(-60px);
+    }
+
+
+    .timeline-right .audit-services-timeline-card {
+
+        transform:
+            translateX(60px);
+    }
+
+
+    .audit-services-timeline-card h3 {
+
+        font-size: 20px;
+    }
+
+
+    .audit-services-timeline-card p {
+
+        font-size: 13.5px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .audit-services-timeline-header h2 {
+
+        font-size: 30px;
+    }
+
+
+    .audit-services-timeline-header p {
+
+        font-size: 13px;
+    }
+
+
+    .audit-services-timeline-wrapper {
+
+        width:
+            calc(100% - 20px);
+    }
+
+
+    .audit-services-timeline-line {
+
+        left: 19px;
+    }
+
+
+    .audit-services-timeline-number {
+
+        left: 19px;
+
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .audit-services-timeline-card,
+    .timeline-left .audit-services-timeline-card,
+    .timeline-right .audit-services-timeline-card {
+
+        width:
+            calc(100% - 50px);
+
+        margin-left: 46px;
+
+        padding:
+            20px 16px;
+    }
+
+
+    .audit-services-timeline-card h3 {
+
+        font-size: 18px;
+    }
+
+
+    .audit-services-timeline-card p {
+
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   STACKLY AUDIT & ASSURANCE
+   FAQ SECTION
+========================================================= */
+
+.audit-faq {
+
+    width: 100%;
+
+    padding: 110px 0 120px;
+
+    background:#68747a;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.audit-faq-header {
+
+    width: min(
+        850px,
+        calc(100% - 40px)
+    );
+
+    margin: 0 auto 70px;
+
+    text-align: center;
+}
+
+
+.audit-faq-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 9px 15px;
+
+    margin-bottom: 20px;
+
+    background: #ffffff;
+
+    border-radius: 6px;
+
+    color: #111111;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    opacity: 0;
+
+    transform: translateY(-25px);
+}
+
+
+.audit-faq-label i {
+
+    color: #075548;
+
+    font-size: 12px;
+}
+
+
+.audit-faq-header h2 {
+
+    margin: 0;
+
+    color: #171717;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        clamp(
+            40px,
+            5vw,
+            62px
+        );
+
+    line-height: 1.06;
+
+    letter-spacing: -2px;
+
+    font-weight: 600;
+
+    opacity: 0;
+
+    transform: translateY(35px);
+}
+
+
+.audit-faq-header h2 strong {
+
+    display: block;
+
+    color: #075548;
+
+    font-weight: 700;
+}
+
+
+.audit-faq-header p {
+
+    max-width: 680px;
+
+    margin: 22px auto 0;
+
+    color: #687572;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.65;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.audit-faq-container {
+
+    width: min(
+        1170px,
+        calc(100% - 70px)
+    );
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        450px 1fr;
+
+    gap: 55px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.audit-faq-image-wrap {
+
+    overflow: hidden;
+
+    border-radius: 3px;
+}
+
+
+.audit-faq-image {
+
+    width: 100%;
+
+    height: 500px;
+
+    overflow: hidden;
+
+    border-radius: 3px;
+
+    opacity: 0;
+
+    transform:
+        translateY(100px);
+}
+
+
+.audit-faq-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transform: scale(1.04);
+
+    transition:
+        transform 0.8s ease;
+}
+
+
+.audit-faq-image:hover img {
+
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   FAQ LIST
+========================================================= */
+
+.audit-faq-list {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+
+    opacity: 0;
+
+    transform:
+        translateX(100px);
+}
+
+
+/* =========================================================
+   FAQ ITEM
+========================================================= */
+
+.audit-faq-item {
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border-radius: 2px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(
+            7,
+            85,
+            72,
+            0.06
+        );
+
+    box-sizing: border-box;
+
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.audit-faq-item:hover {
+
+    box-shadow:
+        0 12px 30px
+        rgba(
+            3,
+            27,
+            23,
+            0.07
+        );
+}
+
+
+/* =========================================================
+   QUESTION
+========================================================= */
+
+.audit-faq-question {
+
+    width: 100%;
+
+    min-height: 76px;
+
+    padding:
+        0 14px 0 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border: none;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #063f35;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+
+.audit-faq-question > span:first-child {
+
+    padding-left: 28px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   PLUS / MINUS BUTTON
+========================================================= */
+
+.audit-faq-icon {
+
+    flex:
+        0 0 40px;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #063f35;
+
+    color: #c9ff91;
+
+    font-size: 14px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.audit-faq-item.active
+.audit-faq-icon {
+
+    background: #c9ff91;
+
+    color: #063f35;
+}
+
+
+/* =========================================================
+   ANSWER
+========================================================= */
+
+.audit-faq-answer {
+
+    height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+}
+
+
+.audit-faq-answer p {
+
+    margin: 0;
+
+    padding:
+        0 30px 26px;
+
+    color: #687572;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .audit-faq-container {
+
+        grid-template-columns:
+            380px 1fr;
+
+        gap: 35px;
+
+        width:
+            calc(100% - 40px);
+    }
+
+
+    .audit-faq-image {
+
+        height: 470px;
+    }
+
+
+    .audit-faq-question {
+
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .audit-faq {
+
+        padding:
+            75px 0 80px;
+    }
+
+
+    .audit-faq-header {
+
+        width:
+            calc(100% - 30px);
+
+        margin-bottom: 45px;
+    }
+
+
+    .audit-faq-label {
+
+        font-size: 13px;
+    }
+
+
+    .audit-faq-header h2 {
+
+        font-size:
+            clamp(
+                34px,
+                9vw,
+                46px
+            );
+
+        line-height: 1.08;
+
+        letter-spacing: -1px;
+    }
+
+
+    .audit-faq-header p {
+
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+
+    /* MAIN */
+
+    .audit-faq-container {
+
+        width:
+            calc(100% - 30px);
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 40px;
+    }
+
+
+    /* IMAGE */
+
+    .audit-faq-image-wrap {
+
+        width: 100%;
+
+        max-width: 430px;
+
+        margin: 0 auto;
+    }
+
+
+    .audit-faq-image {
+
+        width: 100%;
+
+        height:
+            400px;
+
+        border-radius: 8px;
+    }
+
+
+    /* FAQ */
+
+    .audit-faq-list {
+
+        width: 100%;
+
+        max-width: 650px;
+
+        gap: 12px;
+
+        transform:
+            translateX(70px);
+    }
+
+
+    .audit-faq-question {
+
+        min-height: 70px;
+
+        font-size: 14px;
+
+        gap: 12px;
+    }
+
+
+    .audit-faq-question > span:first-child {
+
+        padding-left: 18px;
+    }
+
+
+    .audit-faq-icon {
+
+        flex:
+            0 0 38px;
+
+        width: 38px;
+        height: 38px;
+    }
+
+
+    .audit-faq-answer p {
+
+        padding:
+            0 20px 23px;
+
+        font-size: 13.5px;
+
+        line-height: 1.65;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .audit-faq {
+
+        padding:
+            60px 0 70px;
+    }
+
+
+    .audit-faq-header {
+
+        width:
+            calc(100% - 24px);
+    }
+
+
+    .audit-faq-header h2 {
+
+        font-size: 32px;
+    }
+
+
+    .audit-faq-header p {
+
+        font-size: 13.5px;
+    }
+
+
+    .audit-faq-container {
+
+        width:
+            calc(100% - 24px);
+
+        gap: 35px;
+    }
+
+
+    .audit-faq-image {
+
+        height: 350px;
+    }
+
+
+    .audit-faq-question {
+
+        min-height: 66px;
+
+        padding-right: 10px;
+
+        font-size: 13.5px;
+    }
+
+
+    .audit-faq-question > span:first-child {
+
+        padding-left: 15px;
+    }
+
+
+    .audit-faq-icon {
+
+        flex:
+            0 0 36px;
+
+        width: 36px;
+        height: 36px;
+
+        font-size: 12px;
+    }
+
+
+    .audit-faq-answer p {
+
+        padding:
+            0 16px 20px;
+
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .audit-faq-header h2 {
+
+        font-size: 29px;
+    }
+
+
+    .audit-faq-header p {
+
+        font-size: 13px;
+    }
+
+
+    .audit-faq-image {
+
+        height: 320px;
+    }
+
+
+    .audit-faq-question {
+
+        min-height: 64px;
+
+        font-size: 13px;
+    }
+
+
+    .audit-faq-icon {
+
+        flex:
+            0 0 34px;
+
+        width: 34px;
+        height: 34px;
+    }
+
+}
+
+
+
+
+/* =========================================================
+   AUDIT CTA SECTION
+========================================================= */
+/* =========================================================
+   AUDIT CTA SECTION - FULL WIDTH
+========================================================= */
+
+.audit-cta {
+    position: relative;
+
+    width: 100%;
+    max-width: none;
+
+    min-height: 500px;
+
+    margin: 55px 0 0;
+
+    border-radius: 0;
+
+    overflow: hidden;
+
+    background: #063f35;
+    margin-top: -20px;
+}
+
+/* =========================================================
+   BACKGROUND IMAGE
+========================================================= */
+
+.audit-cta-background {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+.audit-cta-background img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transform: scale(1.08);
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.audit-cta-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4, 63, 55, 0.94) 0%,
+            rgba(4, 63, 55, 0.86) 38%,
+            rgba(4, 63, 55, 0.70) 72%,
+            rgba(4, 63, 55, 0.68) 100%
+        );
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+.audit-cta-container {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+}
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.audit-cta-content {
+    width: min(600px, 100%);
+
+    margin-left: 21%;
+
+    padding: 60px 30px;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.audit-cta-label {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 7px 12px;
+
+    margin-bottom: 17px;
+
+    border-radius: 5px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.audit-cta-label i {
+    color: #c9ff91;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.audit-cta-title {
+    margin: 0 0 17px;
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: clamp(34px, 3.2vw, 48px);
+
+    line-height: 1.08;
+
+    font-weight: 600;
+
+    letter-spacing: -1.2px;
+}
+
+.audit-cta-title strong {
+    display: block;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.audit-cta-description {
+    max-width: 570px;
+
+    margin: 0 0 28px;
+
+    color: rgba(255, 255, 255, 0.86);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.audit-cta-button-wrap {
+    display: flex;
+
+    align-items: center;
+}
+
+.audit-cta-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 18px;
+     height: 50px;
+    padding: 5px 5px 5px 18px;
+
+    background: #c9ff91;
+
+    color: #102018;
+
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.audit-cta-button:hover {
+    background: #ffffff;
+
+    transform: translateY(-3px);
+}
+
+.audit-cta-arrow {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #102018;
+
+    color: #c9ff91;
+
+    font-size: 12px;
+
+    transition:
+        transform 0.35s ease,
+        background 0.3s ease;
+}
+
+.audit-cta-button:hover .audit-cta-arrow {
+    transform: translateX(4px);
+
+    background: #063f35;
+}
+
+
+/* =========================================================
+   GSAP INITIAL STATES
+========================================================= */
+
+.audit-cta-reveal {
+    opacity: 0;
+
+    transform: translateY(35px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .audit-cta {
+        width: calc(100% - 40px);
+    }
+
+    .audit-cta-content {
+        margin-left: 12%;
+
+        max-width: 590px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+     .audit-cta {
+        width: 100%;
+        min-height: 500px;
+        margin: 40px 0 0;
+        border-radius: 0;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .audit-cta-container {
+        width: 100%;
+        min-height: 500px;
+    }
+
+    .audit-cta-content {
+        width: 100%;
+        max-width: 520px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: 55px 22px;
+    }
+
+    .audit-cta-background img {
+        object-position: center;
+    }
+
+
+    .audit-cta-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(4, 63, 55, 0.88) 0%,
+                rgba(4, 63, 55, 0.91) 100%
+            );
+    }
+
+
+    .audit-cta-label {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .audit-cta-title {
+        width: 100%;
+
+        max-width: 460px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        font-size: clamp(32px, 8vw, 43px);
+
+        line-height: 1.08;
+
+        letter-spacing: -0.8px;
+
+        text-align: center;
+    }
+
+
+    .audit-cta-title strong {
+        display: inline;
+    }
+
+
+    .audit-cta-description {
+        width: 100%;
+
+        max-width: 450px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        font-size: 14px;
+
+        line-height: 1.6;
+
+        text-align: center;
+    }
+
+
+    .audit-cta-button-wrap {
+        justify-content: center;
+
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .audit-cta {
+        width: 100%;
+
+        min-height: 460px;
+
+        margin: 35px 0 0;
+
+        border-radius: 0;
+
+        overflow: hidden;
+    }
+
+
+    .audit-cta-container {
+        width: 100%;
+
+        min-height: 460px;
+    }
+
+
+    .audit-cta-content {
+        width: 100%;
+
+        box-sizing: border-box;
+
+        padding:
+            45px
+            18px;
+    }
+
+
+    .audit-cta-title {
+        font-size: 32px;
+
+        line-height: 1.1;
+    }
+
+
+    .audit-cta-description {
+        font-size: 13px;
+
+        line-height: 1.55;
+    }
+
+
+    .audit-cta-button {
+        font-size: 13px;
+
+        gap: 13px;
+
+        padding-left: 16px;
+    }
+
+
+    .audit-cta-arrow {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .audit-cta {
+        width: 100%;
+
+        min-height: 440px;
+
+        margin: 30px 0 0;
+
+        border-radius: 0;
+    }
+
+
+    .audit-cta-container {
+        width: 100%;
+
+        min-height: 440px;
+    }
+
+
+    .audit-cta-content {
+        width: 100%;
+
+        box-sizing: border-box;
+
+        padding:
+            40px
+            15px;
+    }
+
+
+    .audit-cta-title {
+        font-size: 29px;
+    }
+
+
+    .audit-cta-description {
+        font-size: 12.5px;
+    }
+}

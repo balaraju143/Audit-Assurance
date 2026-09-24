@@ -1,0 +1,2414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Client Dashboard | Stackly Audit & Assurance</title>
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- GSAP -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+
+    <!-- Dashboard CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/client-dashboard.css"
+    >
+
+</head>
+
+
+<body class="audit-dashboard-body">
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+    ====================================================== -->
+
+    <div
+        class="audit-mobile-overlay"
+        id="auditMobileOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="audit-sidebar"
+        id="auditSidebar"
+    >
+
+
+        <!-- Logo -->
+
+        <div class="audit-sidebar-logo">
+
+            <a href="client-dashboard.html">
+
+                <img
+                    src="assetss/logo 4.webp"
+                    alt="STACKLY"
+                >
+
+            </a>
+
+        </div>
+
+
+        <!-- User -->
+
+        <div class="audit-sidebar-user">
+
+            <div
+                class="audit-user-avatar"
+                id="sidebarAvatar"
+            >
+                Y
+            </div>
+
+
+            <div class="audit-user-details">
+
+                <strong id="sidebarUserName">
+                    Client User
+                </strong>
+
+                <span id="sidebarUserEmail">
+                    client@example.com
+                </span>
+
+                <small>
+                    CLIENT
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- Menu -->
+
+        <div class="audit-sidebar-label">
+            WORKSPACE
+        </div>
+
+
+        <nav class="audit-sidebar-nav">
+
+
+            <a
+                href="#overview"
+                class="audit-sidebar-link active"
+                data-page="overview"
+            >
+
+                <i class="fa-solid fa-grid-2"></i>
+
+                <span>
+                    Overview
+                </span>
+
+            </a>
+
+
+            <a
+                href="#audits"
+                class="audit-sidebar-link"
+                data-page="audits"
+            >
+
+                <i class="fa-solid fa-file-circle-check"></i>
+
+                <span>
+                    My Audits
+                </span>
+
+                <b>
+                    04
+                </b>
+
+            </a>
+
+
+            <a
+                href="#assurance"
+                class="audit-sidebar-link"
+                data-page="assurance"
+            >
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>
+                    Assurance Reports
+                </span>
+
+            </a>
+
+
+            <a
+                href="#risk"
+                class="audit-sidebar-link"
+                data-page="risk"
+            >
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>
+                    Risk & Compliance
+                </span>
+
+            </a>
+
+            <a
+                href="#billing"
+                class="audit-sidebar-link"
+                data-page="billing"
+            >
+
+                <i class="fa-solid fa-receipt"></i>
+
+                <span>
+                    Billing
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+        <div class="audit-sidebar-label audit-sidebar-label-bottom">
+            ACCOUNT
+        </div>
+
+
+        <nav class="audit-sidebar-nav">
+
+
+            <a
+                href="#profile"
+                class="audit-sidebar-link"
+                data-page="profile"
+            >
+
+                <i class="fa-regular fa-user"></i>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+
+            <a
+                href="404.html"
+                class="audit-sidebar-link"
+            >
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+            <a
+                href="login.html"
+                class="audit-sidebar-link audit-logout-link"
+            >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>
+                    Logout
+                </span>
+
+            </a>
+
+        </nav>
+
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="audit-dashboard-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="audit-dashboard-header">
+
+
+            <div class="audit-header-left">
+
+                <button
+                    class="audit-menu-toggle"
+                    id="auditMenuToggle"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div>
+
+                    <span
+                        class="audit-header-kicker"
+                        id="headerKicker"
+                    >
+                        CLIENT WORKSPACE
+                    </span>
+
+                    <h1 id="headerTitle">
+                        Overview
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="audit-header-actions">
+
+
+                <!-- Search -->
+
+                <button
+                    type="button"
+                    class="audit-header-search"
+                    id="auditSearchButton"
+                >
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <span>
+                        Search workspace
+                    </span>
+
+                </button>
+
+
+                <!-- Notification -->
+
+                <a
+                    href="404.html"
+                    class="audit-header-icon"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span></span>
+
+                </a>
+
+
+                <!-- User -->
+
+                <div class="audit-header-user">
+
+                    <div
+                        class="audit-header-avatar"
+                        id="headerAvatar"
+                    >
+                        Y
+                    </div>
+
+                    <div class="audit-header-user-info">
+
+                        <strong id="headerUserName">
+                            Client User
+                        </strong>
+
+                        <span id="headerUserEmail">
+                            client@example.com
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PAGE AREA
+        ================================================== -->
+
+        <div class="audit-dashboard-content">
+
+
+            <!-- =================================================
+                 OVERVIEW
+            ================================================== -->
+
+            <section
+                class="audit-dashboard-page active"
+                data-content="overview"
+            >
+
+
+                <!-- Welcome -->
+
+                <div class="audit-welcome-panel">
+
+                    <div>
+
+                        <span>
+                            AUDIT & ASSURANCE WORKSPACE
+                        </span>
+
+                        <h2>
+                            Welcome back,
+                        </h2>
+                           
+        <strong
+            class="welcome-user-email"
+            id="welcomeUserEmail">
+            client@example.com
+        </strong>
+                    
+                        <p>
+                            Keep track of your audits, assurance
+                            reports, compliance activities and
+                            important business documents.
+                        </p>
+
+                    </div>
+
+
+                    <div class="audit-welcome-actions">
+
+                        <a
+                            href="#audits"
+                            class="audit-main-button"
+                        >
+                            View My Audits
+                        </a>
+
+                        <a
+                            href="404.html"
+                            class="audit-outline-button"
+                        >
+                            Request Consultation
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Stats -->
+
+                <div class="audit-stat-grid">
+
+
+                    <article class="audit-stat-card">
+
+                        <div class="audit-stat-icon green">
+                            <i class="fa-solid fa-file-circle-check"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                ACTIVE AUDITS
+                            </span>
+
+                            <strong>
+                                04
+                            </strong>
+
+                            <small>
+                                02 currently under review
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="audit-stat-card">
+
+                        <div class="audit-stat-icon blue">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                ASSURANCE REPORTS
+                            </span>
+
+                            <strong>
+                                12
+                            </strong>
+
+                            <small>
+                                03 updated this month
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="audit-stat-card">
+
+                        <div class="audit-stat-icon purple">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                RISK SCORE
+                            </span>
+
+                            <strong>
+                                82%
+                            </strong>
+
+                            <small>
+                                Positive control position
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="audit-stat-card">
+
+                        <div class="audit-stat-icon orange">
+                            <i class="fa-solid fa-folder-open"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                DOCUMENTS
+                            </span>
+
+                            <strong>
+                                28
+                            </strong>
+
+                            <small>
+                                08 require attention
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+                <!-- Middle -->
+
+                <div class="audit-overview-grid">
+
+
+                    <!-- Assurance status -->
+
+                    <article class="audit-dashboard-card audit-assurance-card">
+
+                        <div class="audit-card-heading">
+
+                            <div>
+
+                                <span>
+                                    ASSURANCE STATUS
+                                </span>
+
+                                <h3>
+                                    Current engagement progress
+                                </h3>
+
+                            </div>
+
+                            <a href="#assurance">
+                                View Reports
+                            </a>
+
+                        </div>
+
+
+                        <div class="audit-progress-area">
+
+
+                            <div class="audit-progress-ring">
+
+                                <div>
+
+                                    <strong>
+                                        78%
+                                    </strong>
+
+                                    <span>
+                                        Complete
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="audit-progress-details">
+
+                                <div>
+
+                                    <span>
+                                        Planning
+                                    </span>
+
+                                    <strong>
+                                        Complete
+                                    </strong>
+
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        Fieldwork
+                                    </span>
+
+                                    <strong>
+                                        In Progress
+                                    </strong>
+
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        Review
+                                    </span>
+
+                                    <strong>
+                                        Upcoming
+                                    </strong>
+
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        Final Report
+                                    </span>
+
+                                    <strong>
+                                        Pending
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Risk -->
+
+                    <article class="audit-dashboard-card audit-risk-card">
+
+                        <div class="audit-card-heading">
+
+                            <div>
+
+                                <span>
+                                    RISK OVERVIEW
+                                </span>
+
+                                <h3>
+                                    Control environment
+                                </h3>
+
+                            </div>
+
+                            <a href="#risk">
+                                Details
+                            </a>
+
+                        </div>
+
+
+                        <div class="audit-risk-bars">
+
+
+                            <div class="audit-risk-row">
+
+                                <div>
+
+                                    <span>
+                                        Financial controls
+                                    </span>
+
+                                    <strong>
+                                        92%
+                                    </strong>
+
+                                </div>
+
+                                <div class="audit-bar">
+                                    <span style="width:92%"></span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="audit-risk-row">
+
+                                <div>
+
+                                    <span>
+                                        Compliance
+                                    </span>
+
+                                    <strong>
+                                        84%
+                                    </strong>
+
+                                </div>
+
+                                <div class="audit-bar">
+                                    <span style="width:84%"></span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="audit-risk-row">
+
+                                <div>
+
+                                    <span>
+                                        Operational controls
+                                    </span>
+
+                                    <strong>
+                                        76%
+                                    </strong>
+
+                                </div>
+
+                                <div class="audit-bar">
+                                    <span style="width:76%"></span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="audit-risk-row">
+
+                                <div>
+
+                                    <span>
+                                        Documentation
+                                    </span>
+
+                                    <strong>
+                                        68%
+                                    </strong>
+
+                                </div>
+
+                                <div class="audit-bar">
+                                    <span style="width:68%"></span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- Bottom -->
+
+                <div class="audit-overview-grid bottom-grid">
+
+
+                    <!-- Activity -->
+
+                    <article class="audit-dashboard-card">
+
+                        <div class="audit-card-heading">
+
+                            <div>
+
+                                <span>
+                                    RECENT ACTIVITY
+                                </span>
+
+                                <h3>
+                                    Latest workspace updates
+                                </h3>
+
+                            </div>
+
+                            <a href="#documents">
+                                View All
+                            </a>
+
+                        </div>
+
+
+                        <div class="audit-activity-list">
+
+
+                            <div class="audit-activity-item">
+
+                                <i class="fa-solid fa-check"></i>
+
+                                <div>
+
+                                    <strong>
+                                        Financial documents reviewed
+                                    </strong>
+
+                                    <span>
+                                        Audit team completed the
+                                        initial document review.
+                                    </span>
+
+                                </div>
+
+                                <small>
+                                    Today
+                                </small>
+
+                            </div>
+
+
+                            <div class="audit-activity-item">
+
+                                <i class="fa-solid fa-file-lines"></i>
+
+                                <div>
+
+                                    <strong>
+                                        Assurance report updated
+                                    </strong>
+
+                                    <span>
+                                        New observations were added
+                                        to the current engagement.
+                                    </span>
+
+                                </div>
+
+                                <small>
+                                    Yesterday
+                                </small>
+
+                            </div>
+
+
+                            <div class="audit-activity-item">
+
+                                <i class="fa-solid fa-shield-halved"></i>
+
+                                <div>
+
+                                    <strong>
+                                        Compliance review started
+                                    </strong>
+
+                                    <span>
+                                        Your compliance assessment
+                                        is now in progress.
+                                    </span>
+
+                                </div>
+
+                                <small>
+                                    2 days
+                                </small>
+
+                            </div>
+
+
+                            <div class="audit-activity-item">
+
+                                <i class="fa-solid fa-folder-open"></i>
+
+                                <div>
+
+                                    <strong>
+                                        Documents uploaded
+                                    </strong>
+
+                                    <span>
+                                        Four supporting documents
+                                        were added to your workspace.
+                                    </span>
+
+                                </div>
+
+                                <small>
+                                    3 days
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Upcoming -->
+
+                    <article class="audit-dashboard-card">
+
+                        <div class="audit-card-heading">
+
+                            <div>
+
+                                <span>
+                                    UPCOMING
+                                </span>
+
+                                <h3>
+                                    Engagement milestones
+                                </h3>
+
+                            </div>
+
+                            <a href="#audits">
+                                View Audits
+                            </a>
+
+                        </div>
+
+
+                        <div class="audit-milestone-list">
+
+
+                            <div class="audit-milestone">
+
+                                <div class="audit-milestone-date">
+                                    01
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Management Review
+                                    </strong>
+
+                                    <span>
+                                        Current audit engagement
+                                    </span>
+
+                                </div>
+
+                                <small>
+                                    Soon
+                                </small>
+
+                            </div>
+
+
+                            <div class="audit-milestone">
+
+                                <div class="audit-milestone-date">
+                                    08
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Control Assessment
+                                    </strong>
+
+                                    <span>
+                                        Internal controls review
+                                    </span>
+
+                                </div>
+
+                                <small>
+                                    Upcoming
+                                </small>
+
+                            </div>
+
+
+                            <div class="audit-milestone">
+
+                                <div class="audit-milestone-date">
+                                    15
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Assurance Discussion
+                                    </strong>
+
+                                    <span>
+                                        Findings and observations
+                                    </span>
+
+                                </div>
+
+                                <small>
+                                    Upcoming
+                                </small>
+
+                            </div>
+
+
+                            <div class="audit-milestone">
+
+                                <div class="audit-milestone-date">
+                                    22
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Final Report
+                                    </strong>
+
+                                    <span>
+                                        Engagement completion
+                                    </span>
+
+                                </div>
+
+                                <small>
+                                    Planned
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 AUDITS
+            ================================================== -->
+
+            <section
+                class="audit-dashboard-page"
+                data-content="audits"
+            >
+
+                <div class="audit-page-intro">
+
+                    <span>
+                        AUDIT MANAGEMENT
+                    </span>
+
+                    <h2>
+                        My Audits
+                    </h2>
+
+                    <p>
+                        Monitor your current audit engagements,
+                        review progress and follow important
+                        engagement activities.
+                    </p>
+
+                </div>
+
+
+                <div class="audit-large-summary">
+
+                    <div>
+
+                        <span>
+                            TOTAL ENGAGEMENTS
+                        </span>
+
+                        <strong>
+                            08
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            IN PROGRESS
+                        </span>
+
+                        <strong>
+                            04
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            COMPLETED
+                        </span>
+
+                        <strong>
+                            32
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            REVIEW ITEMS
+                        </span>
+
+                        <strong>
+                            06
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="audit-table-card">
+
+                    <div class="audit-table-heading">
+
+                        <h3>
+                            Active engagements
+                        </h3>
+
+                        <a href="404.html">
+                            Export Report
+                        </a>
+
+                    </div>
+
+
+                    <div class="audit-table-scroll">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Engagement</th>
+                                    <th>Service</th>
+                                    <th>Progress</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+                                        <strong>
+                                            FY Financial Audit
+                                        </strong>
+                                        <small>
+                                            Engagement #AA-1042
+                                        </small>
+                                    </td>
+
+                                    <td>
+                                        Statutory Audit
+                                    </td>
+
+                                    <td>
+                                        <div class="mini-progress">
+                                            <span style="width:78%"></span>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <em class="status-green">
+                                            In Progress
+                                        </em>
+                                    </td>
+
+                                    <td>
+                                        <a href="404.html">
+                                            Open
+                                        </a>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <strong>
+                                            Internal Control Review
+                                        </strong>
+                                        <small>
+                                            Engagement #AA-1037
+                                        </small>
+                                    </td>
+
+                                    <td>
+                                        Internal Audit
+                                    </td>
+
+                                    <td>
+                                        <div class="mini-progress">
+                                            <span style="width:62%"></span>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <em class="status-orange">
+                                            Under Review
+                                        </em>
+                                    </td>
+
+                                    <td>
+                                        <a href="404.html">
+                                            Open
+                                        </a>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <strong>
+                                            Compliance Assessment
+                                        </strong>
+                                        <small>
+                                            Engagement #AA-1029
+                                        </small>
+                                    </td>
+
+                                    <td>
+                                        Compliance
+                                    </td>
+
+                                    <td>
+                                        <div class="mini-progress">
+                                            <span style="width:45%"></span>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <em class="status-blue">
+                                            Planning
+                                        </em>
+                                    </td>
+
+                                    <td>
+                                        <a href="404.html">
+                                            Open
+                                        </a>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <strong>
+                                            Risk Assurance Review
+                                        </strong>
+                                        <small>
+                                            Engagement #AA-1022
+                                        </small>
+                                    </td>
+
+                                    <td>
+                                        Risk Assurance
+                                    </td>
+
+                                    <td>
+                                        <div class="mini-progress">
+                                            <span style="width:88%"></span>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <em class="status-green">
+                                            In Progress
+                                        </em>
+                                    </td>
+
+                                    <td>
+                                        <a href="404.html">
+                                            Open
+                                        </a>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+      
+            <div class="client-audits-content">
+
+    <div class="client-audits-heading">
+        <div>
+            <span>My Audits</span>
+            <h3>Track your assurance engagements</h3>
+            <p>
+                View your ongoing and completed audit engagements,
+                monitor important milestones and stay informed about
+                the progress of your assurance activities.
+            </p>
+        </div>
+
+        <div class="audit-portfolio-count">
+            <strong>06</strong>
+            <span>Total Audits</span>
+        </div>
+    </div>
+
+
+    <div class="audit-engagement-card">
+
+        <div class="audit-engagement-top">
+            <div>
+                <span>Current Engagement</span>
+                <h3>Annual Financial Assurance Review</h3>
+            </div>
+
+            <div class="audit-active-status">
+                In Progress
+            </div>
+        </div>
+
+        <div class="audit-engagement-info">
+
+            <div>
+                <span>Engagement ID</span>
+                <strong>AUD-2026-024</strong>
+            </div>
+
+            <div>
+                <span>Audit Period</span>
+                <strong>Apr 2025 – Mar 2026</strong>
+            </div>
+
+            <div>
+                <span>Lead Reviewer</span>
+                <strong>Assurance Team</strong>
+            </div>
+
+            <div>
+                <span>Expected Completion</span>
+                <strong>30 Sep 2026</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="audit-milestones">
+
+        <div class="audit-milestone-title">
+            <span>Engagement Progress</span>
+            <h3>Audit milestones</h3>
+        </div>
+
+        <div class="audit-milestone-list">
+
+            <div class="audit-milestone completed">
+                <div class="milestone-marker">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div>
+                    <strong>Planning & Scoping</strong>
+                    <span>Completed</span>
+                </div>
+            </div>
+
+
+            <div class="audit-milestone completed">
+                <div class="milestone-marker">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div>
+                    <strong>Document Review</strong>
+                    <span>Completed</span>
+                </div>
+            </div>
+
+
+            <div class="audit-milestone active">
+                <div class="milestone-marker">
+                    <i class="fa-solid fa-circle"></i>
+                </div>
+
+                <div>
+                    <strong>Control Assessment</strong>
+                    <span>Currently in progress</span>
+                </div>
+            </div>
+
+
+            <div class="audit-milestone">
+                <div class="milestone-marker">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+
+                <div>
+                    <strong>Final Assurance Review</strong>
+                    <span>Upcoming</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="audit-client-summary">
+
+        <div>
+            <span>Client Summary</span>
+            <h3>Important engagement information</h3>
+        </div>
+
+        <div class="audit-summary-items">
+
+            <div>
+                <strong>04</strong>
+                <span>Documents Reviewed</span>
+            </div>
+
+            <div>
+                <strong>02</strong>
+                <span>Items Awaiting Review</span>
+            </div>
+
+            <div>
+                <strong>03</strong>
+                <span>Completed Milestones</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+            
+      
+
+            <!-- =================================================
+                 ASSURANCE
+            ================================================== -->
+
+            <section
+                class="audit-dashboard-page"
+                data-content="assurance"
+            >
+
+                <div class="audit-page-intro">
+
+                    <span>
+                        ASSURANCE CENTRE
+                    </span>
+
+                    <h2>
+                        Assurance Reports
+                    </h2>
+
+                    <p>
+                        Review assurance findings, engagement
+                        observations and completed reports.
+                    </p>
+
+                </div>
+
+
+                <div class="audit-report-grid">
+
+
+                    <article class="audit-report-card">
+
+                        <div class="audit-report-icon">
+                            <i class="fa-solid fa-file-circle-check"></i>
+                        </div>
+
+                        <span>
+                            COMPLETED
+                        </span>
+
+                        <h3>
+                            Annual Assurance Report
+                        </h3>
+
+                        <p>
+                            Summary of key observations,
+                            controls and assurance conclusions.
+                        </p>
+
+                        <a href="404.html">
+                            View Report
+                        </a>
+
+                    </article>
+
+
+                    <article class="audit-report-card">
+
+                        <div class="audit-report-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <span>
+                            UPDATED
+                        </span>
+
+                        <h3>
+                            Control Assurance Review
+                        </h3>
+
+                        <p>
+                            Review of financial and operational
+                            control effectiveness.
+                        </p>
+
+                        <a href="404.html">
+                            View Report
+                        </a>
+
+                    </article>
+
+
+                    <article class="audit-report-card">
+
+                        <div class="audit-report-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+
+                        <span>
+                            IN PROGRESS
+                        </span>
+
+                        <h3>
+                            Risk Assurance Report
+                        </h3>
+
+                        <p>
+                            Current assessment of business risk
+                            and mitigation activities.
+                        </p>
+
+                        <a href="404.html">
+                            View Report
+                        </a>
+
+                    </article>
+
+                </div>
+
+
+                <div class="audit-large-note">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    <div>
+
+                        <strong>
+                            Assurance update
+                        </strong>
+
+                        <p>
+                            Your latest engagement observations
+                            have been added to the current
+                            assurance workspace.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="assurance-reports-new-content">
+
+    <div class="assurance-report-banner">
+
+        <div>
+            <span>Assurance Insights</span>
+            <h3>Reports that turn review findings into clear business insight</h3>
+            <p>
+                Access important assurance observations, review outcomes
+                and management insights in one structured reporting view.
+            </p>
+        </div>
+
+        <div class="report-insight-number">
+            <strong>18</strong>
+            <span>Open Insights</span>
+        </div>
+
+    </div>
+
+
+    <div class="report-insight-grid">
+
+        <div class="report-insight-card">
+
+            <div class="report-card-icon">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <span>Financial Insight</span>
+
+            <h3>Financial Review Summary</h3>
+
+            <p>
+                Review key financial observations and reporting areas
+                identified during the latest assurance engagement.
+            </p>
+
+            <div class="report-card-bottom">
+                <strong>Updated</strong>
+                <span>Today</span>
+            </div>
+
+        </div>
+
+
+        <div class="report-insight-card">
+
+            <div class="report-card-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <span>Control Insight</span>
+
+            <h3>Internal Control Review</h3>
+
+            <p>
+                Examine control observations and understand areas where
+                additional monitoring or improvement may be required.
+            </p>
+
+            <div class="report-card-bottom">
+                <strong>Reviewed</strong>
+                <span>2 days ago</span>
+            </div>
+
+        </div>
+
+
+        <div class="report-insight-card">
+
+            <div class="report-card-icon">
+                <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+
+            <span>Compliance Insight</span>
+
+            <h3>Compliance Assessment</h3>
+
+            <p>
+                View important compliance observations and follow-up
+                information from recent assurance activities.
+            </p>
+
+            <div class="report-card-bottom">
+                <strong>Updated</strong>
+                <span>5 days ago</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="report-review-strip">
+
+        <div class="report-review-heading">
+
+            <span>Review Snapshot</span>
+
+            <h3>Latest assurance observations</h3>
+
+        </div>
+
+
+        <div class="report-observation">
+
+            <div class="observation-number">
+                01
+            </div>
+
+            <div>
+                <strong>Financial documentation review</strong>
+                <p>
+                    Supporting documentation has been reviewed and
+                    the remaining observations are being followed up.
+                </p>
+            </div>
+
+            <span class="observation-status">
+                In Review
+            </span>
+
+        </div>
+
+
+        <div class="report-observation">
+
+            <div class="observation-number">
+                02
+            </div>
+
+            <div>
+                <strong>Control effectiveness assessment</strong>
+                <p>
+                    Key controls have been assessed with additional
+                    information requested for selected areas.
+                </p>
+            </div>
+
+            <span class="observation-status completed">
+                Reviewed
+            </span>
+
+        </div>
+
+
+        <div class="report-observation">
+
+            <div class="observation-number">
+                03
+            </div>
+
+            <div>
+                <strong>Management action follow-up</strong>
+                <p>
+                    Previously identified observations are being tracked
+                    through the current assurance review cycle.
+                </p>
+            </div>
+
+            <span class="observation-status pending">
+                Follow-up
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="report-insight-footer">
+
+        <div>
+            <span>Management View</span>
+            <h3>Keeping assurance information easy to understand</h3>
+        </div>
+
+        <div>
+            <p>
+                Structured reporting helps management quickly understand
+                important observations, review progress and areas that
+                may require further attention.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+            </section>
+
+
+           <!-- =================================================
+                 RISK
+            ================================================== -->
+
+            <section
+                class="audit-dashboard-page"
+                data-content="risk"
+            >
+
+                <div class="audit-page-intro">
+
+                    <span>
+                        RISK & COMPLIANCE
+                    </span>
+
+                    <h2>
+                        Risk & Compliance
+                    </h2>
+
+                    <p>
+                        Monitor key risk areas, compliance
+                        observations and control effectiveness.
+                    </p>
+
+                </div>
+
+
+                <div class="audit-risk-overview-grid">
+
+
+                    <article class="audit-risk-score-card">
+
+                        <span>
+                            OVERALL CONTROL SCORE
+                        </span>
+
+                        <strong>
+                            82%
+                        </strong>
+
+                        <p>
+                            Current assurance position
+                        </p>
+
+                        <div class="audit-score-track">
+                            <span></span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="audit-dashboard-card">
+
+                        <div class="audit-card-heading">
+
+                            <div>
+
+                                <span>
+                                    KEY AREAS
+                                </span>
+
+                                <h3>
+                                    Control effectiveness
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="audit-control-list">
+
+                            <div>
+
+                                <span>
+                                    Financial reporting
+                                </span>
+
+                                <strong>
+                                    Strong
+                                </strong>
+
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Compliance processes
+                                </span>
+
+                                <strong>
+                                    Good
+                                </strong>
+
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Operational controls
+                                </span>
+
+                                <strong>
+                                    Moderate
+                                </strong>
+
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Documentation
+                                </span>
+
+                                <strong>
+                                    Review
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <div class="audit-dashboard-card audit-observation-card">
+
+                    <div class="audit-card-heading">
+
+                        <div>
+
+                            <span>
+                                CURRENT OBSERVATIONS
+                            </span>
+
+                            <h3>
+                                Areas requiring attention
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="audit-observation-list">
+
+                        <div>
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <p>
+                                Documentation consistency requires
+                                additional review.
+                            </p>
+                            <small>
+                                Moderate
+                            </small>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <p>
+                                Financial approval controls are
+                                operating effectively.
+                            </p>
+                            <small>
+                                Stable
+                            </small>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <p>
+                                Compliance evidence should be
+                                refreshed for the next review.
+                            </p>
+                            <small>
+                                Review
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="risk-compliance-content">
+
+    <div class="compliance-highlight">
+        <span>Risk & Compliance</span>
+        <h3>Maintaining stronger compliance controls</h3>
+        <p>
+            Monitor key compliance requirements, identify control gaps
+            and keep important risk areas visible.
+        </p>
+    </div>
+
+
+    <div class="compliance-mini-grid">
+
+        <div>
+            <strong>01</strong>
+            <h3>Policy Review</h3>
+            <p>Review important policies and compliance requirements.</p>
+        </div>
+
+        <div>
+            <strong>02</strong>
+            <h3>Risk Tracking</h3>
+            <p>Track significant risks and follow-up activities.</p>
+        </div>
+
+        <div>
+            <strong>03</strong>
+            <h3>Control Checks</h3>
+            <p>Monitor controls and identify areas needing attention.</p>
+        </div>
+
+    </div>
+
+
+    <div class="compliance-status">
+
+        <div>
+            <span>Current Status</span>
+            <h3>Compliance activities are being monitored</h3>
+        </div>
+
+        <div class="compliance-status-badge">
+            Active
+        </div>
+
+    </div>
+
+</div>
+
+ </section>
+
+
+        
+
+            <!-- =================================================
+                 BILLING
+            ================================================== -->
+
+            <section
+                class="audit-dashboard-page"
+                data-content="billing"
+            >
+
+                <div class="audit-page-intro">
+
+                    <span>
+                        ACCOUNT & BILLING
+                    </span>
+
+                    <h2>
+                        Billing
+                    </h2>
+
+                    <p>
+                        Review your Audit & Assurance engagement
+                        billing information and account activity.
+                    </p>
+
+                </div>
+
+
+                <div class="audit-billing-summary">
+
+                    <div>
+
+                        <span>
+                            CURRENT BALANCE
+                        </span>
+
+                        <strong>
+                            ₹48,500
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            THIS YEAR
+                        </span>
+
+                        <strong>
+                            ₹2.84L
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            INVOICES
+                        </span>
+
+                        <strong>
+                            08
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="audit-table-card">
+
+                    <div class="audit-table-heading">
+
+                        <h3>
+                            Recent invoices
+                        </h3>
+
+                        <a href="404.html">
+                            Download Statement
+                        </a>
+
+                    </div>
+
+
+                    <div class="audit-invoice-list">
+
+                        <div>
+
+                            <div>
+                                <strong>
+                                    Assurance Engagement
+                                </strong>
+
+                                <span>
+                                    Invoice #INV-1048
+                                </span>
+                            </div>
+
+                            <strong>
+                                ₹48,500
+                            </strong>
+
+                            <a href="404.html">
+                                View
+                            </a>
+
+                        </div>
+
+
+                        <div>
+
+                            <div>
+                                <strong>
+                                    Compliance Review
+                                </strong>
+
+                                <span>
+                                    Invoice #INV-1039
+                                </span>
+                            </div>
+
+                            <strong>
+                                ₹32,000
+                            </strong>
+
+                            <a href="404.html">
+                                View
+                            </a>
+
+                        </div>
+
+
+                        <div>
+
+                            <div>
+                                <strong>
+                                    Internal Audit
+                                </strong>
+
+                                <span>
+                                    Invoice #INV-1027
+                                </span>
+                            </div>
+
+                            <strong>
+                                ₹41,500
+                            </strong>
+
+                            <a href="404.html">
+                                View
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="client-billing-content">
+
+    <div class="billing-overview">
+
+        <div>
+            <span>Billing Overview</span>
+            <h3>Manage your assurance service payments</h3>
+            <p>
+                View your current billing information, recent charges
+                and payment status for your Stackly assurance services.
+            </p>
+        </div>
+
+        <div class="billing-balance">
+            <span>Current Balance</span>
+            <strong>₹24,500</strong>
+            <small>Due this month</small>
+        </div>
+
+    </div>
+
+
+    <div class="billing-summary">
+
+        <div>
+            <span>Last Payment</span>
+            <strong>₹18,750</strong>
+            <small>Paid on 05 Sep 2026</small>
+        </div>
+
+        <div>
+            <span>Next Payment</span>
+            <strong>₹24,500</strong>
+            <small>Due on 30 Sep 2026</small>
+        </div>
+
+        <div>
+            <span>Payment Status</span>
+            <strong>Active</strong>
+            <small>Account in good standing</small>
+        </div>
+
+    </div>
+
+
+    <div class="billing-details">
+
+        <div class="billing-details-heading">
+            <span>Recent Billing Activity</span>
+            <h3>Payment & invoice summary</h3>
+        </div>
+
+        <div class="billing-row">
+            <div>
+                <strong>Annual Assurance Review</strong>
+                <span>Invoice #STK-2026-091</span>
+            </div>
+
+            <div>
+                <strong>₹18,750</strong>
+                <span>05 Sep 2026</span>
+            </div>
+
+            <div class="billing-paid">
+                Paid
+            </div>
+        </div>
+
+        <div class="billing-row">
+            <div>
+                <strong>Risk & Compliance Review</strong>
+                <span>Invoice #STK-2026-084</span>
+            </div>
+
+            <div>
+                <strong>₹12,800</strong>
+                <span>18 Aug 2026</span>
+            </div>
+
+            <div class="billing-paid">
+                Paid
+            </div>
+        </div>
+
+        <div class="billing-row">
+            <div>
+                <strong>Internal Control Assessment</strong>
+                <span>Invoice #STK-2026-076</span>
+            </div>
+
+            <div>
+                <strong>₹15,200</strong>
+                <span>21 Jul 2026</span>
+            </div>
+
+            <div class="billing-paid">
+                Paid
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="billing-payment-note">
+
+        <div>
+            <span>Payment Information</span>
+            <h3>Secure billing management</h3>
+        </div>
+
+        <p>
+            Your billing information is maintained securely. For payment
+            updates, invoice questions or account assistance, contact
+            the Stackly assurance support team.
+        </p>
+
+    </div>
+
+</div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PROFILE
+            ================================================== -->
+
+            <section
+                class="audit-dashboard-page"
+                data-content="profile"
+            >
+
+                <div class="audit-page-intro">
+
+                    <span>
+                        ACCOUNT PROFILE
+                    </span>
+
+                    <h2>
+                        Profile
+                    </h2>
+
+                    <p>
+                        Your Stackly Audit & Assurance account
+                        information.
+                    </p>
+
+                </div>
+
+
+                <div class="audit-profile-card">
+
+                    <div class="audit-profile-avatar-large" id="profileAvatar">
+                        Y
+                    </div>
+
+
+                    <div class="audit-profile-info">
+
+                        <span>
+                            ACCOUNT HOLDER
+                        </span>
+
+                        <h3 id="profileName">
+                            Client User
+                        </h3>
+
+                        <p id="profileEmail">
+                            client@example.com
+                        </p>
+
+                        <small>
+                            Client Account
+                        </small>
+
+                    </div>
+
+
+                    <a href="404.html" class="audit-main-button">
+                        Edit Profile
+                    </a>
+
+                </div>
+
+
+                <div class="audit-profile-details">
+
+                    <div>
+
+                        <span>
+                            Account Type
+                        </span>
+
+                        <strong>
+                            Client
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Workspace
+                        </span>
+
+                        <strong>
+                            Audit & Assurance
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Access
+                        </span>
+
+                        <strong>
+                            Secure Client Portal
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+    <script src="js/client-dashboard.js"></script>
+
+</body>
+
+</html>

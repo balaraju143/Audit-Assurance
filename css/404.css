@@ -1,0 +1,548 @@
+/* =========================================================
+   STACKLY AUDIT & ASSURANCE - 404 PAGE
+========================================================= */
+
+.audit-404-body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    background: #031b17;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+.audit-404-page {
+    position: relative;
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 60px 20px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(11, 191, 159, 0.14),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(201, 255, 145, 0.08),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #021410 0%,
+            #063f35 50%,
+            #031b17 100%
+        );
+}
+
+
+/* =========================================================
+   SUBTLE GRID
+========================================================= */
+
+.audit-404-page::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.18;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.04) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.04) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+}
+
+
+/* =========================================================
+   GLOW
+========================================================= */
+
+.audit-404-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(20px);
+}
+
+
+.audit-404-glow-one {
+    width: 300px;
+
+    height: 300px;
+
+    top: -100px;
+
+    left: -100px;
+
+    background: rgba(11, 191, 159, 0.10);
+}
+
+
+.audit-404-glow-two {
+    width: 350px;
+
+    height: 350px;
+
+    right: -150px;
+
+    bottom: -150px;
+
+    background: rgba(201, 255, 145, 0.08);
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.audit-404-card {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(620px, 100%);
+
+    padding: 52px 55px 48px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.09),
+            rgba(255,255,255,0.035)
+        );
+
+    border: 1px solid rgba(201, 255, 145, 0.18);
+
+    border-radius: 18px;
+
+    backdrop-filter: blur(15px);
+
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35);
+
+    opacity: 0;
+
+    transform: translateY(50px) scale(0.97);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.audit-404-logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 30px;
+
+    text-decoration: none;
+}
+
+
+.audit-404-logo img {
+    width: 145px;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+
+    filter:
+        brightness(0)
+        invert(1);
+}
+
+
+/* =========================================================
+   404 VISUAL
+========================================================= */
+
+.audit-404-visual {
+    position: relative;
+
+    width: 100%;
+
+    height: 190px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 5px;
+}
+
+
+.audit-404-number {
+    position: absolute;
+
+    color: rgba(201, 255, 145, 0.08);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 175px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: -12px;
+
+    user-select: none;
+}
+
+
+.audit-404-icon {
+    position: relative;
+
+    z-index: 2;
+
+    width: 105px;
+
+    height: 105px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(201, 255, 145, 0.55);
+
+    background: rgba(201, 255, 145, 0.10);
+
+    color: #c9ff91;
+
+    font-size: 45px;
+
+    box-shadow:
+        0 0 45px rgba(201, 255, 145, 0.08);
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.audit-404-label {
+    display: inline-block;
+
+    margin-bottom: 13px;
+
+    color: #c9ff91;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.audit-404-content h1 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(36px, 5vw, 52px);
+
+    line-height: 1.05;
+
+    letter-spacing: -1.8px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.audit-404-content p {
+    max-width: 500px;
+
+    margin: 18px auto 0;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.audit-404-buttons {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-top: 32px;
+}
+
+
+.audit-404-button {
+    min-width: 170px;
+
+    height: 48px;
+
+    padding: 0 24px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    border-radius: 25px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Primary */
+
+.audit-404-primary {
+    border: 1px solid #c9ff91;
+
+    background: #c9ff91;
+
+    color: #063f35;
+}
+
+
+.audit-404-primary:hover {
+    background: #ffffff;
+
+    border-color: #ffffff;
+
+    transform: translateY(-3px);
+}
+
+
+/* Secondary */
+
+.audit-404-secondary {
+    border: 1px solid rgba(201, 255, 145, 0.55);
+
+    background: transparent;
+
+    color: #ffffff;
+}
+
+
+.audit-404-secondary:hover {
+    background: rgba(201, 255, 145, 0.10);
+
+    border-color: #c9ff91;
+
+    color: #c9ff91;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .audit-404-page {
+        padding: 25px 15px;
+    }
+
+
+    .audit-404-card {
+        width: 100%;
+
+        padding: 40px 22px 35px;
+
+        border-radius: 15px;
+    }
+
+
+    .audit-404-logo {
+        margin-bottom: 20px;
+    }
+
+
+    .audit-404-logo img {
+        width: 125px;
+    }
+
+
+    .audit-404-visual {
+        height: 155px;
+    }
+
+
+    .audit-404-number {
+        font-size: 135px;
+
+        letter-spacing: -9px;
+    }
+
+
+    .audit-404-icon {
+        width: 82px;
+
+        height: 82px;
+
+        font-size: 34px;
+    }
+
+
+    .audit-404-label {
+        font-size: 9px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .audit-404-content h1 {
+        font-size: 35px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .audit-404-content p {
+        font-size: 12.5px;
+
+        line-height: 1.65;
+    }
+
+
+    .audit-404-buttons {
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 10px;
+    }
+
+
+    .audit-404-button {
+        width: 100%;
+
+        max-width: 250px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .audit-404-card {
+        padding: 32px 17px 30px;
+    }
+
+
+    .audit-404-visual {
+        height: 135px;
+    }
+
+
+    .audit-404-number {
+        font-size: 115px;
+    }
+
+
+    .audit-404-icon {
+        width: 72px;
+
+        height: 72px;
+
+        font-size: 29px;
+    }
+
+
+    .audit-404-content h1 {
+        font-size: 31px;
+    }
+
+}

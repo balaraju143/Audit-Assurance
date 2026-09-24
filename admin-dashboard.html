@@ -1,0 +1,1425 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Client Dashboard | Stackly Audit & Assurance</title>
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- GSAP -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+
+    <!-- Dashboard CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/admin-dashboard.css"
+    >
+
+</head>
+
+
+
+<!-- =========================================================
+     STACKLY AUDIT & ASSURANCE
+     ADMIN DASHBOARD
+========================================================= -->
+
+<div class="audit-admin-dashboard">
+
+    <!-- =====================================================
+         SIDEBAR
+    ===================================================== -->
+
+    <aside class="audit-admin-sidebar" id="adminSidebar">
+
+        <div class="audit-admin-logo">
+            <a href="admin-dashboard.html">
+                <img src="assetss/logo 4.webp" alt="STACKLY">
+            </a>
+        </div>
+
+        <!-- ADMIN PROFILE -->
+
+        <div class="audit-admin-profile">
+
+            <div
+                class="audit-admin-avatar"
+                id="adminSidebarAvatar"
+            >
+                C
+            </div>
+
+            <div class="audit-admin-profile-info">
+
+                <strong id="adminSidebarName">
+                    Admin User
+                </strong>
+
+                <span id="adminSidebarEmail">
+                    admin@example.com
+                </span>
+
+                <small>
+                    ADMINISTRATOR
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- SIDEBAR MENU -->
+
+        <div class="audit-admin-menu-title">
+            ADMIN PANEL
+        </div>
+
+        <nav class="audit-admin-nav">
+
+            <a
+                href="#admin-overview"
+                class="admin-menu-link active"
+            >
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Overview</span>
+            </a>
+
+            <a
+                href="#audit-monitoring"
+                class="admin-menu-link"
+            >
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                <span>Audit Monitoring</span>
+            </a>
+
+            <a
+                href="#risk-management"
+                class="admin-menu-link"
+            >
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Risk Management</span>
+            </a>
+
+
+            <a
+                href="#team-performance"
+                class="admin-menu-link"
+            >
+                <i class="fa-solid fa-people-group"></i>
+                <span>Team Performance</span>
+            </a>
+
+            <a
+                href="#assurance-reports"
+                class="admin-menu-link"
+            >
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Assurance Reports</span>
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="audit-admin-sidebar-bottom">
+
+            <a href="404.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="login.html">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ===================================================== -->
+
+    <main class="audit-admin-main">
+
+
+        <!-- =================================================
+             HEADER
+        ================================================= -->
+
+        <header class="audit-admin-header">
+
+            <div class="audit-admin-header-left">
+
+                <button
+                    class="audit-admin-mobile-toggle"
+                    id="adminMobileToggle"
+                    type="button"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+
+                    <span class="audit-admin-page-label">
+                        ADMIN CONTROL CENTER
+                    </span>
+
+                    <h1 id="adminPageTitle">
+                        Assurance Overview
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="audit-admin-header-right">
+
+                <a
+                    href="404.html"
+                    class="audit-admin-search"
+                >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Search dashboard...</span>
+                </a>
+
+                <a
+                    href="404.html"
+                    class="audit-admin-notification"
+                >
+                    <i class="fa-regular fa-bell"></i>
+                    <span></span>
+                </a>
+
+                <div class="audit-admin-header-avatar" id="adminHeaderAvatar">
+                    C
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PAGE CONTENT
+        ================================================= -->
+
+        <div class="audit-admin-content">
+
+
+            <!-- =================================================
+                 OVERVIEW
+            ================================================= -->
+
+            <section
+                class="admin-page-section active"
+                id="admin-overview"
+            >
+
+                <div class="audit-admin-welcome">
+
+                    <div>
+
+                        <span>
+                            AUDIT & ASSURANCE ADMINISTRATION
+                        </span>
+
+                        <h2>
+                            Welcome back,
+                            <strong id="adminWelcomeEmail">
+                                admin@example.com
+                            </strong>
+                        </h2>
+
+                        <p>
+                            Monitor assurance activities, review business
+                            risks and manage client engagements from one
+                            centralized workspace.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="#audit-monitoring"
+                        class="audit-admin-primary-btn"
+                    >
+                        Review Audit Activity
+                    </a>
+
+                </div>
+
+
+                <!-- KPI CARDS -->
+
+                <div class="audit-admin-kpi-grid">
+
+                    <div class="audit-admin-kpi-card">
+
+                        <div class="audit-admin-kpi-icon">
+                            <i class="fa-solid fa-clipboard-check"></i>
+                        </div>
+
+                        <span>ACTIVE AUDITS</span>
+
+                        <strong>48</strong>
+
+                        <small>
+                            +8 this month
+                        </small>
+
+                    </div>
+
+
+                    <div class="audit-admin-kpi-card">
+
+                        <div class="audit-admin-kpi-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+                        <span>ACTIVE CLIENTS</span>
+
+                        <strong>126</strong>
+
+                        <small>
+                            12 new engagements
+                        </small>
+
+                    </div>
+
+
+                    <div class="audit-admin-kpi-card">
+
+                        <div class="audit-admin-kpi-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <span>RISK REVIEWS</span>
+
+                        <strong>34</strong>
+
+                        <small>
+                            6 require attention
+                        </small>
+
+                    </div>
+
+
+                    <div class="audit-admin-kpi-card">
+
+                        <div class="audit-admin-kpi-icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+
+                        <span>COMPLIANCE RATE</span>
+
+                        <strong>94%</strong>
+
+                        <small>
+                            +3.2% this quarter
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ANALYTICS -->
+
+                <div class="audit-admin-grid-two">
+
+                    <div class="audit-admin-panel">
+
+                        <div class="audit-admin-panel-heading">
+
+                            <div>
+
+                                <span>
+                                    ASSURANCE ACTIVITY
+                                </span>
+
+                                <h3>
+                                    Audit performance overview
+                                </h3>
+
+                            </div>
+
+                            <button
+                                class="audit-admin-small-btn"
+                                onclick="location.href='404.html'"
+                            >
+                                View Details
+                            </button>
+
+                        </div>
+
+                        <div class="audit-admin-bars">
+
+                            <div class="admin-bar-row">
+                                <span>Statutory Audit</span>
+                                <div>
+                                    <i style="width:82%"></i>
+                                </div>
+                                <strong>82%</strong>
+                            </div>
+
+                            <div class="admin-bar-row">
+                                <span>Risk Assurance</span>
+                                <div>
+                                    <i style="width:68%"></i>
+                                </div>
+                                <strong>68%</strong>
+                            </div>
+
+                            <div class="admin-bar-row">
+                                <span>Internal Audit</span>
+                                <div>
+                                    <i style="width:91%"></i>
+                                </div>
+                                <strong>91%</strong>
+                            </div>
+
+                            <div class="admin-bar-row">
+                                <span>Compliance</span>
+                                <div>
+                                    <i style="width:76%"></i>
+                                </div>
+                                <strong>76%</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- RISK SUMMARY -->
+
+                    <div class="audit-admin-panel audit-risk-panel">
+
+                        <span>
+                            RISK SUMMARY
+                        </span>
+
+                        <h3>
+                            Current assurance exposure
+                        </h3>
+
+                        <div class="risk-circle">
+
+                            <div>
+                                <strong>72</strong>
+                                <span>Score</span>
+                            </div>
+
+                        </div>
+
+                        <div class="risk-legend">
+
+                            <span>
+                                <i></i>
+                                Low Risk
+                            </span>
+
+                            <span>
+                                <i></i>
+                                Moderate
+                            </span>
+
+                            <span>
+                                <i></i>
+                                High Risk
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RECENT ACTIVITY -->
+
+                <div class="audit-admin-panel audit-admin-activity">
+
+                    <div class="audit-admin-panel-heading">
+
+                        <div>
+
+                            <span>
+                                RECENT ACTIVITY
+                            </span>
+
+                            <h3>
+                                Latest assurance updates
+                            </h3>
+
+                        </div>
+
+                        <button
+                            class="audit-admin-small-btn"
+                            onclick="location.href='404.html'"
+                        >
+                            View Activity
+                        </button>
+
+                    </div>
+
+
+                    <div class="audit-admin-activity-list">
+
+                        <div class="admin-activity-item">
+
+                            <div class="admin-activity-icon">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Audit review completed
+                                </strong>
+
+                                <p>
+                                    Financial controls assessment completed
+                                    for a corporate client.
+                                </p>
+                            </div>
+
+                            <time>
+                                12 min ago
+                            </time>
+
+                        </div>
+
+
+                        <div class="admin-activity-item">
+
+                            <div class="admin-activity-icon">
+                                <i class="fa-solid fa-shield"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Risk assessment updated
+                                </strong>
+
+                                <p>
+                                    New operational risk information has
+                                    been added to the review queue.
+                                </p>
+                            </div>
+
+                            <time>
+                                45 min ago
+                            </time>
+
+                        </div>
+
+
+                        <div class="admin-activity-item">
+
+                            <div class="admin-activity-icon">
+                                <i class="fa-solid fa-user-plus"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    New client engagement
+                                </strong>
+
+                                <p>
+                                    A new assurance engagement is awaiting
+                                    administrator review.
+                                </p>
+                            </div>
+
+                            <time>
+                                2 hrs ago
+                            </time>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 AUDIT MONITORING
+            ================================================= -->
+
+            <section
+                class="admin-page-section"
+                id="audit-monitoring"
+            >
+
+                <div class="admin-section-heading">
+
+                    <span>AUDIT OPERATIONS</span>
+
+                    <h2>
+                        Audit Monitoring
+                    </h2>
+
+                    <p>
+                        Review current audit engagements, progress,
+                        assigned teams and assurance status.
+                    </p>
+
+                </div>
+
+
+                <div class="audit-admin-table-panel">
+
+                    <div class="admin-table-heading">
+                        <h3>Current engagements</h3>
+
+                        <button
+                            class="audit-admin-primary-btn"
+                            onclick="location.href='404.html'"
+                        >
+                            Create Engagement
+                        </button>
+                    </div>
+
+                    <div class="audit-admin-table-wrap">
+
+                        <table class="audit-admin-table">
+
+                            <thead>
+                                <tr>
+                                    <th>CLIENT</th>
+                                    <th>ENGAGEMENT</th>
+                                    <th>TEAM</th>
+                                    <th>PROGRESS</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>Northstar Group</td>
+                                    <td>Financial Audit</td>
+                                    <td>Team A</td>
+                                    <td>84%</td>
+                                    <td>
+                                        <span class="status active">
+                                            Active
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Vertex Holdings</td>
+                                    <td>Internal Audit</td>
+                                    <td>Team B</td>
+                                    <td>67%</td>
+                                    <td>
+                                        <span class="status review">
+                                            Review
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Summit Enterprises</td>
+                                    <td>Compliance Audit</td>
+                                    <td>Team C</td>
+                                    <td>91%</td>
+                                    <td>
+                                        <span class="status complete">
+                                            Near Complete
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>BluePeak Ltd</td>
+                                    <td>Risk Assurance</td>
+                                    <td>Team A</td>
+                                    <td>48%</td>
+                                    <td>
+                                        <span class="status pending">
+                                            Pending
+                                        </span>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <div class="audit-monitoring-extra">
+
+    <div>
+        <span>Audit Intelligence</span>
+        <h3>Real-time assurance visibility</h3>
+        <p>
+            Maintain a clear view of important audit activities,
+            review progress, and identify areas that may require
+            administrator attention.
+        </p>
+    </div>
+
+    <div>
+        <span>Financial Assurance</span>
+        <h3>Reliable financial oversight</h3>
+        <p>
+            Monitor financial review activities and ensure that
+            key reporting information is examined with accuracy
+            and professional care.
+        </p>
+    </div>
+
+    <div>
+        <span>Control Assessment</span>
+        <h3>Stronger internal controls</h3>
+        <p>
+            Track control assessments and follow up on observations
+            that could affect operational efficiency or financial
+            transparency.
+        </p>
+    </div>
+
+    <div>
+        <span>Audit Findings</span>
+        <h3>Clear findings and follow-up</h3>
+        <p>
+            Keep important audit observations visible and support
+            timely follow-up actions across active engagements.
+        </p>
+    </div>
+
+    <div>
+        <span>Assurance Quality</span>
+        <h3>Consistent review standards</h3>
+        <p>
+            Support consistent assurance practices by monitoring
+            review quality, documentation and engagement progress.
+        </p>
+    </div>
+
+</div>
+
+            </section>
+
+
+            <!-- =================================================
+                 RISK MANAGEMENT
+            ================================================= -->
+
+            <section
+                class="admin-page-section"
+                id="risk-management"
+            >
+
+                <div class="admin-section-heading">
+
+                    <span>RISK CONTROL</span>
+
+                    <h2>
+                        Risk Management
+                    </h2>
+
+                    <p>
+                        Monitor identified risks and review their current
+                        impact across active engagements.
+                    </p>
+
+                </div>
+
+
+                <div class="admin-risk-grid">
+
+                    <div class="admin-risk-card high">
+
+                        <span>HIGH PRIORITY</span>
+
+                        <h3>
+                            Financial Reporting Risk
+                        </h3>
+
+                        <p>
+                            Review required for financial reporting controls
+                            and supporting documentation.
+                        </p>
+
+                        <button onclick="location.href='404.html'">
+                            Review Risk
+                        </button>
+
+                    </div>
+
+
+                    <div class="admin-risk-card medium">
+
+                        <span>MODERATE</span>
+
+                        <h3>
+                            Operational Control Risk
+                        </h3>
+
+                        <p>
+                            Internal process controls require additional
+                            assessment during the next review.
+                        </p>
+
+                        <button onclick="location.href='404.html'">
+                            Review Risk
+                        </button>
+
+                    </div>
+
+
+                    <div class="admin-risk-card low">
+
+                        <span>LOW PRIORITY</span>
+
+                        <h3>
+                            Compliance Documentation
+                        </h3>
+
+                        <p>
+                            Documentation is substantially complete with
+                            minor follow-up actions remaining.
+                        </p>
+
+                        <button onclick="location.href='404.html'">
+                            Review Risk
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="risk-management-content">
+
+    <div class="risk-control-intro">
+        <span>Risk Control</span>
+        <h3>Building stronger control over business risk</h3>
+        <p>
+            Identify potential risks before they become business
+            challenges. Our risk control approach helps organizations
+            understand exposure, strengthen preventive measures and
+            maintain better control across critical operations.
+        </p>
+    </div>
+
+
+    <div class="risk-control-grid">
+
+        <div class="risk-control-box">
+            <span>01</span>
+            <h3>Risk Identification</h3>
+            <p>
+                Recognize operational, financial and compliance risks
+                that may affect business continuity and performance.
+            </p>
+        </div>
+
+        <div class="risk-control-box">
+            <span>02</span>
+            <h3>Control Evaluation</h3>
+            <p>
+                Review existing controls to understand their effectiveness
+                and identify areas that need additional attention.
+            </p>
+        </div>
+
+        <div class="risk-control-box">
+            <span>03</span>
+            <h3>Exposure Review</h3>
+            <p>
+                Examine areas of higher exposure and understand how
+                potential risks could impact important business activities.
+            </p>
+        </div>
+
+        <div class="risk-control-box">
+            <span>04</span>
+            <h3>Mitigation Planning</h3>
+            <p>
+                Develop practical actions that help reduce identified
+                risks and improve the organization's control environment.
+            </p>
+        </div>
+
+        <div class="risk-control-box">
+            <span>05</span>
+            <h3>Control Monitoring</h3>
+            <p>
+                Maintain ongoing visibility into key controls and
+                track changes that may require management attention.
+            </p>
+        </div>
+
+        <div class="risk-control-box">
+            <span>06</span>
+            <h3>Risk Reporting</h3>
+            <p>
+                Present important risk information clearly so decision
+                makers can understand exposure and required actions.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="risk-control-note">
+        <div>
+            <span>Control Focus</span>
+            <h3>Turning risk information into practical action</h3>
+        </div>
+
+        <div>
+            <p>
+                A structured risk control process provides better
+                visibility across the organization and supports
+                informed decisions when business conditions change.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+ </section>
+
+
+
+
+            <!-- =================================================
+                 TEAM PERFORMANCE
+            ================================================= -->
+
+            <section
+                class="admin-page-section"
+                id="team-performance"
+            >
+
+                <div class="admin-section-heading">
+
+                    <span>PEOPLE & PERFORMANCE</span>
+
+                    <h2>
+                        Team Performance
+                    </h2>
+
+                    <p>
+                        Monitor workload, assurance assignments and
+                        delivery performance across teams.
+                    </p>
+
+                </div>
+
+
+                <div class="team-performance-grid">
+
+                    <div class="team-performance-card">
+
+                        <div class="team-member-icon">
+                            AR
+                        </div>
+
+                        <h3>
+                            Assurance Team A
+                        </h3>
+
+                        <p>
+                            Financial & Statutory Audit
+                        </p>
+
+                        <div class="team-progress">
+                            <span style="width:88%"></span>
+                        </div>
+
+                        <strong>
+                            88% workload completion
+                        </strong>
+
+                    </div>
+
+
+                    <div class="team-performance-card">
+
+                        <div class="team-member-icon">
+                            RK
+                        </div>
+
+                        <h3>
+                            Assurance Team B
+                        </h3>
+
+                        <p>
+                            Internal Controls & Risk
+                        </p>
+
+                        <div class="team-progress">
+                            <span style="width:74%"></span>
+                        </div>
+
+                        <strong>
+                            74% workload completion
+                        </strong>
+
+                    </div>
+
+
+                    <div class="team-performance-card">
+
+                        <div class="team-member-icon">
+                            SM
+                        </div>
+
+                        <h3>
+                            Assurance Team C
+                        </h3>
+
+                        <p>
+                            Compliance & Advisory
+                        </p>
+
+                        <div class="team-progress">
+                            <span style="width:81%"></span>
+                        </div>
+
+                        <strong>
+                            81% workload completion
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <div class="team-performance-content">
+
+    <div class="team-performance-header">
+        <div>
+            <span>Team Performance</span>
+            <h3>Strengthening assurance through team expertise</h3>
+            <p>
+                Monitor team contribution, engagement progress and
+                professional development to maintain consistent
+                assurance quality across client assignments.
+            </p>
+        </div>
+
+        <div class="team-performance-status">
+            <strong>92%</strong>
+            <span>Overall Performance</span>
+        </div>
+    </div>
+
+
+    <div class="team-performance-metrics">
+
+        <div class="team-metric">
+            <span>Active Engagements</span>
+            <strong>24</strong>
+            <small>Currently assigned</small>
+        </div>
+
+        <div class="team-metric">
+            <span>Reviews Completed</span>
+            <strong>86</strong>
+            <small>This reporting period</small>
+        </div>
+
+        <div class="team-metric">
+            <span>Team Availability</span>
+            <strong>88%</strong>
+            <small>Available capacity</small>
+        </div>
+
+        <div class="team-metric">
+            <span>Quality Reviews</span>
+            <strong>97%</strong>
+            <small>Review completion</small>
+        </div>
+
+    </div>
+
+
+    <div class="team-performance-panels">
+
+        <div class="team-performance-panel">
+            <span>Engagement Progress</span>
+            <h3>Current assignment activity</h3>
+
+            <div class="team-progress-item">
+                <div>
+                    <span>Audit Planning</span>
+                    <strong>94%</strong>
+                </div>
+                <div class="team-progress-track">
+                    <div style="width:94%;"></div>
+                </div>
+            </div>
+
+            <div class="team-progress-item">
+                <div>
+                    <span>Field Review</span>
+                    <strong>82%</strong>
+                </div>
+                <div class="team-progress-track">
+                    <div style="width:82%;"></div>
+                </div>
+            </div>
+
+            <div class="team-progress-item">
+                <div>
+                    <span>Quality Review</span>
+                    <strong>76%</strong>
+                </div>
+                <div class="team-progress-track">
+                    <div style="width:76%;"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="team-performance-panel team-development-panel">
+            <span>Capability Development</span>
+            <h3>Building stronger assurance skills</h3>
+
+            <div class="development-item">
+                <div>
+                    <strong>Technical Training</strong>
+                    <small>8 team members</small>
+                </div>
+                <span>Active</span>
+            </div>
+
+            <div class="development-item">
+                <div>
+                    <strong>Risk Assessment</strong>
+                    <small>5 team members</small>
+                </div>
+                <span>Progress</span>
+            </div>
+
+            <div class="development-item">
+                <div>
+                    <strong>Quality Standards</strong>
+                    <small>11 team members</small>
+                </div>
+                <span>Completed</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="team-performance-footer">
+
+        <div>
+            <span>Performance Focus</span>
+            <h3>Supporting consistent delivery across every engagement</h3>
+        </div>
+
+        <div>
+            <p>
+                Regular performance reviews help identify workload
+                requirements, strengthen team capabilities and maintain
+                reliable delivery standards throughout the assurance cycle.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+            </section>
+
+
+            <!-- =================================================
+                 REPORTS
+            ================================================= -->
+
+            <section
+                class="admin-page-section"
+                id="assurance-reports"
+            >
+
+                <div class="admin-section-heading">
+
+                    <span>BUSINESS INTELLIGENCE</span>
+
+                    <h2>
+                        Assurance Reports
+                    </h2>
+
+                    <p>
+                        Review high-level assurance metrics and
+                        reporting information.
+                    </p>
+
+                </div>
+
+
+                <div class="report-admin-grid">
+
+                    <div class="report-admin-card large">
+
+                        <span>
+                            QUARTERLY ASSURANCE
+                        </span>
+
+                        <h3>
+                            Overall assurance performance
+                        </h3>
+
+                        <div class="report-number">
+                            91.4%
+                        </div>
+
+                        <p>
+                            Current quarter assurance completion
+                            across active engagements.
+                        </p>
+
+                        <button onclick="location.href='404.html'">
+                            Open Report
+                        </button>
+
+                    </div>
+
+
+                    <div class="report-admin-card">
+
+                        <span>
+                            CLIENT CONFIDENCE
+                        </span>
+
+                        <strong>
+                            96%
+                        </strong>
+
+                        <p>
+                            Current client confidence indicator.
+                        </p>
+
+                        <button onclick="location.href='404.html'">
+                            View Report
+                        </button>
+
+                    </div>
+
+
+                    <div class="report-admin-card">
+
+                        <span>
+                            OPEN FINDINGS
+                        </span>
+
+                        <strong>
+                            27
+                        </strong>
+
+                        <p>
+                            Findings currently requiring follow-up.
+                        </p>
+
+                        <button onclick="location.href='404.html'">
+                            Review Findings
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="assurance-reports-content">
+
+    <div class="assurance-report-intro">
+        <div>
+            <span>Assurance Reports</span>
+            <h3>Clear reporting for informed assurance decisions</h3>
+            <p>
+                Review completed assurance activities, reporting outcomes
+                and important observations through a structured reporting
+                view designed for management oversight.
+            </p>
+        </div>
+
+        <div class="report-summary-badge">
+            <strong>42</strong>
+            <span>Reports Available</span>
+        </div>
+    </div>
+
+
+    <div class="assurance-report-types">
+
+        <div class="report-type-card">
+            <div>
+                <span>01</span>
+                <h3>Audit Reports</h3>
+                <p>
+                    Detailed summaries of completed audit engagements,
+                    key observations and final assurance conclusions.
+                </p>
+            </div>
+
+            <div class="report-status">
+                <strong>18</strong>
+                <span>Available</span>
+            </div>
+        </div>
+
+
+        <div class="report-type-card">
+            <div>
+                <span>02</span>
+                <h3>Risk Reports</h3>
+                <p>
+                    Reports covering significant risk areas, control
+                    observations and recommended management actions.
+                </p>
+            </div>
+
+            <div class="report-status">
+                <strong>09</strong>
+                <span>Available</span>
+            </div>
+        </div>
+
+
+        <div class="report-type-card">
+            <div>
+                <span>03</span>
+                <h3>Compliance Reports</h3>
+                <p>
+                    Structured reporting on compliance reviews, identified
+                    gaps and areas requiring additional attention.
+                </p>
+            </div>
+
+            <div class="report-status">
+                <strong>07</strong>
+                <span>Available</span>
+            </div>
+        </div>
+
+
+        <div class="report-type-card">
+            <div>
+                <span>04</span>
+                <h3>Control Reports</h3>
+                <p>
+                    Summaries of internal control evaluations and the
+                    progress of important control improvement activities.
+                </p>
+            </div>
+
+            <div class="report-status">
+                <strong>08</strong>
+                <span>Available</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="assurance-report-review">
+
+        <div class="report-review-heading">
+            <span>Report Review</span>
+            <h3>Current reporting activity</h3>
+        </div>
+
+        <div class="report-review-list">
+
+            <div class="report-review-item">
+                <div>
+                    <strong>Quarterly Assurance Summary</strong>
+                    <span>Management reporting</span>
+                </div>
+
+                <div class="review-complete">
+                    Completed
+                </div>
+            </div>
+
+            <div class="report-review-item">
+                <div>
+                    <strong>Internal Control Assessment</strong>
+                    <span>Control evaluation</span>
+                </div>
+
+                <div class="review-progress">
+                    Under Review
+                </div>
+            </div>
+
+            <div class="report-review-item">
+                <div>
+                    <strong>Compliance Review Report</strong>
+                    <span>Regulatory assurance</span>
+                </div>
+
+                <div class="review-complete">
+                    Completed
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="assurance-report-note">
+        <span>Reporting Focus</span>
+        <h3>Reliable information for better management oversight</h3>
+        <p>
+            Assurance reporting brings together important findings,
+            control observations and review outcomes in a clear format,
+            helping management maintain visibility across assurance
+            activities.
+        </p>
+    </div>
+
+</div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+</div>
+
+
+    <script src="js/admin-dashboard.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1125 @@
+/* =========================================================
+   HEADER / NAVBAR
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition:
+        background-color 0.4s ease,
+        box-shadow 0.4s ease,
+        transform 0.4s ease;
+}
+
+/* Navbar after scrolling */
+.site-header.scrolled {
+    position: fixed;
+    background: #050505;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+}
+
+.navbar {
+    width: min(1400px, 92%);
+    min-height: 82px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+}
+
+/* =========================================================
+   STACKLY LOGO
+========================================================= */
+
+.brand-logo {
+    flex-shrink: 0;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    position: relative;
+    z-index: 1100;
+
+    transition: opacity 0.3s ease,
+                transform 0.3s ease;
+}
+
+.brand-logo:hover {
+    opacity: 0.8;
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 38px;
+}
+
+.nav-link {
+    position: relative;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    padding: 10px 0;
+
+    transition:
+        color 0.3s ease,
+        opacity 0.3s ease;
+}
+
+/* Underline */
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: #ffffff;
+
+    transform: translateX(-50%);
+    transition: width 0.35s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ffffff;
+}
+
+/* =========================================================
+   DESKTOP LOGIN / SIGNUP
+========================================================= */
+
+.desktop-auth {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.login-btn,
+.signup-btn {
+    text-decoration: none;
+
+    min-width: 82px;
+    height: 42px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 4px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.login-btn {
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: transparent;
+}
+
+.login-btn:hover {
+    background: #ffffff;
+    color: #050505;
+    transform: translateY(-2px);
+}
+
+.signup-btn {
+    color: #050505;
+    background: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.signup-btn:hover {
+    background: transparent;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   MOBILE AUTH
+========================================================= */
+
+.mobile-auth {
+    display: none;
+}
+
+/* =========================================================
+   MOBILE MENU TOGGLE
+========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    position: relative;
+    z-index: 1200;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 25px;
+    height: 2px;
+
+    background: #ffffff;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.25s ease;
+}
+
+/* X animation */
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .site-header {
+        position: fixed;
+        background: #050505;
+    }
+
+    .navbar {
+        width: 100%;
+        min-height: 70px;
+        padding: 0 20px;
+    }
+
+    /*
+       Logo stays above the mobile menu.
+       Therefore it will NEVER disappear.
+    */
+    .brand-logo {
+        position: relative;
+        z-index: 1200;
+    }
+
+    .desktop-auth {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Mobile navigation panel */
+
+    .nav-menu {
+        position: fixed;
+
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+        height: calc(100vh - 70px);
+
+        background: #050505;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        gap: 0;
+
+        padding: 35px 25px 40px;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        /*
+           Hidden state
+        */
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transform: translateY(-15px);
+
+        transition:
+            opacity 0.35s ease,
+            transform 0.35s ease,
+            visibility 0.35s ease;
+    }
+
+    /* Open state */
+
+    .nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+
+        transform: translateY(0);
+    }
+
+    .nav-link {
+        width: 100%;
+
+        padding: 17px 5px;
+
+        font-size: 19px;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .nav-link::after {
+        left: 0;
+        transform: none;
+        bottom: 0;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+        width: 45px;
+    }
+
+    /* Mobile login/signup */
+
+    .mobile-auth {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 12px;
+
+        margin-top: 30px;
+    }
+
+    .mobile-auth .login-btn,
+    .mobile-auth .signup-btn {
+        width: 100%;
+        height: 48px;
+        font-size: 19px;
+    }
+      .brand-logo img {
+        width: 125px;
+
+      }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 0 16px;
+        min-height: 66px;
+    }
+
+    .brand-logo {
+        font-size: 22px;
+    }
+
+    .nav-menu {
+        top: 66px;
+        height: calc(100vh - 66px);
+
+        padding: 25px 20px 35px;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+    }
+    
+.brand-logo img {
+  
+    margin-left:0 !important;
+}
+}
+
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.brand-logo img {
+    width: 140px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    margin-left:50px;
+}
+
+
+
+/* =========================================================
+   STACKLY AUDIT FOOTER
+========================================================= */
+
+.audit-footer {
+    position: relative;
+
+    width: 100%;
+
+    background: #080909;
+
+    color: #ffffff;
+
+    overflow: hidden;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   SUBTLE BACKGROUND
+   NO DIAMOND LINES
+========================================================= */
+
+.audit-footer-pattern {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(201, 255, 145, 0.055) 0,
+            rgba(201, 255, 145, 0) 28%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(7, 155, 131, 0.07) 0,
+            rgba(7, 155, 131, 0) 30%
+        ),
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        auto,
+        auto,
+        28px 28px;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.audit-footer-container {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1260px, calc(100% - 80px));
+
+    margin: 0 auto;
+
+    padding: 75px 0 80px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.45fr
+        0.8fr
+        1fr
+        1.15fr;
+
+    gap: 70px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.audit-footer-logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    text-decoration: none;
+}
+
+.audit-footer-logo img {
+    width: 160px;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.audit-footer-description {
+    max-width: 410px;
+
+    margin: 48px 0 35px;
+
+    color: #a8b0b0;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SOCIALS
+========================================================= */
+
+.audit-footer-socials {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.audit-footer-socials a {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #151717;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.audit-footer-socials a:hover {
+    transform: translateY(-4px);
+
+    background: #c9ff91;
+
+    color: #101713;
+}
+
+
+/* =========================================================
+   FOOTER HEADINGS
+========================================================= */
+
+.audit-footer-column h3,
+.audit-footer-newsletter h3 {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin: 0 0 30px;
+
+    color: #ffffff;
+
+    font-size: 21px;
+
+    font-weight: 600;
+}
+
+.audit-footer-column h3 span,
+.audit-footer-newsletter h3 span {
+    width: 4px;
+
+    height: 34px;
+
+    display: block;
+
+    background: #c9ff91;
+
+    border-radius: 2px;
+}
+
+
+/* =========================================================
+   FOOTER LINKS
+========================================================= */
+
+.audit-footer-column ul {
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+.audit-footer-column li {
+    margin-bottom: 19px;
+}
+
+.audit-footer-column a {
+    position: relative;
+
+    color: #aeb5b5;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    transition:
+        color 0.3s ease,
+        padding-left 0.3s ease;
+}
+
+.audit-footer-column a:hover {
+    color: #c9ff91;
+
+    padding-left: 5px;
+}
+
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+.audit-footer-newsletter p {
+    max-width: 350px;
+
+    margin: 0 0 35px;
+
+    color: #aeb5b5;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   NEWSLETTER FORM
+========================================================= */
+
+.audit-newsletter-form {
+    width: 100%;
+}
+
+.audit-newsletter-input-wrap {
+    width: 100%;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: stretch;
+
+    border: 1px solid #303333;
+
+    background: #111313;
+}
+
+.audit-newsletter-input-wrap input {
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 0 20px;
+
+    border: 0;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+}
+
+.audit-newsletter-input-wrap input::placeholder {
+    color: #737b7b;
+}
+
+.audit-newsletter-input-wrap button {
+    width: 70px;
+
+    flex: 0 0 70px;
+
+    border: 0;
+
+    background: #c9ff91;
+
+    color: #101713;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.audit-newsletter-input-wrap button:hover {
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   VALIDATION ERROR
+========================================================= */
+
+.audit-newsletter-error {
+    min-height: 20px;
+
+    margin-top: 8px;
+
+    color: #ff7b7b;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.audit-footer-bottom {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1260px, calc(100% - 80px));
+
+    margin: 0 auto;
+
+    padding: 28px 0 18px;
+
+    border-top: 1px solid rgba(255,255,255,0.12);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.audit-footer-bottom p {
+    margin: 0;
+
+    color: #858d8d;
+
+    font-size: 13px;
+}
+
+.audit-footer-crafted i {
+    margin: 0 4px;
+
+    color: #c9ff91;
+
+    font-size: 11px;
+}
+
+.audit-footer-legal {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.audit-footer-legal a {
+    color: #858d8d;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition: color 0.3s ease;
+}
+
+.audit-footer-legal a:hover {
+    color: #c9ff91;
+}
+
+.audit-footer-legal span {
+    color: #4d5353;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .audit-footer-container {
+        width: min(940px, calc(100% - 50px));
+
+        grid-template-columns:
+            1.2fr
+            0.8fr
+            1fr;
+
+        gap: 50px;
+    }
+
+    .audit-footer-newsletter {
+        grid-column: 1 / -1;
+        max-width: 500px;
+    }
+
+    .audit-footer-bottom {
+        width: min(940px, calc(100% - 50px));
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .audit-footer {
+        width: 100%;
+
+        overflow: hidden;
+    }
+
+    .audit-footer-container {
+        width: 100%;
+
+        box-sizing: border-box;
+
+        padding:
+            65px
+            22px
+            55px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 48px;
+
+        text-align: center;
+    }
+
+
+    /* BRAND */
+
+    .audit-footer-brand {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .audit-footer-logo img {
+        width: 150px;
+    }
+
+    .audit-footer-description {
+        max-width: 480px;
+
+        margin:
+            30px auto
+            25px;
+
+        font-size: 17px;
+
+        line-height: 1.7;
+    }
+
+    .audit-footer-socials {
+        justify-content: center;
+    }
+
+
+    /* COLUMNS */
+
+    .audit-footer-column {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .audit-footer-column h3,
+    .audit-footer-newsletter h3 {
+        justify-content: center;
+
+        margin-bottom: 24px;
+    }
+
+    .audit-footer-column ul {
+        text-align: center;
+    }
+
+    .audit-footer-column ul li a {
+        margin-bottom: 16px;
+        font-size:17px;
+    }
+
+
+    /* NEWSLETTER */
+
+    .audit-footer-newsletter {
+        width: 100%;
+
+        max-width: 500px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .audit-footer-newsletter p {
+        max-width: 450px;
+
+        text-align: center;
+    }
+
+    .audit-newsletter-form {
+        width: 100%;
+    }
+
+
+    /* BOTTOM */
+
+    .audit-footer-bottom {
+        width: calc(100% - 44px);
+
+        padding:
+            25px
+            0
+            22px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        text-align: center;
+
+        gap: 15px;
+    }
+
+    .audit-footer-legal {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .audit-footer-container {
+        padding:
+            55px
+            16px
+            45px;
+
+        gap: 42px;
+    }
+
+    .audit-footer-logo img {
+        width: 140px;
+    }
+
+    .audit-footer-description {
+        font-size: 15px;
+
+        margin-top: 25px;
+    }
+
+    .audit-footer-socials a {
+        width: 44px;
+        height: 44px;
+
+        font-size: 19px;
+    }
+
+    .audit-footer-column h3,
+    .audit-footer-newsletter h3 {
+        font-size: 19px;
+    }
+
+    .audit-footer-newsletter p {
+        font-size: 15px;
+    }
+
+    .audit-newsletter-input-wrap {
+        height: 60px;
+    }
+
+    .audit-newsletter-input-wrap button {
+        width: 60px;
+
+        flex-basis: 60px;
+    }
+
+    .audit-footer-bottom {
+        width: calc(100% - 32px);
+    }
+    .audit-footer-column li{
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .audit-footer-container {
+        padding:
+            50px
+            14px
+            40px;
+    }
+
+    .audit-footer-description {
+        font-size: 12.5px;
+    }
+
+    .audit-footer-socials {
+        gap: 8px;
+    }
+
+    .audit-footer-socials a {
+        width: 42px;
+        height: 42px;
+    }
+
+    .audit-newsletter-input-wrap input {
+        padding: 0 14px;
+
+        font-size: 12px;
+    }
+
+    .audit-newsletter-input-wrap button {
+        width: 55px;
+
+        flex-basis: 55px;
+    }
+
+    .audit-footer-bottom {
+        width: calc(100% - 28px);
+    }
+}
