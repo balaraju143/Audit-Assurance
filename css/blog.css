@@ -3486,3 +3486,31 @@
     }
 
 }
+
+
+/* =========================================================
+   ALL BUTTONS - FONT FAMILY
+========================================================= */
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+a.audit-hero-btn,
+a.audit-blog-hero-button,
+a.audit-video-cta-button,
+a.audit-about-button,
+a.audit-main-button,
+a.audit-outline-button,
+a.audit-insight-button,
+.audit-login-submit,
+.audit-register-submit,
+.audit-admin-primary-btn,
+.audit-admin-small-btn {
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif !important;
+}
